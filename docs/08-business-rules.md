@@ -31,3 +31,20 @@
 12. Lead contacts are copied to client contacts.
 13. Converted leads cannot be archived.
 14. CRM exports are permission protected and audited.
+
+## M02
+
+1. Every new client receives a sequential client number.
+2. A converted lead creates only one client.
+3. Client conversion retains source lead history.
+4. Only one primary contact is allowed per client.
+5. Only one billing contact is allowed per client.
+6. A client may have multiple billing profiles.
+7. Only one billing profile should be marked default.
+8. Payment terms are expressed in calendar days.
+9. Client documents must use private storage.
+10. Client documents must never be exposed through public storage URLs.
+11. Every document download requires authentication and permission.
+12. Client creation sends a queued internal notification/email.
+13. Contact creation sends a queued internal notification/email.
+14. Client export and PDF generation are audited.

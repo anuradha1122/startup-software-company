@@ -49,3 +49,25 @@ Includes:
 - assignment notifications
 - follow-up due notifications
 - stale lead notifications
+
+## M02 — Clients & Contacts
+
+Includes:
+
+- client profiles
+- client numbering
+- client ownership
+- client contacts
+- primary contacts
+- billing contacts
+- decision makers
+- billing profiles
+- payment terms
+- tax information
+- private client documents
+- secure document downloads
+- lead-to-client integration
+- client list Excel
+- client profile PDF
+- client-created notifications
+- contact-added notifications

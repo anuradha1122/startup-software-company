@@ -1,12 +1,12 @@
-import AppLayout from "@/layouts/app-layout";
-import { Head, Link, router, useForm } from "@inertiajs/react";
+import AppLayout from '@/layouts/app-layout';
+import { Head, Link, router, useForm } from '@inertiajs/react';
 
 export default function LeadShow({ lead }: any) {
     const activity = useForm({
-        type: "note",
-        subject: "",
-        description: "",
-        due_at: "",
+        type: 'note',
+        subject: '',
+        description: '',
+        due_at: '',
         completed: true,
     });
 
@@ -36,12 +36,12 @@ export default function LeadShow({ lead }: any) {
                             Edit
                         </Link>
 
-                        {lead.status !== "converted" && (
+                        {lead.status !== 'converted' && (
                             <button
                                 onClick={() => {
                                     if (
                                         confirm(
-                                            "Convert this lead to a client?",
+                                            'Convert this lead to a client?',
                                         )
                                     ) {
                                         router.post(
@@ -75,14 +75,14 @@ export default function LeadShow({ lead }: any) {
                                 <dt className="text-sm text-muted-foreground">
                                     Owner
                                 </dt>
-                                <dd>{lead.owner?.name ?? "Unassigned"}</dd>
+                                <dd>{lead.owner?.name ?? 'Unassigned'}</dd>
                             </div>
 
                             <div>
                                 <dt className="text-sm text-muted-foreground">
                                     Source
                                 </dt>
-                                <dd>{lead.source?.name ?? "-"}</dd>
+                                <dd>{lead.source?.name ?? '-'}</dd>
                             </div>
 
                             <div>
@@ -166,10 +166,10 @@ export default function LeadShow({ lead }: any) {
                         }}
                     >
                         <select
-                            className="rounded border bg-white dark:bg-gray-950 p-2"
+                            className="rounded border bg-white p-2 dark:bg-gray-950"
                             value={activity.data.type}
                             onChange={(e) =>
-                                activity.setData("type", e.target.value)
+                                activity.setData('type', e.target.value)
                             }
                         >
                             <option value="call">Call</option>
@@ -184,7 +184,7 @@ export default function LeadShow({ lead }: any) {
                             className="rounded border p-2"
                             value={activity.data.subject}
                             onChange={(e) =>
-                                activity.setData("subject", e.target.value)
+                                activity.setData('subject', e.target.value)
                             }
                         />
 
@@ -193,7 +193,7 @@ export default function LeadShow({ lead }: any) {
                             className="rounded border p-2"
                             value={activity.data.due_at}
                             onChange={(e) =>
-                                activity.setData("due_at", e.target.value)
+                                activity.setData('due_at', e.target.value)
                             }
                         />
 
@@ -202,7 +202,7 @@ export default function LeadShow({ lead }: any) {
                             className="rounded border p-2 md:col-span-2"
                             value={activity.data.description}
                             onChange={(e) =>
-                                activity.setData("description", e.target.value)
+                                activity.setData('description', e.target.value)
                             }
                         />
 
@@ -232,7 +232,7 @@ export default function LeadShow({ lead }: any) {
                                             {item.subject}
                                         </span>
 
-                                        <span className="ml-2 text-xs uppercase text-muted-foreground">
+                                        <span className="ml-2 text-xs text-muted-foreground uppercase">
                                             {item.type}
                                         </span>
                                     </div>
@@ -242,12 +242,12 @@ export default function LeadShow({ lead }: any) {
                                     </span>
                                 </div>
 
-                                <p className="mt-1 whitespace-pre-wrap text-sm">
+                                <p className="mt-1 text-sm whitespace-pre-wrap">
                                     {item.description}
                                 </p>
 
                                 <p className="mt-1 text-xs text-muted-foreground">
-                                    By {item.creator?.name ?? "System"}
+                                    By {item.creator?.name ?? 'System'}
                                 </p>
                             </div>
                         ))}

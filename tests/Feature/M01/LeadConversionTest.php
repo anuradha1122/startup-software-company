@@ -4,6 +4,7 @@ use App\Models\Client;
 use App\Models\Lead;
 use App\Models\LeadStage;
 use App\Models\User;
+use Database\Seeders\CompanySettingSeeder;
 use Database\Seeders\LeadStageSeeder;
 use Database\Seeders\RolePermissionSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -13,6 +14,7 @@ uses(RefreshDatabase::class);
 beforeEach(function (): void {
     $this->seed([
         RolePermissionSeeder::class,
+        CompanySettingSeeder::class,
         LeadStageSeeder::class,
     ]);
 });

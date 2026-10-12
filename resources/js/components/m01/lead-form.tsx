@@ -38,7 +38,7 @@ export default function LeadForm({
                 <input
                     className="w-full rounded border p-2"
                     value={data.title}
-                    onChange={(e) => setData("title", e.target.value)}
+                    onChange={(e) => setData('title', e.target.value)}
                 />
             </label>
 
@@ -47,16 +47,16 @@ export default function LeadForm({
                 <input
                     className="w-full rounded border p-2"
                     value={data.company_name}
-                    onChange={(e) => setData("company_name", e.target.value)}
+                    onChange={(e) => setData('company_name', e.target.value)}
                 />
             </label>
 
             <label className="space-y-1">
                 <span>Stage</span>
                 <select
-                    className="w-full rounded bg-white dark:bg-gray-950 border p-2"
+                    className="w-full rounded border bg-white p-2 dark:bg-gray-950"
                     value={data.stage_id}
-                    onChange={(e) => setData("stage_id", e.target.value)}
+                    onChange={(e) => setData('stage_id', e.target.value)}
                 >
                     {stages.map((stage) => (
                         <option key={stage.id} value={stage.id}>
@@ -69,9 +69,9 @@ export default function LeadForm({
             <label className="space-y-1">
                 <span>Source</span>
                 <select
-                    className="w-full rounded bg-white dark:bg-gray-950 border p-2"
+                    className="w-full rounded border bg-white p-2 dark:bg-gray-950"
                     value={data.source_id}
-                    onChange={(e) => setData("source_id", e.target.value)}
+                    onChange={(e) => setData('source_id', e.target.value)}
                 >
                     <option value="">Select source</option>
 
@@ -86,9 +86,9 @@ export default function LeadForm({
             <label className="space-y-1">
                 <span>Owner</span>
                 <select
-                    className="w-full rounded bg-white dark:bg-gray-950 border p-2"
+                    className="w-full rounded border bg-white p-2 dark:bg-gray-950"
                     value={data.owner_id}
-                    onChange={(e) => setData("owner_id", e.target.value)}
+                    onChange={(e) => setData('owner_id', e.target.value)}
                 >
                     <option value="">Unassigned</option>
 
@@ -103,9 +103,9 @@ export default function LeadForm({
             <label className="space-y-1">
                 <span>Priority</span>
                 <select
-                    className="w-full rounded border bg-white dark:bg-gray-950 p-2"
+                    className="w-full rounded border bg-white p-2 dark:bg-gray-950"
                     value={data.priority}
-                    onChange={(e) => setData("priority", e.target.value)}
+                    onChange={(e) => setData('priority', e.target.value)}
                 >
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
@@ -122,7 +122,7 @@ export default function LeadForm({
                     step="0.01"
                     className="w-full rounded border p-2"
                     value={data.estimated_value}
-                    onChange={(e) => setData("estimated_value", e.target.value)}
+                    onChange={(e) => setData('estimated_value', e.target.value)}
                 />
             </label>
 
@@ -133,7 +133,7 @@ export default function LeadForm({
                     value={data.currency}
                     maxLength={3}
                     onChange={(e) =>
-                        setData("currency", e.target.value.toUpperCase())
+                        setData('currency', e.target.value.toUpperCase())
                     }
                 />
             </label>
@@ -145,7 +145,7 @@ export default function LeadForm({
                     className="w-full rounded border p-2"
                     value={data.next_follow_up_at}
                     onChange={(e) =>
-                        setData("next_follow_up_at", e.target.value)
+                        setData('next_follow_up_at', e.target.value)
                     }
                 />
             </label>
@@ -156,7 +156,7 @@ export default function LeadForm({
                 <textarea
                     className="min-h-28 w-full rounded border p-2"
                     value={data.notes}
-                    onChange={(e) => setData("notes", e.target.value)}
+                    onChange={(e) => setData('notes', e.target.value)}
                 />
             </label>
         </div>

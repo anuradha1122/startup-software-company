@@ -1,6 +1,6 @@
-import AppLayout from "@/layouts/app-layout";
-import { Head, Link, router } from "@inertiajs/react";
-import { useState } from "react";
+import AppLayout from '@/layouts/app-layout';
+import { Head, Link, router } from '@inertiajs/react';
+import { useState } from 'react';
 
 export default function LeadsIndex({
     stages,
@@ -75,7 +75,7 @@ export default function LeadsIndex({
                         const form = new FormData(event.currentTarget);
 
                         router.get(
-                            "/admin/leads",
+                            '/admin/leads',
                             Object.fromEntries(form.entries()),
                             {
                                 preserveState: true,
@@ -86,14 +86,14 @@ export default function LeadsIndex({
                     <input
                         name="search"
                         placeholder="Search..."
-                        defaultValue={filters.search ?? ""}
+                        defaultValue={filters.search ?? ''}
                         className="rounded border p-2"
                     />
 
                     <select
                         name="source_id"
-                        defaultValue={filters.source_id ?? ""}
-                        className="rounded border bg-white dark:bg-gray-950 p-2"
+                        defaultValue={filters.source_id ?? ''}
+                        className="rounded border bg-white p-2 dark:bg-gray-950"
                     >
                         <option value="">All sources</option>
 
@@ -106,8 +106,8 @@ export default function LeadsIndex({
 
                     <select
                         name="owner_id"
-                        defaultValue={filters.owner_id ?? ""}
-                        className="rounded border bg-white dark:bg-gray-950 p-2"
+                        defaultValue={filters.owner_id ?? ''}
+                        className="rounded border bg-white p-2 dark:bg-gray-950"
                     >
                         <option value="">All owners</option>
 
@@ -130,7 +130,7 @@ export default function LeadsIndex({
                         return (
                             <div
                                 key={stage.id}
-                                className="min-w-75 max-w-75 rounded-lg border bg-muted/20 p-3"
+                                className="max-w-75 min-w-75 rounded-lg border bg-muted/20 p-3"
                                 onDragOver={(event) => event.preventDefault()}
                                 onDrop={() => moveLead(stage.id)}
                             >
@@ -171,19 +171,19 @@ export default function LeadsIndex({
 
                                             <div className="mt-3 space-y-1 text-xs text-muted-foreground">
                                                 <p>
-                                                    Owner:{" "}
+                                                    Owner:{' '}
                                                     {lead.owner?.name ??
-                                                        "Unassigned"}
+                                                        'Unassigned'}
                                                 </p>
 
                                                 <p>
-                                                    Value: {lead.currency}{" "}
+                                                    Value: {lead.currency}{' '}
                                                     {lead.estimated_value ??
-                                                        "0.00"}
+                                                        '0.00'}
                                                 </p>
 
                                                 <p>
-                                                    Probability:{" "}
+                                                    Probability:{' '}
                                                     {lead.probability}%
                                                 </p>
                                             </div>

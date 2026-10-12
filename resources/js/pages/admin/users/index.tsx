@@ -1,4 +1,4 @@
-import { Head, Link, router, useForm } from "@inertiajs/react";
+import { Head, Link, router, useForm } from '@inertiajs/react';
 
 type Role = {
     id: number;
@@ -28,16 +28,16 @@ type Props = {
 
 export default function UsersIndex({ users, roles }: Props) {
     const form = useForm({
-        name: "",
-        email: "",
-        phone: "",
-        status: "active",
+        name: '',
+        email: '',
+        phone: '',
+        status: 'active',
         roles: [] as string[],
     });
 
     const toggleRole = (role: string) => {
         form.setData(
-            "roles",
+            'roles',
             form.data.roles.includes(role)
                 ? form.data.roles.filter((item) => item !== role)
                 : [...form.data.roles, role],
@@ -47,7 +47,7 @@ export default function UsersIndex({ users, roles }: Props) {
     const submit = (event: React.FormEvent) => {
         event.preventDefault();
 
-        form.post("/admin/users", {
+        form.post('/admin/users', {
             preserveScroll: true,
             onSuccess: () => form.reset(),
         });
@@ -83,7 +83,7 @@ export default function UsersIndex({ users, roles }: Props) {
                             placeholder="Full name"
                             value={form.data.name}
                             onChange={(e) =>
-                                form.setData("name", e.target.value)
+                                form.setData('name', e.target.value)
                             }
                         />
 
@@ -93,7 +93,7 @@ export default function UsersIndex({ users, roles }: Props) {
                             placeholder="Email"
                             value={form.data.email}
                             onChange={(e) =>
-                                form.setData("email", e.target.value)
+                                form.setData('email', e.target.value)
                             }
                         />
 
@@ -102,15 +102,15 @@ export default function UsersIndex({ users, roles }: Props) {
                             placeholder="Phone"
                             value={form.data.phone}
                             onChange={(e) =>
-                                form.setData("phone", e.target.value)
+                                form.setData('phone', e.target.value)
                             }
                         />
 
                         <select
-                            className="rounded border bg-white dark:bg-gray-950 p-2"
+                            className="rounded border bg-white p-2 dark:bg-gray-950"
                             value={form.data.status}
                             onChange={(e) =>
-                                form.setData("status", e.target.value)
+                                form.setData('status', e.target.value)
                             }
                         >
                             <option value="active">Active</option>
@@ -169,7 +169,7 @@ export default function UsersIndex({ users, roles }: Props) {
                                     <td className="p-3">
                                         {user.roles
                                             .map((role) => role.name)
-                                            .join(", ")}
+                                            .join(', ')}
                                     </td>
 
                                     <td className="p-3">{user.status}</td>
@@ -187,7 +187,7 @@ export default function UsersIndex({ users, roles }: Props) {
                                             onClick={() => {
                                                 if (
                                                     confirm(
-                                                        "Archive this user?",
+                                                        'Archive this user?',
                                                     )
                                                 ) {
                                                     router.delete(
@@ -212,7 +212,7 @@ export default function UsersIndex({ users, roles }: Props) {
                             disabled={!link.url}
                             onClick={() => link.url && router.get(link.url)}
                             className={`rounded border px-3 py-1 ${
-                                link.active ? "bg-slate-900 text-white" : ""
+                                link.active ? 'bg-slate-900 text-white' : ''
                             }`}
                             dangerouslySetInnerHTML={{
                                 __html: link.label,

@@ -36,6 +36,17 @@ class RolePermissionSeeder extends Seeder
             'leads.assign',
             'leads.convert',
             'leads.export',
+
+            'clients.view',
+            'clients.create',
+            'clients.update',
+            'clients.delete',
+            'clients.export',
+
+            'clients.contacts.manage',
+            'clients.billing.manage',
+            'clients.documents.manage',
+            'clients.documents.download',
         ];
 
         foreach ($permissions as $permission) {
@@ -80,6 +91,27 @@ class RolePermissionSeeder extends Seeder
             ->givePermissionTo([
                 'leads.view',
                 'leads.export',
+                'clients.view',
+                'clients.documents.download',
+            ]);
+
+        Role::findByName('Sales')
+            ->givePermissionTo([
+                'clients.view',
+                'clients.create',
+                'clients.update',
+                'clients.export',
+                'clients.contacts.manage',
+                'clients.documents.manage',
+                'clients.documents.download',
+            ]);
+
+        Role::findByName('Finance')
+            ->givePermissionTo([
+                'clients.view',
+                'clients.export',
+                'clients.billing.manage',
+                'clients.documents.download',
             ]);
 
         Role::findByName('Director')

@@ -4,9 +4,9 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-} from "@/components/ui/sidebar";
-import type { NavItem } from "@/types";
-import { Link, usePage } from "@inertiajs/react";
+} from '@/components/ui/sidebar';
+import type { NavItem } from '@/types';
+import { Link, usePage } from '@inertiajs/react';
 
 export function NavMain({
     items = [],
@@ -24,7 +24,7 @@ export function NavMain({
             <SidebarMenu>
                 {items.map((item) => {
                     const href =
-                        typeof item.href === "string"
+                        typeof item.href === 'string'
                             ? item.href
                             : item.href.url;
 

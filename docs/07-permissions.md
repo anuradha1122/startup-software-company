@@ -47,3 +47,15 @@ view, create, update, assign, convert, export.
 
 Project Manager:
 view and export.
+
+## M02 Permissions
+
+- clients.view
+- clients.create
+- clients.update
+- clients.delete
+- clients.export
+- clients.contacts.manage
+- clients.billing.manage
+- clients.documents.manage
+- clients.documents.download

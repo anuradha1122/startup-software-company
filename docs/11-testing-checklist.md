@@ -37,3 +37,25 @@
 - [ ] Lead Excel export works
 - [ ] Pipeline PDF works
 - [ ] Export actions appear in audit log
+
+## M02
+
+- [ ] Manual client creation works
+- [ ] Client number is generated
+- [ ] Lead conversion generates client number
+- [ ] Contact can be added
+- [ ] Only one primary contact is maintained
+- [ ] Billing contact works
+- [ ] Billing profile can be added
+- [ ] Default billing profile works
+- [ ] Payment terms are stored
+- [ ] Private document upload works
+- [ ] Secure document download works
+- [ ] Client-created notification works
+- [ ] Contact-added notification works
+- [ ] Client Excel export works
+- [ ] Client profile PDF works
+- [ ] Unauthorized access returns 403
+- [ ] Full PHP test suite passes
+- [ ] TypeScript check passes
+- [ ] Production build succeeds

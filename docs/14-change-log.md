@@ -29,3 +29,15 @@
 - lead-to-client conversion
 - CRM Excel export
 - pipeline PDF export
+
+### Added — M02
+
+- Client management
+- Client contacts
+- Billing profiles
+- Payment terms
+- Client private document storage
+- Client profile PDF
+- Client list Excel
+- Client-created notifications
+- Contact-added notifications

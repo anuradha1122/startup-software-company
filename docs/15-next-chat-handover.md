@@ -57,3 +57,31 @@ Before M02:
 M02 — Clients & Contacts
 
 M02 must extend the clients/client_contacts foundation created by M01.
+
+## Current Module
+
+M02 — Clients & Contacts
+
+## Completion Gate
+
+Before M03:
+
+1. migrations pass
+2. seeders pass
+3. client CRUD tested
+4. lead conversion tested
+5. contacts tested
+6. billing profiles tested
+7. payment terms tested
+8. private upload/download tested
+9. queued notifications/emails tested
+10. client PDF tested
+11. client Excel tested
+12. php artisan test passes
+13. TypeScript checks pass
+14. production build passes
+15. M02 Git commit created
+
+## Next Module
+
+M03 — Requirements & Estimation

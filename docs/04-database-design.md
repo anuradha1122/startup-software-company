@@ -56,3 +56,29 @@ Lead contact records are copied to client contacts during conversion
 inside one database transaction.
 
 M02 extends client records rather than rebuilding them.
+
+## M02 Tables
+
+Extended:
+
+- clients
+- client_contacts
+
+Added:
+
+- client_billing_profiles
+- client_documents
+
+### Client Documents
+
+Client documents use the private Laravel `local` disk.
+
+Files are downloaded only through authenticated and permission-
+protected controller routes.
+
+### Billing Profiles
+
+A client may hold multiple billing profiles, but only one should be
+marked as default.
+
+Payment terms are stored as number of days.

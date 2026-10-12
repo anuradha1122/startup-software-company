@@ -1,4 +1,4 @@
-import { Head, router } from "@inertiajs/react";
+import { Head, router } from '@inertiajs/react';
 
 export default function NotificationsIndex({ notifications }: any) {
     return (
@@ -10,7 +10,7 @@ export default function NotificationsIndex({ notifications }: any) {
                     <h1 className="text-2xl font-semibold">Notifications</h1>
 
                     <button
-                        onClick={() => router.patch("/notifications/read-all")}
+                        onClick={() => router.patch('/notifications/read-all')}
                         className="rounded border px-3 py-2"
                     >
                         Mark all as read
@@ -22,7 +22,7 @@ export default function NotificationsIndex({ notifications }: any) {
                         <div
                             key={notification.id}
                             className={`rounded border p-4 ${
-                                notification.read_at ? "" : "bg-muted/40"
+                                notification.read_at ? '' : 'bg-muted/40'
                             }`}
                         >
                             <h2 className="font-medium">

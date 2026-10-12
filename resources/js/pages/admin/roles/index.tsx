@@ -1,5 +1,5 @@
-import { Head, router, useForm } from "@inertiajs/react";
-import { useState } from "react";
+import { Head, router, useForm } from '@inertiajs/react';
+import { useState } from 'react';
 
 type Role = {
     id: number;
@@ -27,7 +27,7 @@ function RoleCard({
         role.permissions.map((item) => item.name),
     );
 
-    const locked = ["Director", "Admin"].includes(role.name);
+    const locked = ['Director', 'Admin'].includes(role.name);
 
     const toggle = (permission: string) => {
         if (locked) {
@@ -82,7 +82,7 @@ function RoleCard({
 
 export default function RolesIndex({ roles, permissions }: Props) {
     const createForm = useForm({
-        name: "",
+        name: '',
     });
 
     return (
@@ -99,7 +99,7 @@ export default function RolesIndex({ roles, permissions }: Props) {
                     onSubmit={(event) => {
                         event.preventDefault();
 
-                        createForm.post("/admin/roles", {
+                        createForm.post('/admin/roles', {
                             onSuccess: () => createForm.reset(),
                         });
                     }}
@@ -109,7 +109,7 @@ export default function RolesIndex({ roles, permissions }: Props) {
                         placeholder="Custom role name"
                         value={createForm.data.name}
                         onChange={(e) =>
-                            createForm.setData("name", e.target.value)
+                            createForm.setData('name', e.target.value)
                         }
                     />
 

@@ -45,3 +45,13 @@ introduce those files.
 ## Audit
 
 Authentication and protected model changes are recorded.
+
+## M02 Client Documents
+
+Client documents are stored on the private local disk.
+
+Access is provided only through authenticated controller downloads.
+
+Document upload/download activity is audited.
+
+Client documents must not be exposed using `storage:link`.

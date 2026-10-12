@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\AuditLogController;
+use App\Http\Controllers\Admin\ClientBillingProfileController;
+use App\Http\Controllers\Admin\ClientContactController;
+use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\ClientDocumentController;
 use App\Http\Controllers\Admin\CompanySettingController;
 use App\Http\Controllers\Admin\LeadActivityController;
 use App\Http\Controllers\Admin\LeadController;
@@ -244,5 +248,236 @@ Route::middleware([
                         'permission:leads.convert'
                     )
                     ->name('convert');
+            });
+
+        Route::prefix('clients')
+            ->name('clients.')
+            ->group(function (): void {
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ClientController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '/',
+                    [
+                        ClientController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    'create',
+                    [
+                        ClientController::class,
+                        'create',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.create'
+                    )
+                    ->name('create');
+
+                Route::post(
+                    '/',
+                    [
+                        ClientController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{client}',
+                    [
+                        ClientController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.view'
+                    )
+                    ->name('show');
+
+                Route::get(
+                    '{client}/edit',
+                    [
+                        ClientController::class,
+                        'edit',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.update'
+                    )
+                    ->name('edit');
+
+                Route::put(
+                    '{client}',
+                    [
+                        ClientController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.update'
+                    )
+                    ->name('update');
+
+                Route::delete(
+                    '{client}',
+                    [
+                        ClientController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.delete'
+                    )
+                    ->name('destroy');
+
+                Route::get(
+                    '{client}/profile-pdf',
+                    [
+                        ClientController::class,
+                        'profilePdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.view'
+                    )
+                    ->name('profile-pdf');
+
+                Route::post(
+                    '{client}/contacts',
+                    [
+                        ClientContactController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.contacts.manage'
+                    )
+                    ->name('contacts.store');
+
+                Route::put(
+                    '{client}/contacts/{contact}',
+                    [
+                        ClientContactController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.contacts.manage'
+                    )
+                    ->name('contacts.update');
+
+                Route::delete(
+                    '{client}/contacts/{contact}',
+                    [
+                        ClientContactController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.contacts.manage'
+                    )
+                    ->name('contacts.destroy');
+
+                Route::post(
+                    '{client}/billing-profiles',
+                    [
+                        ClientBillingProfileController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.billing.manage'
+                    )
+                    ->name(
+                        'billing-profiles.store'
+                    );
+
+                Route::put(
+                    '{client}/billing-profiles/{billingProfile}',
+                    [
+                        ClientBillingProfileController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.billing.manage'
+                    )
+                    ->name(
+                        'billing-profiles.update'
+                    );
+
+                Route::delete(
+                    '{client}/billing-profiles/{billingProfile}',
+                    [
+                        ClientBillingProfileController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.billing.manage'
+                    )
+                    ->name(
+                        'billing-profiles.destroy'
+                    );
+
+                Route::post(
+                    '{client}/documents',
+                    [
+                        ClientDocumentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.documents.manage'
+                    )
+                    ->name('documents.store');
+
+                Route::get(
+                    '{client}/documents/{document}/download',
+                    [
+                        ClientDocumentController::class,
+                        'download',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.documents.download'
+                    )
+                    ->name(
+                        'documents.download'
+                    );
+
+                Route::delete(
+                    '{client}/documents/{document}',
+                    [
+                        ClientDocumentController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:clients.documents.manage'
+                    )
+                    ->name(
+                        'documents.destroy'
+                    );
             });
     });

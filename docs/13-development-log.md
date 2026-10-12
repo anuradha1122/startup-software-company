@@ -41,3 +41,22 @@ Implemented:
 - pipeline PDF
 - queued CRM notifications/emails
 - CRM test suite
+
+## M02 — Clients & Contacts
+
+Implemented:
+
+- full client profiles
+- client numbering
+- ownership
+- contacts
+- billing contacts
+- billing profiles
+- payment terms
+- private documents
+- secure downloads
+- client profile PDF
+- client list Excel
+- queued client/contact notifications
+- lead-conversion integration
+- M02 automated tests

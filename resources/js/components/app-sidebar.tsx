@@ -1,4 +1,4 @@
-import { Link, usePage } from "@inertiajs/react";
+import { Link, usePage } from '@inertiajs/react';
 import {
     Bell,
     Building2,
@@ -6,11 +6,12 @@ import {
     LayoutGrid,
     ShieldCheck,
     Users,
-} from "lucide-react";
+    ContactRound,
+} from 'lucide-react';
 
-import AppLogo from "@/components/app-logo";
-import { NavMain } from "@/components/nav-main";
-import { NavUser } from "@/components/nav-user";
+import AppLogo from '@/components/app-logo';
+import { NavMain } from '@/components/nav-main';
+import { NavUser } from '@/components/nav-user';
 import {
     Sidebar,
     SidebarContent,
@@ -19,10 +20,9 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-} from "@/components/ui/sidebar";
-import { dashboard } from "@/routes";
-import type { NavItem } from "@/types";
-import { ContactRound } from "lucide-react";
+} from '@/components/ui/sidebar';
+import { dashboard } from '@/routes';
+import type { NavItem } from '@/types';
 
 export function AppSidebar() {
     const page = usePage<any>();
@@ -33,7 +33,7 @@ export function AppSidebar() {
 
     const mainNavItems: NavItem[] = [
         {
-            title: "Dashboard",
+            title: 'Dashboard',
             href: dashboard(),
             icon: LayoutGrid,
         },
@@ -41,53 +41,61 @@ export function AppSidebar() {
 
     const administrationNavItems: NavItem[] = [];
 
-    if (can("users.view")) {
+    if (can('users.view')) {
         administrationNavItems.push({
-            title: "Users",
-            href: "/admin/users",
+            title: 'Users',
+            href: '/admin/users',
             icon: Users,
         });
     }
 
-    if (can("roles.manage")) {
+    if (can('roles.manage')) {
         administrationNavItems.push({
-            title: "Roles & Permissions",
-            href: "/admin/roles",
+            title: 'Roles & Permissions',
+            href: '/admin/roles',
             icon: ShieldCheck,
         });
     }
 
-    if (can("company-settings.view")) {
+    if (can('company-settings.view')) {
         administrationNavItems.push({
-            title: "Company Settings",
-            href: "/admin/company",
+            title: 'Company Settings',
+            href: '/admin/company',
             icon: Building2,
         });
     }
 
-    if (can("audit.view")) {
+    if (can('audit.view')) {
         administrationNavItems.push({
-            title: "Audit Log",
-            href: "/admin/audit",
+            title: 'Audit Log',
+            href: '/admin/audit',
             icon: ClipboardList,
         });
     }
 
     const accountNavItems: NavItem[] = [
         {
-            title: "Notifications",
-            href: "/notifications",
+            title: 'Notifications',
+            href: '/notifications',
             icon: Bell,
         },
     ];
 
     const crmNavItems: NavItem[] = [];
 
-    if (can("leads.view")) {
+    if (can('leads.view')) {
         crmNavItems.push({
-            title: "Leads",
-            href: "/admin/leads",
+            title: 'Leads',
+            href: '/admin/leads',
             icon: ContactRound,
+        });
+    }
+
+    if (can('clients.view')) {
+        crmNavItems.push({
+            title: 'Clients',
+            href: '/admin/clients',
+            icon: Building2,
         });
     }
 

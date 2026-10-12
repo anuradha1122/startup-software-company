@@ -37,3 +37,26 @@
 | POST   | /admin/leads/{lead}/convert      | leads.convert |
 | GET    | /admin/leads/export/excel        | leads.export  |
 | GET    | /admin/leads/export/pipeline-pdf | leads.export  |
+
+## M02 – Clients
+
+| Method | URI                                                       | Permission                 |
+| ------ | --------------------------------------------------------- | -------------------------- |
+| GET    | /admin/clients/export/excel                               | clients.export             |
+| GET    | /admin/clients                                            | clients.view               |
+| GET    | /admin/clients/create                                     | clients.create             |
+| POST   | /admin/clients                                            | clients.create             |
+| GET    | /admin/clients/{client}                                   | clients.view               |
+| GET    | /admin/clients/{client}/edit                              | clients.update             |
+| PUT    | /admin/clients/{client}                                   | clients.update             |
+| DELETE | /admin/clients/{client}                                   | clients.delete             |
+| GET    | /admin/clients/{client}/profile-pdf                       | clients.view               |
+| POST   | /admin/clients/{client}/contacts                          | clients.contacts.manage    |
+| PUT    | /admin/clients/{client}/contacts/{contact}                | clients.contacts.manage    |
+| DELETE | /admin/clients/{client}/contacts/{contact}                | clients.contacts.manage    |
+| POST   | /admin/clients/{client}/billing-profiles                  | clients.billing.manage     |
+| PUT    | /admin/clients/{client}/billing-profiles/{billingProfile} | clients.billing.manage     |
+| DELETE | /admin/clients/{client}/billing-profiles/{billingProfile} | clients.billing.manage     |
+| POST   | /admin/clients/{client}/documents                         | clients.documents.manage   |
+| GET    | /admin/clients/{client}/documents/{document}/download     | clients.documents.download |
+| DELETE | /admin/clients/{client}/documents/{document}              | clients.documents.manage   |

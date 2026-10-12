@@ -1,4 +1,4 @@
-import { Head, useForm } from "@inertiajs/react";
+import { Head, useForm } from '@inertiajs/react';
 
 type ManagedUser = {
     public_id: string;
@@ -18,14 +18,14 @@ export default function EditUser({ managedUser, roles }: Props) {
     const form = useForm({
         name: managedUser.name,
         email: managedUser.email,
-        phone: managedUser.phone ?? "",
+        phone: managedUser.phone ?? '',
         status: managedUser.status,
         roles: managedUser.roles,
     });
 
     const toggleRole = (role: string) => {
         form.setData(
-            "roles",
+            'roles',
             form.data.roles.includes(role)
                 ? form.data.roles.filter((item) => item !== role)
                 : [...form.data.roles, role],
@@ -50,26 +50,26 @@ export default function EditUser({ managedUser, roles }: Props) {
                     <input
                         className="w-full rounded border p-2"
                         value={form.data.name}
-                        onChange={(e) => form.setData("name", e.target.value)}
+                        onChange={(e) => form.setData('name', e.target.value)}
                     />
 
                     <input
                         type="email"
                         className="w-full rounded border p-2"
                         value={form.data.email}
-                        onChange={(e) => form.setData("email", e.target.value)}
+                        onChange={(e) => form.setData('email', e.target.value)}
                     />
 
                     <input
                         className="w-full rounded border p-2"
                         value={form.data.phone}
-                        onChange={(e) => form.setData("phone", e.target.value)}
+                        onChange={(e) => form.setData('phone', e.target.value)}
                     />
 
                     <select
-                        className="w-full rounded bg-white dark:bg-gray-950 border p-2"
+                        className="w-full rounded border bg-white p-2 dark:bg-gray-950"
                         value={form.data.status}
-                        onChange={(e) => form.setData("status", e.target.value)}
+                        onChange={(e) => form.setData('status', e.target.value)}
                     >
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>

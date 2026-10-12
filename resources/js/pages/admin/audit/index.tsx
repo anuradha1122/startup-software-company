@@ -1,11 +1,11 @@
-import { Head, router, useForm } from "@inertiajs/react";
+import { Head, router, useForm } from '@inertiajs/react';
 
 export default function AuditIndex({ activities, filters }: any) {
     const form = useForm({
-        search: filters.search ?? "",
-        log_name: filters.log_name ?? "",
-        date_from: filters.date_from ?? "",
-        date_to: filters.date_to ?? "",
+        search: filters.search ?? '',
+        log_name: filters.log_name ?? '',
+        date_from: filters.date_from ?? '',
+        date_to: filters.date_to ?? '',
     });
 
     const query = new URLSearchParams(
@@ -50,7 +50,7 @@ export default function AuditIndex({ activities, filters }: any) {
                     onSubmit={(event) => {
                         event.preventDefault();
 
-                        router.get("/admin/audit", form.data, {
+                        router.get('/admin/audit', form.data, {
                             preserveState: true,
                         });
                     }}
@@ -59,7 +59,7 @@ export default function AuditIndex({ activities, filters }: any) {
                         className="rounded border p-2"
                         placeholder="Search"
                         value={form.data.search}
-                        onChange={(e) => form.setData("search", e.target.value)}
+                        onChange={(e) => form.setData('search', e.target.value)}
                     />
 
                     <input
@@ -67,7 +67,7 @@ export default function AuditIndex({ activities, filters }: any) {
                         placeholder="Log name"
                         value={form.data.log_name}
                         onChange={(e) =>
-                            form.setData("log_name", e.target.value)
+                            form.setData('log_name', e.target.value)
                         }
                     />
 
@@ -76,7 +76,7 @@ export default function AuditIndex({ activities, filters }: any) {
                         className="rounded border p-2"
                         value={form.data.date_from}
                         onChange={(e) =>
-                            form.setData("date_from", e.target.value)
+                            form.setData('date_from', e.target.value)
                         }
                     />
 
@@ -85,7 +85,7 @@ export default function AuditIndex({ activities, filters }: any) {
                         className="rounded border p-2"
                         value={form.data.date_to}
                         onChange={(e) =>
-                            form.setData("date_to", e.target.value)
+                            form.setData('date_to', e.target.value)
                         }
                     />
 
@@ -112,7 +112,7 @@ export default function AuditIndex({ activities, filters }: any) {
                                     <td className="p-3 uppercase">
                                         {new Date(
                                             activity.created_at,
-                                        ).toLocaleString("en-CA")}
+                                        ).toLocaleString('en-CA')}
                                     </td>
 
                                     <td className="p-3">{activity.log_name}</td>
@@ -124,7 +124,7 @@ export default function AuditIndex({ activities, filters }: any) {
                                     </td>
 
                                     <td className="p-3">
-                                        {activity.causer?.name ?? "System"}
+                                        {activity.causer?.name ?? 'System'}
                                     </td>
                                 </tr>
                             ))}

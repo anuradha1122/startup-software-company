@@ -1,24 +1,24 @@
-import LeadForm from "@/components/m01/lead-form";
-import { Head, useForm } from "@inertiajs/react";
+import LeadForm from '@/components/m01/lead-form';
+import { Head, useForm } from '@inertiajs/react';
 
 export default function CreateLead({ stages, sources, owners }: any) {
     const form = useForm({
-        title: "",
-        company_name: "",
-        stage_id: stages[0]?.id?.toString() ?? "",
-        source_id: "",
-        owner_id: "",
-        estimated_value: "",
-        currency: "LKR",
-        priority: "medium",
-        next_follow_up_at: "",
-        notes: "",
+        title: '',
+        company_name: '',
+        stage_id: stages[0]?.id?.toString() ?? '',
+        source_id: '',
+        owner_id: '',
+        estimated_value: '',
+        currency: 'LKR',
+        priority: 'medium',
+        next_follow_up_at: '',
+        notes: '',
 
         contact: {
-            name: "",
-            designation: "",
-            email: "",
-            phone: "",
+            name: '',
+            designation: '',
+            email: '',
+            phone: '',
         },
     });
 
@@ -34,7 +34,7 @@ export default function CreateLead({ stages, sources, owners }: any) {
                     onSubmit={(event) => {
                         event.preventDefault();
 
-                        form.post("/admin/leads");
+                        form.post('/admin/leads');
                     }}
                 >
                     <section className="rounded-lg border p-5">
@@ -58,10 +58,10 @@ export default function CreateLead({ stages, sources, owners }: any) {
 
                         <div className="grid gap-4 md:grid-cols-2">
                             {[
-                                ["name", "Name"],
-                                ["designation", "Designation"],
-                                ["email", "Email"],
-                                ["phone", "Phone"],
+                                ['name', 'Name'],
+                                ['designation', 'Designation'],
+                                ['email', 'Email'],
+                                ['phone', 'Phone'],
                             ].map(([key, label]) => (
                                 <label key={key} className="space-y-1">
                                     <span>{label}</span>
@@ -70,7 +70,7 @@ export default function CreateLead({ stages, sources, owners }: any) {
                                         className="w-full rounded border p-2"
                                         value={(form.data.contact as any)[key]}
                                         onChange={(e) =>
-                                            form.setData("contact", {
+                                            form.setData('contact', {
                                                 ...form.data.contact,
 
                                                 [key]: e.target.value,

@@ -1,28 +1,28 @@
-import { Head, useForm } from "@inertiajs/react";
+import { Head, useForm } from '@inertiajs/react';
 
 export default function CompanyEdit({ setting }: { setting: any }) {
     const form = useForm({
-        _method: "put",
+        _method: 'put',
 
-        legal_name: setting.legal_name ?? "",
-        trading_name: setting.trading_name ?? "",
-        registration_number: setting.registration_number ?? "",
-        tax_number: setting.tax_number ?? "",
-        email: setting.email ?? "",
-        phone: setting.phone ?? "",
-        website: setting.website ?? "",
-        address: setting.address ?? "",
-        country: setting.country ?? "Sri Lanka",
-        currency: setting.currency ?? "LKR",
-        timezone: setting.timezone ?? "Asia/Colombo",
+        legal_name: setting.legal_name ?? '',
+        trading_name: setting.trading_name ?? '',
+        registration_number: setting.registration_number ?? '',
+        tax_number: setting.tax_number ?? '',
+        email: setting.email ?? '',
+        phone: setting.phone ?? '',
+        website: setting.website ?? '',
+        address: setting.address ?? '',
+        country: setting.country ?? 'Sri Lanka',
+        currency: setting.currency ?? 'LKR',
+        timezone: setting.timezone ?? 'Asia/Colombo',
 
-        bank_name: setting.bank_name ?? "",
-        bank_branch: setting.bank_branch ?? "",
-        bank_account_name: setting.bank_account_name ?? "",
-        bank_account_number: setting.bank_account_number ?? "",
-        bank_swift_code: setting.bank_swift_code ?? "",
+        bank_name: setting.bank_name ?? '',
+        bank_branch: setting.bank_branch ?? '',
+        bank_account_name: setting.bank_account_name ?? '',
+        bank_account_number: setting.bank_account_number ?? '',
+        bank_swift_code: setting.bank_swift_code ?? '',
 
-        document_footer: setting.document_footer ?? "",
+        document_footer: setting.document_footer ?? '',
 
         logo: null as File | null,
     });
@@ -30,7 +30,7 @@ export default function CompanyEdit({ setting }: { setting: any }) {
     const field = (
         key: keyof typeof form.data,
         label: string,
-        type = "text",
+        type = 'text',
     ) => (
         <label className="space-y-1">
             <span className="text-sm font-medium">{label}</span>
@@ -39,9 +39,9 @@ export default function CompanyEdit({ setting }: { setting: any }) {
                 type={type}
                 className="w-full rounded border p-2"
                 value={
-                    typeof form.data[key] === "string"
+                    typeof form.data[key] === 'string'
                         ? (form.data[key] as string)
-                        : ""
+                        : ''
                 }
                 onChange={(e) => form.setData(key, e.target.value as never)}
             />
@@ -62,26 +62,26 @@ export default function CompanyEdit({ setting }: { setting: any }) {
                     onSubmit={(event) => {
                         event.preventDefault();
 
-                        form.post("/admin/company", {
+                        form.post('/admin/company', {
                             forceFormData: true,
                         });
                     }}
                 >
                     <section className="grid gap-4 rounded border p-5 md:grid-cols-2">
-                        {field("legal_name", "Legal name")}
+                        {field('legal_name', 'Legal name')}
 
-                        {field("trading_name", "Trading name")}
+                        {field('trading_name', 'Trading name')}
 
-                        {field("registration_number", "Registration number")}
+                        {field('registration_number', 'Registration number')}
 
-                        {field("tax_number", "Tax number")}
+                        {field('tax_number', 'Tax number')}
 
-                        {field("email", "Email", "email")}
-                        {field("phone", "Phone")}
-                        {field("website", "Website")}
-                        {field("country", "Country")}
-                        {field("currency", "Currency")}
-                        {field("timezone", "Timezone")}
+                        {field('email', 'Email', 'email')}
+                        {field('phone', 'Phone')}
+                        {field('website', 'Website')}
+                        {field('country', 'Country')}
+                        {field('currency', 'Currency')}
+                        {field('timezone', 'Timezone')}
 
                         <label className="space-y-1 md:col-span-2">
                             <span className="text-sm font-medium">Address</span>
@@ -90,26 +90,26 @@ export default function CompanyEdit({ setting }: { setting: any }) {
                                 className="min-h-24 w-full rounded border p-2"
                                 value={form.data.address}
                                 onChange={(e) =>
-                                    form.setData("address", e.target.value)
+                                    form.setData('address', e.target.value)
                                 }
                             />
                         </label>
                     </section>
 
                     <section className="grid gap-4 rounded border p-5 md:grid-cols-2">
-                        <h2 className="md:col-span-2 text-lg font-semibold">
+                        <h2 className="text-lg font-semibold md:col-span-2">
                             Bank details
                         </h2>
 
-                        {field("bank_name", "Bank name")}
+                        {field('bank_name', 'Bank name')}
 
-                        {field("bank_branch", "Branch")}
+                        {field('bank_branch', 'Branch')}
 
-                        {field("bank_account_name", "Account name")}
+                        {field('bank_account_name', 'Account name')}
 
-                        {field("bank_account_number", "Account number")}
+                        {field('bank_account_number', 'Account number')}
 
-                        {field("bank_swift_code", "SWIFT code")}
+                        {field('bank_swift_code', 'SWIFT code')}
                     </section>
 
                     <section className="space-y-4 rounded border p-5">
@@ -122,7 +122,7 @@ export default function CompanyEdit({ setting }: { setting: any }) {
                             accept="image/png,image/jpeg,image/webp"
                             onChange={(e) =>
                                 form.setData(
-                                    "logo",
+                                    'logo',
                                     e.target.files?.[0] ?? null,
                                 )
                             }
@@ -133,7 +133,7 @@ export default function CompanyEdit({ setting }: { setting: any }) {
                             placeholder="Document footer"
                             value={form.data.document_footer}
                             onChange={(e) =>
-                                form.setData("document_footer", e.target.value)
+                                form.setData('document_footer', e.target.value)
                             }
                         />
                     </section>

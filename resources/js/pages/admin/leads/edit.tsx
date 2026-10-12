@@ -1,9 +1,9 @@
-import LeadForm from "@/components/m01/lead-form";
-import { Head, useForm } from "@inertiajs/react";
+import LeadForm from '@/components/m01/lead-form';
+import { Head, useForm } from '@inertiajs/react';
 
 function localDateTime(value?: string | null) {
     if (!value) {
-        return "";
+        return '';
     }
 
     return value.slice(0, 16);
@@ -11,18 +11,18 @@ function localDateTime(value?: string | null) {
 
 export default function EditLead({ lead, stages, sources, owners }: any) {
     const form = useForm({
-        title: lead.title ?? "",
-        company_name: lead.company_name ?? "",
-        stage_id: lead.stage_id?.toString() ?? "",
-        source_id: lead.source_id?.toString() ?? "",
-        owner_id: lead.owner_id?.toString() ?? "",
-        estimated_value: lead.estimated_value ?? "",
-        currency: lead.currency ?? "LKR",
-        priority: lead.priority ?? "medium",
+        title: lead.title ?? '',
+        company_name: lead.company_name ?? '',
+        stage_id: lead.stage_id?.toString() ?? '',
+        source_id: lead.source_id?.toString() ?? '',
+        owner_id: lead.owner_id?.toString() ?? '',
+        estimated_value: lead.estimated_value ?? '',
+        currency: lead.currency ?? 'LKR',
+        priority: lead.priority ?? 'medium',
 
         next_follow_up_at: localDateTime(lead.next_follow_up_at),
 
-        notes: lead.notes ?? "",
+        notes: lead.notes ?? '',
     });
 
     return (

@@ -35,3 +35,24 @@ Bank account number and SWIFT code are encrypted at the model layer.
 
 Document numbers must be allocated inside a database transaction with
 a row lock to prevent duplicate numbers.
+
+## M01 Tables
+
+- lead_stages
+- lead_sources
+- leads
+- lead_contacts
+- lead_activities
+- clients
+- client_contacts
+
+### Conversion Rule
+
+A lead may create only one client.
+
+`clients.source_lead_id` is unique.
+
+Lead contact records are copied to client contacts during conversion
+inside one database transaction.
+
+M02 extends client records rather than rebuilding them.

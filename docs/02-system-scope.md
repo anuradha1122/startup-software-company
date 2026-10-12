@@ -26,3 +26,26 @@ Includes:
 - notifications centre
 
 Remaining modules follow M01–M16 from the approved system plan.
+
+## M01 — CRM & Leads
+
+Status: Complete after M01 acceptance gate.
+
+Includes:
+
+- lead creation and editing
+- lead sources
+- primary lead contacts
+- lead assignment
+- Kanban pipeline
+- pipeline stage movement
+- probability tracking
+- lead activities
+- follow-up scheduling
+- stale lead detection
+- conversion to client
+- Excel lead export
+- pipeline PDF
+- assignment notifications
+- follow-up due notifications
+- stale lead notifications

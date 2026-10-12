@@ -18,3 +18,22 @@
 - [ ] Laravel auth tests pass
 - [ ] TypeScript checks pass
 - [ ] Production build succeeds
+
+## M01
+
+- [ ] Sales can create a lead
+- [ ] Lead receives sequential number
+- [ ] Primary contact is created
+- [ ] Owner receives assignment notification
+- [ ] Unauthorized users cannot manage leads
+- [ ] Kanban stage movement works
+- [ ] Stage probability updates
+- [ ] Activity timeline works
+- [ ] Follow-up activity updates due date
+- [ ] Due reminder is queued
+- [ ] Stale reminder is queued
+- [ ] Lead converts to one client
+- [ ] Contacts copied during conversion
+- [ ] Lead Excel export works
+- [ ] Pipeline PDF works
+- [ ] Export actions appear in audit log

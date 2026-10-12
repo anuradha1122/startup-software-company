@@ -22,3 +22,22 @@ Routes:
 
 - routes/web.php
 - routes/admin.php
+
+## M01
+
+Backend:
+
+- Models/Lead\*
+- Models/Client\*
+- Controllers/Admin/LeadController
+- Controllers/Admin/LeadActivityController
+- Requests/Admin/_Lead_
+- Services/CRM/LeadConversionService
+- Notifications/Lead\*
+- Exports/LeadsExport
+- Console/Commands/SendLeadReminders
+
+Frontend:
+
+- pages/admin/leads
+- components/m01

@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/sidebar";
 import { dashboard } from "@/routes";
 import type { NavItem } from "@/types";
+import { ContactRound } from "lucide-react";
 
 export function AppSidebar() {
     const page = usePage<any>();
@@ -80,6 +81,16 @@ export function AppSidebar() {
         },
     ];
 
+    const crmNavItems: NavItem[] = [];
+
+    if (can("leads.view")) {
+        crmNavItems.push({
+            title: "Leads",
+            href: "/admin/leads",
+            icon: ContactRound,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -96,6 +107,10 @@ export function AppSidebar() {
 
             <SidebarContent>
                 <NavMain items={mainNavItems} label="Platform" />
+
+                {crmNavItems.length > 0 && (
+                    <NavMain items={crmNavItems} label="CRM" />
+                )}
 
                 {administrationNavItems.length > 0 && (
                     <NavMain

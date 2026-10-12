@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\CompanySettingController;
+use App\Http\Controllers\Admin\LeadActivityController;
+use App\Http\Controllers\Admin\LeadController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -119,4 +121,128 @@ Route::middleware([
         )
             ->middleware('permission:audit.export')
             ->name('audit.pdf');
+
+        Route::prefix('leads')
+            ->name('leads.')
+            ->group(function (): void {
+                Route::get(
+                    'export/excel',
+                    [LeadController::class, 'excel']
+                )
+                    ->middleware(
+                        'permission:leads.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pipeline-pdf',
+                    [
+                        LeadController::class,
+                        'pipelinePdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:leads.export'
+                    )
+                    ->name('pipeline-pdf');
+
+                Route::get(
+                    '/',
+                    [LeadController::class, 'index']
+                )
+                    ->middleware(
+                        'permission:leads.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    'create',
+                    [LeadController::class, 'create']
+                )
+                    ->middleware(
+                        'permission:leads.create'
+                    )
+                    ->name('create');
+
+                Route::post(
+                    '/',
+                    [LeadController::class, 'store']
+                )
+                    ->middleware(
+                        'permission:leads.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{lead}',
+                    [LeadController::class, 'show']
+                )
+                    ->middleware(
+                        'permission:leads.view'
+                    )
+                    ->name('show');
+
+                Route::get(
+                    '{lead}/edit',
+                    [LeadController::class, 'edit']
+                )
+                    ->middleware(
+                        'permission:leads.update'
+                    )
+                    ->name('edit');
+
+                Route::put(
+                    '{lead}',
+                    [LeadController::class, 'update']
+                )
+                    ->middleware(
+                        'permission:leads.update'
+                    )
+                    ->name('update');
+
+                Route::patch(
+                    '{lead}/stage',
+                    [
+                        LeadController::class,
+                        'updateStage',
+                    ]
+                )
+                    ->middleware(
+                        'permission:leads.update'
+                    )
+                    ->name('stage');
+
+                Route::delete(
+                    '{lead}',
+                    [LeadController::class, 'destroy']
+                )
+                    ->middleware(
+                        'permission:leads.delete'
+                    )
+                    ->name('destroy');
+
+                Route::post(
+                    '{lead}/activities',
+                    [
+                        LeadActivityController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:leads.update'
+                    )
+                    ->name('activities.store');
+
+                Route::post(
+                    '{lead}/convert',
+                    [
+                        LeadController::class,
+                        'convert',
+                    ]
+                )
+                    ->middleware(
+                        'permission:leads.convert'
+                    )
+                    ->name('convert');
+            });
     });

@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolePermissionSeeder::class,
             CompanySettingSeeder::class,
+            LeadStageSeeder::class,
+            LeadSourceSeeder::class,
         ]);
 
         $admin = User::firstOrCreate(

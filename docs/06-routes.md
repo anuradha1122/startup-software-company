@@ -20,3 +20,20 @@
 | GET    | /admin/audit/excel       | audit.export            |
 | GET    | /admin/audit/pdf         | audit.export            |
 | GET    | /notifications           | authenticated user      |
+
+## M01
+
+| Method | URI                              | Permission    |
+| ------ | -------------------------------- | ------------- |
+| GET    | /admin/leads                     | leads.view    |
+| GET    | /admin/leads/create              | leads.create  |
+| POST   | /admin/leads                     | leads.create  |
+| GET    | /admin/leads/{lead}              | leads.view    |
+| GET    | /admin/leads/{lead}/edit         | leads.update  |
+| PUT    | /admin/leads/{lead}              | leads.update  |
+| PATCH  | /admin/leads/{lead}/stage        | leads.update  |
+| DELETE | /admin/leads/{lead}              | leads.delete  |
+| POST   | /admin/leads/{lead}/activities   | leads.update  |
+| POST   | /admin/leads/{lead}/convert      | leads.convert |
+| GET    | /admin/leads/export/excel        | leads.export  |
+| GET    | /admin/leads/export/pipeline-pdf | leads.export  |

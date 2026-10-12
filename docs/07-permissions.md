@@ -28,3 +28,22 @@
 Director and Admin receive every M00 permission.
 
 Permissions are assigned to roles rather than directly to users.
+
+## M01 Permissions
+
+- leads.view
+- leads.create
+- leads.update
+- leads.delete
+- leads.assign
+- leads.convert
+- leads.export
+
+Director/Admin:
+all M01 permissions.
+
+Sales:
+view, create, update, assign, convert, export.
+
+Project Manager:
+view and export.

@@ -28,6 +28,14 @@ class RolePermissionSeeder extends Seeder
 
             'audit.view',
             'audit.export',
+
+            'leads.view',
+            'leads.create',
+            'leads.update',
+            'leads.delete',
+            'leads.assign',
+            'leads.convert',
+            'leads.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -57,6 +65,22 @@ class RolePermissionSeeder extends Seeder
         }
 
         $allPermissions = Permission::all();
+
+        Role::findByName('Sales')
+            ->syncPermissions([
+                'leads.view',
+                'leads.create',
+                'leads.update',
+                'leads.assign',
+                'leads.convert',
+                'leads.export',
+            ]);
+
+        Role::findByName('Project Manager')
+            ->givePermissionTo([
+                'leads.view',
+                'leads.export',
+            ]);
 
         Role::findByName('Director')
             ->syncPermissions($allPermissions);

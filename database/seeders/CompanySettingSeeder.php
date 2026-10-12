@@ -22,6 +22,7 @@ class CompanySettingSeeder extends Seeder
         );
 
         $sequences = [
+            'lead' => 'LEAD-',
             'proposal' => 'PRP-',
             'quotation' => 'QTN-',
             'contract' => 'CON-',

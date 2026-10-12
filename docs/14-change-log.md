@@ -16,3 +16,16 @@
 - user Excel export
 - audit Excel/PDF exports
 - notification centre
+
+### Added — M01
+
+- CRM lead management
+- Kanban sales pipeline
+- lead source management foundation
+- lead contacts
+- CRM activities
+- follow-up reminders
+- stale lead notifications
+- lead-to-client conversion
+- CRM Excel export
+- pipeline PDF export

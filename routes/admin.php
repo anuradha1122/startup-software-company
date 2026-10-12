@@ -6,8 +6,13 @@ use App\Http\Controllers\Admin\ClientContactController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ClientDocumentController;
 use App\Http\Controllers\Admin\CompanySettingController;
+use App\Http\Controllers\Admin\EstimateController;
 use App\Http\Controllers\Admin\LeadActivityController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\RequirementApprovalController;
+use App\Http\Controllers\Admin\RequirementAttachmentController;
+use App\Http\Controllers\Admin\RequirementController;
+use App\Http\Controllers\Admin\RequirementVersionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -479,5 +484,289 @@ Route::middleware([
                     ->name(
                         'documents.destroy'
                     );
+            });
+
+        Route::prefix('requirements')
+            ->name('requirements.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        RequirementController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    'create',
+                    [
+                        RequirementController::class,
+                        'create',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.create'
+                    )
+                    ->name('create');
+
+                Route::post(
+                    '/',
+                    [
+                        RequirementController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{requirement}',
+                    [
+                        RequirementController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.view'
+                    )
+                    ->name('show');
+
+                Route::get(
+                    '{requirement}/versions/{version}/edit',
+                    [
+                        RequirementVersionController::class,
+                        'edit',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.update'
+                    )
+                    ->name(
+                        'versions.edit'
+                    );
+
+                Route::put(
+                    '{requirement}/versions/{version}',
+                    [
+                        RequirementVersionController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.update'
+                    )
+                    ->name(
+                        'versions.update'
+                    );
+
+                Route::post(
+                    '{requirement}/revisions',
+                    [
+                        RequirementVersionController::class,
+                        'createRevision',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.update'
+                    )
+                    ->name(
+                        'revisions.store'
+                    );
+
+                Route::post(
+                    '{requirement}/versions/{version}/review',
+                    [
+                        RequirementVersionController::class,
+                        'submitReview',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.review'
+                    )
+                    ->name(
+                        'versions.review'
+                    );
+
+                Route::post(
+                    '{requirement}/versions/{version}/approval-request',
+                    [
+                        RequirementApprovalController::class,
+                        'requestApproval',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.request-approval'
+                    )
+                    ->name(
+                        'versions.approval-request'
+                    );
+
+                Route::post(
+                    '{requirement}/versions/{version}/approvals/{approval}/decision',
+                    [
+                        RequirementApprovalController::class,
+                        'decision',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.record-approval'
+                    )
+                    ->name(
+                        'approvals.decision'
+                    );
+
+                Route::get(
+                    '{requirement}/versions/{version}/srs-pdf',
+                    [
+                        RequirementController::class,
+                        'srsPdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.export'
+                    )
+                    ->name(
+                        'versions.srs-pdf'
+                    );
+
+                Route::post(
+                    '{requirement}/versions/{version}/attachments',
+                    [
+                        RequirementAttachmentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.attachments.manage'
+                    )
+                    ->name(
+                        'attachments.store'
+                    );
+
+                Route::get(
+                    '{requirement}/versions/{version}/attachments/{attachment}/download',
+                    [
+                        RequirementAttachmentController::class,
+                        'download',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.attachments.download'
+                    )
+                    ->name(
+                        'attachments.download'
+                    );
+
+                Route::delete(
+                    '{requirement}/versions/{version}/attachments/{attachment}',
+                    [
+                        RequirementAttachmentController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:requirements.attachments.manage'
+                    )
+                    ->name(
+                        'attachments.destroy'
+                    );
+
+                Route::get(
+                    '{requirement}/versions/{version}/estimates/create',
+                    [
+                        EstimateController::class,
+                        'create',
+                    ]
+                )
+                    ->middleware(
+                        'permission:estimates.create'
+                    )
+                    ->name(
+                        'estimates.create'
+                    );
+
+                Route::post(
+                    '{requirement}/versions/{version}/estimates',
+                    [
+                        EstimateController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:estimates.create'
+                    )
+                    ->name(
+                        'estimates.store'
+                    );
+            });
+
+        Route::prefix('estimates')
+            ->name('estimates.')
+            ->group(function (): void {
+                Route::get(
+                    '{estimate}/edit',
+                    [
+                        EstimateController::class,
+                        'edit',
+                    ]
+                )
+                    ->middleware(
+                        'permission:estimates.view'
+                    )
+                    ->name('edit');
+
+                Route::put(
+                    '{estimate}',
+                    [
+                        EstimateController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:estimates.update'
+                    )
+                    ->name('update');
+
+                Route::post(
+                    '{estimate}/approve',
+                    [
+                        EstimateController::class,
+                        'approve',
+                    ]
+                )
+                    ->middleware(
+                        'permission:estimates.approve'
+                    )
+                    ->name('approve');
+
+                Route::get(
+                    '{estimate}/excel',
+                    [
+                        EstimateController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:estimates.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '{estimate}/pdf',
+                    [
+                        EstimateController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:estimates.export'
+                    )
+                    ->name('pdf');
             });
     });

@@ -48,3 +48,25 @@
 12. Client creation sends a queued internal notification/email.
 13. Contact creation sends a queued internal notification/email.
 14. Client export and PDF generation are audited.
+
+## M03
+
+1. Requirements have a stable sequential requirement number.
+2. Requirement content is versioned.
+3. Only draft versions may be edited.
+4. Submitted/approved versions are locked.
+5. Revisions create a new version number.
+6. Functional and non-functional requirements are maintained separately.
+7. Client-visible notes and internal notes must remain separate.
+8. Internal notes must never appear in the client SRS PDF.
+9. Client approval requests must target a contact belonging to the requirement client.
+10. Approved requirement versions become the commercial baseline for M04.
+11. Revision-required decisions preserve the previous version.
+12. Requirement attachments use private storage.
+13. Estimates belong to a specific requirement version.
+14. Estimates are internal-only.
+15. Estimate revenue equals line revenue plus contingency.
+16. Internal cost is based on estimated hours multiplied by cost rate.
+17. Gross margin equals estimated revenue minus estimated cost.
+18. Approved estimates may not be edited.
+19. Requirement and estimate exports are audited.

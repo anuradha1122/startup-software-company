@@ -71,3 +71,29 @@ Includes:
 - client profile PDF
 - client-created notifications
 - contact-added notifications
+
+## M03 — Requirements & Estimation
+
+Includes:
+
+- versioned software requirements
+- functional requirements
+- non-functional requirements
+- included/excluded scope
+- assumptions and constraints
+- acceptance criteria
+- client-visible notes
+- internal notes
+- requirement review workflow
+- client approval requests
+- approval/revision decisions
+- immutable approved versions
+- requirement attachments
+- estimation worksheets
+- estimated hours
+- billing rates
+- internal cost rates
+- contingency
+- revenue/cost/margin calculation
+- SRS PDF
+- estimate Excel/PDF

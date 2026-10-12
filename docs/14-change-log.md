@@ -41,3 +41,14 @@
 - Client list Excel
 - Client-created notifications
 - Contact-added notifications
+
+### Added — M03
+
+- Versioned requirement specifications
+- Requirement approval workflow
+- Requirement SRS PDF
+- Requirement attachments
+- Software estimation worksheets
+- Internal cost and margin calculations
+- Estimate Excel/PDF
+- Requirement workflow notifications

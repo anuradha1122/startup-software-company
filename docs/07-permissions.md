@@ -59,3 +59,25 @@ view and export.
 - clients.billing.manage
 - clients.documents.manage
 - clients.documents.download
+
+## M03 Permissions
+
+Requirements:
+
+- requirements.view
+- requirements.create
+- requirements.update
+- requirements.review
+- requirements.request-approval
+- requirements.record-approval
+- requirements.export
+- requirements.attachments.manage
+- requirements.attachments.download
+
+Estimation:
+
+- estimates.view
+- estimates.create
+- estimates.update
+- estimates.approve
+- estimates.export

@@ -41,3 +41,24 @@ Frontend:
 
 - pages/admin/leads
 - components/m01
+
+## M03
+
+Backend:
+
+- Models/Requirement\*
+- Models/Estimate\*
+- Controllers/Admin/Requirement\*
+- Controllers/Admin/EstimateController
+- Requests/Admin/_Requirement_
+- Requests/Admin/StoreEstimateRequest
+- Services/Requirements
+- Services/Estimation
+- Notifications/Requirement\*
+- Exports/EstimateExport
+
+Frontend:
+
+- pages/admin/requirements
+- pages/admin/estimates
+- components/m03

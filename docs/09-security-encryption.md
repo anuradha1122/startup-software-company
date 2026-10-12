@@ -55,3 +55,16 @@ Access is provided only through authenticated controller downloads.
 Document upload/download activity is audited.
 
 Client documents must not be exposed using `storage:link`.
+
+## M03 Security
+
+Requirement attachments use private Laravel storage.
+
+Client-facing SRS documents exclude internal notes and internal
+estimation data.
+
+Estimation worksheets are internal-only.
+
+Client approval contacts must belong to the requirement's client.
+
+Approved requirement versions and estimates are locked from editing.

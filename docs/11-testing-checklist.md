@@ -59,3 +59,34 @@
 - [ ] Full PHP test suite passes
 - [ ] TypeScript check passes
 - [ ] Production build succeeds
+
+## M03
+
+- [ ] Requirement can be created
+- [ ] Requirement number generated
+- [ ] Version 1 created automatically
+- [ ] Draft version editable
+- [ ] Functional requirements persist
+- [ ] Non-functional requirements persist
+- [ ] Internal/client notes remain separated
+- [ ] Review submission works
+- [ ] Review notification queued
+- [ ] Client approval email queued
+- [ ] Client contact ownership validated
+- [ ] Client decision can be recorded
+- [ ] Approved version becomes locked
+- [ ] Revision required workflow works
+- [ ] New revision copies previous scope
+- [ ] Version history retained
+- [ ] Requirement attachments private
+- [ ] SRS PDF excludes internal notes
+- [ ] Estimate can be created
+- [ ] Estimate totals calculate correctly
+- [ ] Contingency calculates correctly
+- [ ] Margin calculates correctly
+- [ ] Estimate approval locks editing
+- [ ] Estimate Excel works
+- [ ] Estimate PDF works
+- [ ] Full backend suite passes
+- [ ] TypeScript check passes
+- [ ] Production build passes

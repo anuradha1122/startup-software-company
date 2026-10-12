@@ -47,6 +47,22 @@ class RolePermissionSeeder extends Seeder
             'clients.billing.manage',
             'clients.documents.manage',
             'clients.documents.download',
+
+            'requirements.view',
+            'requirements.create',
+            'requirements.update',
+            'requirements.review',
+            'requirements.request-approval',
+            'requirements.record-approval',
+            'requirements.export',
+            'requirements.attachments.manage',
+            'requirements.attachments.download',
+
+            'estimates.view',
+            'estimates.create',
+            'estimates.update',
+            'estimates.approve',
+            'estimates.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -93,6 +109,20 @@ class RolePermissionSeeder extends Seeder
                 'leads.export',
                 'clients.view',
                 'clients.documents.download',
+                'requirements.view',
+                'requirements.create',
+                'requirements.update',
+                'requirements.review',
+                'requirements.request-approval',
+                'requirements.record-approval',
+                'requirements.export',
+                'requirements.attachments.manage',
+                'requirements.attachments.download',
+
+                'estimates.view',
+                'estimates.create',
+                'estimates.update',
+                'estimates.export',
             ]);
 
         Role::findByName('Sales')
@@ -104,6 +134,9 @@ class RolePermissionSeeder extends Seeder
                 'clients.contacts.manage',
                 'clients.documents.manage',
                 'clients.documents.download',
+                'requirements.view',
+                'requirements.export',
+                'estimates.view',
             ]);
 
         Role::findByName('Finance')

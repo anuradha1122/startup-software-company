@@ -85,3 +85,38 @@ Before M03:
 ## Next Module
 
 M03 — Requirements & Estimation
+
+## Current Module
+
+M03 — Requirements & Estimation
+
+## Completion Gate
+
+Before M04:
+
+1. migrations pass
+2. requirement numbering works
+3. versioning tested
+4. approved-version locking tested
+5. client approval workflow tested
+6. revision workflow tested
+7. attachments tested
+8. SRS PDF checked
+9. estimation totals checked
+10. margin checked
+11. estimate approval checked
+12. Excel checked
+13. estimate PDF checked
+14. notification/email flow checked
+15. php artisan test passes
+16. TypeScript checks pass
+17. production build passes
+18. npm run check passes
+19. M03 Git commit created
+
+## Next Module
+
+M04 — Proposal, Quotation & Contract
+
+M04 must consume an approved requirement version and an approved
+estimate rather than duplicating requirement or estimation data.

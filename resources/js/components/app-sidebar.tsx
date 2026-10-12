@@ -7,6 +7,7 @@ import {
     ShieldCheck,
     Users,
     ContactRound,
+    ClipboardCheck,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -96,6 +97,14 @@ export function AppSidebar() {
             title: 'Clients',
             href: '/admin/clients',
             icon: Building2,
+        });
+    }
+
+    if (can('requirements.view')) {
+        crmNavItems.push({
+            title: 'Requirements',
+            href: '/admin/requirements',
+            icon: ClipboardCheck,
         });
     }
 

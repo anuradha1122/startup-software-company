@@ -60,3 +60,25 @@ Implemented:
 - queued client/contact notifications
 - lead-conversion integration
 - M02 automated tests
+
+## M03 — Requirements & Estimation
+
+Implemented:
+
+- versioned requirements
+- functional/non-functional scope
+- assumptions
+- constraints
+- acceptance criteria
+- review workflow
+- client approval request workflow
+- approval/revision recording
+- immutable approved baselines
+- private requirement attachments
+- estimation lines
+- hours/rates/internal costing
+- contingency and margin calculation
+- SRS PDF
+- estimation Excel/PDF
+- queued review/approval/revision notifications
+- M03 test suite

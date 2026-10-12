@@ -82,3 +82,36 @@ A client may hold multiple billing profiles, but only one should be
 marked as default.
 
 Payment terms are stored as number of days.
+
+## M03 Tables
+
+- requirements
+- requirement_versions
+- requirement_approvals
+- requirement_attachments
+- estimates
+- estimate_lines
+
+### Requirement Versioning
+
+A requirement is the stable business record.
+
+Its detailed specification is stored in requirement_versions.
+
+Approved versions are locked.
+
+A revision creates a new version rather than modifying the approved
+version.
+
+requirements.approved_version_id identifies the commercial baseline
+that M04 may consume.
+
+### Estimates
+
+Estimates belong to a specific requirement version.
+
+Estimate lines contain hours, billing rates and internal cost rates.
+
+Revenue, cost and margin totals are recalculated by the application.
+
+Estimates are internal documents.

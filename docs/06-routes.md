@@ -86,3 +86,48 @@
 | POST   | /admin/estimates/{estimate}/approve                                                    | estimates.approve                 |
 | GET    | /admin/estimates/{estimate}/excel                                                      | estimates.export                  |
 | GET    | /admin/estimates/{estimate}/pdf                                                        | estimates.export                  |
+
+## M04 – Proposals, Quotations & Contracts
+
+### Proposals
+
+| Method | URI                                  | Permission                |
+| ------ | ------------------------------------ | ------------------------- |
+| GET    | /admin/proposals                     | proposals.view            |
+| GET    | /admin/proposals/create              | proposals.create          |
+| POST   | /admin/proposals                     | proposals.create          |
+| GET    | /admin/proposals/{proposal}          | proposals.view            |
+| PUT    | /admin/proposals/{proposal}          | proposals.update          |
+| POST   | /admin/proposals/{proposal}/approve  | proposals.approve         |
+| POST   | /admin/proposals/{proposal}/send     | proposals.send            |
+| POST   | /admin/proposals/{proposal}/decision | proposals.record-decision |
+| GET    | /admin/proposals/{proposal}/pdf      | proposals.export          |
+
+### Quotations
+
+| Method | URI                                           | Permission                 |
+| ------ | --------------------------------------------- | -------------------------- |
+| GET    | /admin/quotations                             | quotations.view            |
+| GET    | /admin/quotations/create                      | quotations.create          |
+| POST   | /admin/quotations                             | quotations.create          |
+| GET    | /admin/quotations/{quotation}                 | quotations.view            |
+| PUT    | /admin/quotations/{quotation}                 | quotations.update          |
+| POST   | /admin/quotations/{quotation}/approve         | quotations.approve         |
+| POST   | /admin/quotations/{quotation}/send            | quotations.send            |
+| POST   | /admin/quotations/{quotation}/decision        | quotations.record-decision |
+| GET    | /admin/quotations/{quotation}/excel           | quotations.export          |
+| GET    | /admin/quotations/{quotation}/pdf             | quotations.export          |
+| GET    | /admin/quotations/{quotation}/contract/create | contracts.create           |
+
+### Contracts
+
+| Method | URI                                                       | Permission                   |
+| ------ | --------------------------------------------------------- | ---------------------------- |
+| GET    | /admin/contracts                                          | contracts.view               |
+| POST   | /admin/contracts                                          | contracts.create             |
+| GET    | /admin/contracts/{contract}                               | contracts.view               |
+| POST   | /admin/contracts/{contract}/issue                         | contracts.issue              |
+| POST   | /admin/contracts/{contract}/signed                        | contracts.mark-signed        |
+| GET    | /admin/contracts/{contract}/pdf                           | contracts.export             |
+| POST   | /admin/contracts/{contract}/documents                     | contracts.documents.manage   |
+| GET    | /admin/contracts/{contract}/documents/{document}/download | contracts.documents.download |

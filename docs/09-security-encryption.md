@@ -68,3 +68,18 @@ Estimation worksheets are internal-only.
 Client approval contacts must belong to the requirement's client.
 
 Approved requirement versions and estimates are locked from editing.
+
+## M04 Security
+
+Commercial documents exclude:
+
+- cost rates
+- estimated internal cost
+- gross margin
+- internal estimation notes
+
+Signed contracts and supporting documents use private storage.
+
+Downloads are permission protected.
+
+Commercial status changes and exports are audited.

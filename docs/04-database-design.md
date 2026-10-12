@@ -115,3 +115,40 @@ Estimate lines contain hours, billing rates and internal cost rates.
 Revenue, cost and margin totals are recalculated by the application.
 
 Estimates are internal documents.
+
+## M04 Tables
+
+- proposals
+- quotations
+- contracts
+- contract_documents
+
+### Commercial Source Integrity
+
+Proposals and quotations reference:
+
+- an approved requirement version
+- an approved estimate
+
+Commercial documents must not recreate or mutate requirement scope.
+
+Contracts reference the accepted quotation and retain the same
+requirement-version and estimate lineage.
+
+### Quotation Amounts
+
+Quotation subtotal originates from the approved estimate commercial
+revenue.
+
+Discount is applied before tax.
+
+Total:
+
+subtotal
+
+- discount
+
+* tax
+
+Internal estimate cost and margin must not appear on client
+commercial documents.

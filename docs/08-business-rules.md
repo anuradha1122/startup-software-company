@@ -70,3 +70,23 @@
 17. Gross margin equals estimated revenue minus estimated cost.
 18. Approved estimates may not be edited.
 19. Requirement and estimate exports are audited.
+
+## M04
+
+1. Proposals require an approved requirement version.
+2. Proposals require an approved estimate belonging to that version.
+3. Quotations require an approved requirement version.
+4. Quotations require an approved estimate belonging to that version.
+5. Proposal/quotation source scope must not be edited in M04.
+6. Quotation subtotal comes from approved estimate revenue.
+7. Discounts are applied before tax.
+8. Internal estimate cost rates and margins must never appear on client documents.
+9. Draft commercial documents may be edited.
+10. Approved commercial documents are locked.
+11. Only approved documents may be sent.
+12. Only sent documents may receive a client decision.
+13. Contracts require an accepted quotation.
+14. One quotation may create only one contract.
+15. Contract value equals accepted quotation total.
+16. Signed-contract uploads use private storage.
+17. Contract creation preserves requirement-version and estimate lineage.

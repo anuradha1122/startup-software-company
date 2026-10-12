@@ -52,3 +52,15 @@
 - Internal cost and margin calculations
 - Estimate Excel/PDF
 - Requirement workflow notifications
+
+### Added — M04
+
+- Proposals
+- Quotations
+- Commercial approvals
+- Discount/tax calculations
+- Proposal PDF
+- Quotation PDF/Excel
+- Contracts
+- Private signed-contract storage
+- Commercial emails and notifications

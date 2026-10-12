@@ -62,3 +62,26 @@ Frontend:
 - pages/admin/requirements
 - pages/admin/estimates
 - components/m03
+
+## M04
+
+Backend:
+
+- Models/Proposal
+- Models/Quotation
+- Models/Contract
+- Models/ContractDocument
+- Controllers/Admin/ProposalController
+- Controllers/Admin/QuotationController
+- Controllers/Admin/ContractController
+- Controllers/Admin/ContractDocumentController
+- Services/Commercial
+- Notifications/Commercial\*
+- Exports/QuotationExport
+
+Frontend:
+
+- pages/admin/proposals
+- pages/admin/quotations
+- pages/admin/contracts
+- components/m04

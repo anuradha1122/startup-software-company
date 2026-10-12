@@ -120,3 +120,38 @@ M04 — Proposal, Quotation & Contract
 
 M04 must consume an approved requirement version and an approved
 estimate rather than duplicating requirement or estimation data.
+
+## Current Module
+
+M04 — Proposal, Quotation & Contract
+
+## Completion Gate
+
+Before M05:
+
+1. proposal generation tested
+2. approved-source validation tested
+3. quotation calculations verified
+4. proposal PDF checked
+5. quotation PDF checked
+6. quotation Excel checked
+7. send workflow checked
+8. acceptance/rejection checked
+9. accepted quotation to contract tested
+10. duplicate contract prevention tested
+11. contract PDF checked
+12. issue/sign workflow checked
+13. private contract documents checked
+14. queued emails checked
+15. full PHP suite passes
+16. TypeScript check passes
+17. production build passes
+18. npm run check passes
+19. M04 Git commit created
+
+## Next Module
+
+M05 — Project Setup & Governance
+
+M05 may create a project only from the approved commercial baseline,
+normally a signed contract backed by an accepted quotation.

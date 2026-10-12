@@ -81,3 +81,36 @@ Estimation:
 - estimates.update
 - estimates.approve
 - estimates.export
+
+## M04 Permissions
+
+### Proposals
+
+- proposals.view
+- proposals.create
+- proposals.update
+- proposals.approve
+- proposals.send
+- proposals.record-decision
+- proposals.export
+
+### Quotations
+
+- quotations.view
+- quotations.create
+- quotations.update
+- quotations.approve
+- quotations.send
+- quotations.record-decision
+- quotations.export
+
+### Contracts
+
+- contracts.view
+- contracts.create
+- contracts.update
+- contracts.issue
+- contracts.mark-signed
+- contracts.export
+- contracts.documents.manage
+- contracts.documents.download

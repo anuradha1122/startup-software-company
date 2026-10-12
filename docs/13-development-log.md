@@ -82,3 +82,23 @@ Implemented:
 - estimation Excel/PDF
 - queued review/approval/revision notifications
 - M03 test suite
+
+## M04 — Proposal, Quotation & Contract
+
+Implemented:
+
+- proposal workflow
+- approved requirement/estimate source validation
+- proposal approval
+- proposal PDF/email
+- quotation workflow
+- discounts/tax/payment terms
+- quotation Excel/PDF
+- quotation approval/email
+- manual commercial decision recording
+- accepted quotation to contract conversion
+- contract PDF
+- contract issue/sign workflow
+- private signed-contract storage
+- queued commercial notifications
+- M04 automated tests

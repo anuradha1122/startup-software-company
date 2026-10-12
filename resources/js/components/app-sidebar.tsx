@@ -8,6 +8,9 @@ import {
     Users,
     ContactRound,
     ClipboardCheck,
+    FileSignature,
+    ReceiptText,
+    ScrollText,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -108,6 +111,32 @@ export function AppSidebar() {
         });
     }
 
+    const commercialNavItems: NavItem[] = [];
+
+    if (can('proposals.view')) {
+        commercialNavItems.push({
+            title: 'Proposals',
+            href: '/admin/proposals',
+            icon: FileSignature,
+        });
+    }
+
+    if (can('quotations.view')) {
+        commercialNavItems.push({
+            title: 'Quotations',
+            href: '/admin/quotations',
+            icon: ReceiptText,
+        });
+    }
+
+    if (can('contracts.view')) {
+        commercialNavItems.push({
+            title: 'Contracts',
+            href: '/admin/contracts',
+            icon: ScrollText,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -127,6 +156,10 @@ export function AppSidebar() {
 
                 {crmNavItems.length > 0 && (
                     <NavMain items={crmNavItems} label="CRM" />
+                )}
+
+                {commercialNavItems.length > 0 && (
+                    <NavMain items={commercialNavItems} label="Commercial" />
                 )}
 
                 {administrationNavItems.length > 0 && (

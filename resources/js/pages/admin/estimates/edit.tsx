@@ -167,7 +167,7 @@ export default function EditEstimate({ estimate, requirement, version }: any) {
                 </div>
 
                 <div className="mt-6 overflow-x-auto rounded border">
-                    <table className="w-full min-w-[1000px] text-sm">
+                    <table className="w-full min-w-250 text-sm">
                         <thead className="bg-muted">
                             <tr>
                                 <th className="p-2">Module</th>

@@ -90,3 +90,35 @@
 - [ ] Full backend suite passes
 - [ ] TypeScript check passes
 - [ ] Production build passes
+
+## M04
+
+- [ ] Proposal requires approved requirement version
+- [ ] Proposal requires approved estimate
+- [ ] Proposal numbering works
+- [ ] Proposal approval works
+- [ ] Proposal email works
+- [ ] Proposal PDF works
+- [ ] Quotation numbering works
+- [ ] Quotation subtotal comes from approved estimate
+- [ ] Discount calculation works
+- [ ] Tax calculation works
+- [ ] Total calculation works
+- [ ] Quotation approval works
+- [ ] Quotation email works
+- [ ] Quotation Excel works
+- [ ] Quotation PDF works
+- [ ] Acceptance/rejection recording works
+- [ ] Contract requires accepted quotation
+- [ ] Duplicate contract prevented
+- [ ] Contract number generated
+- [ ] Contract value matches quotation
+- [ ] Contract issue works
+- [ ] Signed state works
+- [ ] Signed contract upload is private
+- [ ] Internal margin never appears in client PDF
+- [ ] M01-M03 regression tests pass
+- [ ] Full PHP test suite passes
+- [ ] TypeScript check passes
+- [ ] Production build passes
+- [ ] npm run check passes

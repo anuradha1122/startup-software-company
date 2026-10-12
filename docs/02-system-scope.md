@@ -97,3 +97,28 @@ Includes:
 - revenue/cost/margin calculation
 - SRS PDF
 - estimate Excel/PDF
+
+## M04 — Proposal, Quotation & Contract
+
+Includes:
+
+- proposal generation from approved requirements and estimates
+- internal proposal approval
+- proposal PDF
+- proposal email delivery
+- client proposal decision recording
+- quotation generation
+- discounts and taxes
+- validity dates
+- payment terms
+- payment schedules
+- quotation PDF
+- quotation Excel
+- quotation approval
+- quotation email delivery
+- quotation acceptance/rejection
+- contract creation from accepted quotation
+- contract PDF
+- contract issue workflow
+- signed-contract recording
+- private signed-contract storage

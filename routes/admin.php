@@ -6,9 +6,13 @@ use App\Http\Controllers\Admin\ClientContactController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ClientDocumentController;
 use App\Http\Controllers\Admin\CompanySettingController;
+use App\Http\Controllers\Admin\ContractController;
+use App\Http\Controllers\Admin\ContractDocumentController;
 use App\Http\Controllers\Admin\EstimateController;
 use App\Http\Controllers\Admin\LeadActivityController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\ProposalController;
+use App\Http\Controllers\Admin\QuotationController;
 use App\Http\Controllers\Admin\RequirementApprovalController;
 use App\Http\Controllers\Admin\RequirementAttachmentController;
 use App\Http\Controllers\Admin\RequirementController;
@@ -768,5 +772,272 @@ Route::middleware([
                         'permission:estimates.export'
                     )
                     ->name('pdf');
+            });
+
+        Route::prefix('proposals')
+            ->name('proposals.')
+            ->group(function (): void {
+                Route::get('/', [
+                    ProposalController::class,
+                    'index',
+                ])
+                    ->middleware(
+                        'permission:proposals.view'
+                    )
+                    ->name('index');
+
+                Route::get('create', [
+                    ProposalController::class,
+                    'create',
+                ])
+                    ->middleware(
+                        'permission:proposals.create'
+                    )
+                    ->name('create');
+
+                Route::post('/', [
+                    ProposalController::class,
+                    'store',
+                ])
+                    ->middleware(
+                        'permission:proposals.create'
+                    )
+                    ->name('store');
+
+                Route::get('{proposal}', [
+                    ProposalController::class,
+                    'show',
+                ])
+                    ->middleware(
+                        'permission:proposals.view'
+                    )
+                    ->name('show');
+
+                Route::put('{proposal}', [
+                    ProposalController::class,
+                    'update',
+                ])
+                    ->middleware(
+                        'permission:proposals.update'
+                    )
+                    ->name('update');
+
+                Route::post('{proposal}/approve', [
+                    ProposalController::class,
+                    'approve',
+                ])
+                    ->middleware(
+                        'permission:proposals.approve'
+                    )
+                    ->name('approve');
+
+                Route::post('{proposal}/send', [
+                    ProposalController::class,
+                    'send',
+                ])
+                    ->middleware(
+                        'permission:proposals.send'
+                    )
+                    ->name('send');
+
+                Route::post('{proposal}/decision', [
+                    ProposalController::class,
+                    'decision',
+                ])
+                    ->middleware(
+                        'permission:proposals.record-decision'
+                    )
+                    ->name('decision');
+
+                Route::get('{proposal}/pdf', [
+                    ProposalController::class,
+                    'pdf',
+                ])
+                    ->middleware(
+                        'permission:proposals.export'
+                    )
+                    ->name('pdf');
+            });
+
+        Route::prefix('quotations')
+            ->name('quotations.')
+            ->group(function (): void {
+                Route::get('/', [
+                    QuotationController::class,
+                    'index',
+                ])
+                    ->middleware(
+                        'permission:quotations.view'
+                    )
+                    ->name('index');
+
+                Route::get('create', [
+                    QuotationController::class,
+                    'create',
+                ])
+                    ->middleware(
+                        'permission:quotations.create'
+                    )
+                    ->name('create');
+
+                Route::post('/', [
+                    QuotationController::class,
+                    'store',
+                ])
+                    ->middleware(
+                        'permission:quotations.create'
+                    )
+                    ->name('store');
+
+                Route::get('{quotation}', [
+                    QuotationController::class,
+                    'show',
+                ])
+                    ->middleware(
+                        'permission:quotations.view'
+                    )
+                    ->name('show');
+
+                Route::put('{quotation}', [
+                    QuotationController::class,
+                    'update',
+                ])
+                    ->middleware(
+                        'permission:quotations.update'
+                    )
+                    ->name('update');
+
+                Route::post('{quotation}/approve', [
+                    QuotationController::class,
+                    'approve',
+                ])
+                    ->middleware(
+                        'permission:quotations.approve'
+                    )
+                    ->name('approve');
+
+                Route::post('{quotation}/send', [
+                    QuotationController::class,
+                    'send',
+                ])
+                    ->middleware(
+                        'permission:quotations.send'
+                    )
+                    ->name('send');
+
+                Route::post('{quotation}/decision', [
+                    QuotationController::class,
+                    'decision',
+                ])
+                    ->middleware(
+                        'permission:quotations.record-decision'
+                    )
+                    ->name('decision');
+
+                Route::get('{quotation}/excel', [
+                    QuotationController::class,
+                    'excel',
+                ])
+                    ->middleware(
+                        'permission:quotations.export'
+                    )
+                    ->name('excel');
+
+                Route::get('{quotation}/pdf', [
+                    QuotationController::class,
+                    'pdf',
+                ])
+                    ->middleware(
+                        'permission:quotations.export'
+                    )
+                    ->name('pdf');
+
+                Route::get('{quotation}/contract/create', [
+                    ContractController::class,
+                    'create',
+                ])
+                    ->middleware(
+                        'permission:contracts.create'
+                    )
+                    ->name('contract.create');
+            });
+
+        Route::prefix('contracts')
+            ->name('contracts.')
+            ->group(function (): void {
+                Route::get('/', [
+                    ContractController::class,
+                    'index',
+                ])
+                    ->middleware(
+                        'permission:contracts.view'
+                    )
+                    ->name('index');
+
+                Route::post('/', [
+                    ContractController::class,
+                    'store',
+                ])
+                    ->middleware(
+                        'permission:contracts.create'
+                    )
+                    ->name('store');
+
+                Route::get('{contract}', [
+                    ContractController::class,
+                    'show',
+                ])
+                    ->middleware(
+                        'permission:contracts.view'
+                    )
+                    ->name('show');
+
+                Route::post('{contract}/issue', [
+                    ContractController::class,
+                    'issue',
+                ])
+                    ->middleware(
+                        'permission:contracts.issue'
+                    )
+                    ->name('issue');
+
+                Route::post('{contract}/signed', [
+                    ContractController::class,
+                    'markSigned',
+                ])
+                    ->middleware(
+                        'permission:contracts.mark-signed'
+                    )
+                    ->name('signed');
+
+                Route::get('{contract}/pdf', [
+                    ContractController::class,
+                    'pdf',
+                ])
+                    ->middleware(
+                        'permission:contracts.export'
+                    )
+                    ->name('pdf');
+
+                Route::post('{contract}/documents', [
+                    ContractDocumentController::class,
+                    'store',
+                ])
+                    ->middleware(
+                        'permission:contracts.documents.manage'
+                    )
+                    ->name('documents.store');
+
+                Route::get(
+                    '{contract}/documents/{document}/download',
+                    [
+                        ContractDocumentController::class,
+                        'download',
+                    ]
+                )
+                    ->middleware(
+                        'permission:contracts.documents.download'
+                    )
+                    ->name('documents.download');
             });
     });

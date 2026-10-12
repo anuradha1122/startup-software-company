@@ -63,6 +63,31 @@ class RolePermissionSeeder extends Seeder
             'estimates.update',
             'estimates.approve',
             'estimates.export',
+
+            'proposals.view',
+            'proposals.create',
+            'proposals.update',
+            'proposals.approve',
+            'proposals.send',
+            'proposals.record-decision',
+            'proposals.export',
+
+            'quotations.view',
+            'quotations.create',
+            'quotations.update',
+            'quotations.approve',
+            'quotations.send',
+            'quotations.record-decision',
+            'quotations.export',
+
+            'contracts.view',
+            'contracts.create',
+            'contracts.update',
+            'contracts.issue',
+            'contracts.mark-signed',
+            'contracts.export',
+            'contracts.documents.manage',
+            'contracts.documents.download',
         ];
 
         foreach ($permissions as $permission) {
@@ -123,6 +148,19 @@ class RolePermissionSeeder extends Seeder
                 'estimates.create',
                 'estimates.update',
                 'estimates.export',
+
+                'proposals.view',
+                'proposals.create',
+                'proposals.update',
+                'proposals.export',
+
+                'quotations.view',
+                'quotations.create',
+                'quotations.update',
+                'quotations.export',
+
+                'contracts.view',
+                'contracts.documents.download',
             ]);
 
         Role::findByName('Sales')
@@ -137,6 +175,23 @@ class RolePermissionSeeder extends Seeder
                 'requirements.view',
                 'requirements.export',
                 'estimates.view',
+
+                'proposals.view',
+                'proposals.create',
+                'proposals.update',
+                'proposals.send',
+                'proposals.record-decision',
+                'proposals.export',
+
+                'quotations.view',
+                'quotations.create',
+                'quotations.update',
+                'quotations.send',
+                'quotations.record-decision',
+                'quotations.export',
+
+                'contracts.view',
+                'contracts.documents.download',
             ]);
 
         Role::findByName('Finance')
@@ -145,6 +200,13 @@ class RolePermissionSeeder extends Seeder
                 'clients.export',
                 'clients.billing.manage',
                 'clients.documents.download',
+
+                'quotations.view',
+                'quotations.export',
+
+                'contracts.view',
+                'contracts.export',
+                'contracts.documents.download',
             ]);
 
         Role::findByName('Director')

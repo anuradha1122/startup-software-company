@@ -36,3 +36,11 @@ Each module must be completed with its applicable:
 - documentation
 
 before moving to the next module.
+
+## M05
+
+M05 establishes the transition from signed commercial agreement to
+governed software project.
+
+A project inherits its commercial and scope baseline from the signed
+contract and cannot redefine that baseline.

@@ -155,3 +155,42 @@ M05 — Project Setup & Governance
 
 M05 may create a project only from the approved commercial baseline,
 normally a signed contract backed by an accepted quotation.
+
+## Current Module
+
+M05 — Project Setup & Governance
+
+## Completion Gate
+
+Before M06:
+
+1. signed-contract validation passes
+2. duplicate-project prevention passes
+3. project numbering passes
+4. commercial baseline integrity verified
+5. charter versioning tested
+6. charter approval tested
+7. activation gate tested
+8. lifecycle tested
+9. phases tested
+10. milestones tested
+11. stakeholder validation tested
+12. risk scoring tested
+13. escalation tested
+14. decision register tested
+15. kickoff notification tested
+16. charter PDF checked
+17. Excel export checked
+18. M01-M04 regression tests pass
+19. full PHP suite passes
+20. TypeScript passes
+21. production build passes
+22. npm run check passes
+23. M05 Git commit created
+
+## Next Module
+
+M06 — Tasks, Workflow & Work Submission
+
+M06 must operate inside an active M05 project and may use project
+phases and milestones as task/workflow grouping structures.

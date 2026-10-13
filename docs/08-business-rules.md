@@ -90,3 +90,26 @@
 15. Contract value equals accepted quotation total.
 16. Signed-contract uploads use private storage.
 17. Contract creation preserves requirement-version and estimate lineage.
+
+## M05
+
+1. A project requires a signed contract.
+2. One contract may create only one project.
+3. Client, requirement version, estimate, currency and contract value
+   originate from the signed contract.
+4. Commercial baseline fields cannot be manually modified in M05.
+5. Every project receives a sequential project number.
+6. Every new project receives charter version 1 in draft status.
+7. Only draft charters may be edited.
+8. Approved charters are immutable.
+9. Charter revisions create a new version.
+10. A project cannot activate without an approved charter.
+11. Project stakeholders are governance contacts, not resource
+    assignments.
+12. Workforce assignments are handled by M07.
+13. Risk score equals likelihood × impact.
+14. Likelihood and impact are each 1-5.
+15. Escalated high risks may change project health.
+16. Project charter PDF must not expose internal estimate costs or
+    margins.
+17. Project completion requires an active/on-hold project.

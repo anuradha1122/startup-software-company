@@ -88,6 +88,26 @@ class RolePermissionSeeder extends Seeder
             'contracts.export',
             'contracts.documents.manage',
             'contracts.documents.download',
+
+            'projects.view',
+            'projects.create',
+            'projects.update',
+            'projects.activate',
+            'projects.complete',
+            'projects.export',
+
+            'projects.charter.manage',
+            'projects.charter.approve',
+
+            'projects.phases.manage',
+            'projects.milestones.manage',
+            'projects.stakeholders.manage',
+
+            'projects.risks.manage',
+            'projects.risks.escalate',
+
+            'projects.decisions.manage',
+            'projects.kickoff.send',
         ];
 
         foreach ($permissions as $permission) {
@@ -161,6 +181,24 @@ class RolePermissionSeeder extends Seeder
 
                 'contracts.view',
                 'contracts.documents.download',
+
+                'projects.view',
+                'projects.create',
+                'projects.update',
+                'projects.activate',
+                'projects.export',
+
+                'projects.charter.manage',
+
+                'projects.phases.manage',
+                'projects.milestones.manage',
+                'projects.stakeholders.manage',
+
+                'projects.risks.manage',
+                'projects.risks.escalate',
+
+                'projects.decisions.manage',
+                'projects.kickoff.send',
             ]);
 
         Role::findByName('Sales')
@@ -192,6 +230,9 @@ class RolePermissionSeeder extends Seeder
 
                 'contracts.view',
                 'contracts.documents.download',
+
+                'projects.view',
+                'projects.export',
             ]);
 
         Role::findByName('Finance')
@@ -207,6 +248,9 @@ class RolePermissionSeeder extends Seeder
                 'contracts.view',
                 'contracts.export',
                 'contracts.documents.download',
+
+                'projects.view',
+                'projects.export',
             ]);
 
         Role::findByName('Director')

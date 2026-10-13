@@ -122,3 +122,25 @@ Includes:
 - contract issue workflow
 - signed-contract recording
 - private signed-contract storage
+
+## M05 — Project Setup & Governance
+
+Includes:
+
+- signed contract to project conversion
+- project numbering
+- project manager
+- client sponsor
+- project lifecycle
+- project health
+- project charter versioning
+- charter approval
+- phases
+- milestones
+- governance stakeholders
+- risk register
+- risk escalation
+- governance decision register
+- kickoff email
+- project charter PDF
+- project Excel export

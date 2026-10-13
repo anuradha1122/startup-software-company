@@ -152,3 +152,20 @@ subtotal
 
 Internal estimate cost and margin must not appear on client
 commercial documents.
+
+## M05 Tables
+
+- projects
+- project_charters
+- project_phases
+- project_milestones
+- project_stakeholders
+- project_risks
+- project_decisions
+
+projects.contract_id is unique.
+
+Therefore one signed contract can create only one project.
+
+Project commercial fields are copied from the signed contract and
+treated as immutable baseline data.

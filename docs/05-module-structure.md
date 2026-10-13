@@ -85,3 +85,23 @@ Frontend:
 - pages/admin/quotations
 - pages/admin/contracts
 - components/m04
+
+## M05
+
+Backend:
+
+- Models/Project\*
+- Controllers/Admin/Project\*
+- Requests/Admin/Project\*
+- Services/Projects
+- Notifications/Project\*
+- Exports/ProjectsExport
+
+Frontend:
+
+- pages/admin/projects
+- components/m05
+
+PDF:
+
+- pdf/project-charter.blade.php

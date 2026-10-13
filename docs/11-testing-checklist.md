@@ -122,3 +122,36 @@
 - [ ] TypeScript check passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M05
+
+- [ ] Signed contract creates project
+- [ ] Unsigned contract rejected
+- [ ] Duplicate project from same contract rejected
+- [ ] PRJ number generated
+- [ ] Client inherited from contract
+- [ ] Requirement version inherited
+- [ ] Estimate inherited
+- [ ] Contract value inherited
+- [ ] Charter version 1 created
+- [ ] Draft charter editable
+- [ ] Charter approval works
+- [ ] Approved charter locked
+- [ ] Charter revision works
+- [ ] Activation requires approved charter
+- [ ] Activate/hold/resume lifecycle works
+- [ ] Phases work
+- [ ] Milestones work
+- [ ] Client milestone visibility works
+- [ ] Stakeholders validated
+- [ ] Risk score calculated
+- [ ] Risk escalation works
+- [ ] Governance decisions persist
+- [ ] Kickoff email queued
+- [ ] Charter PDF works
+- [ ] Project Excel works
+- [ ] M01-M04 regression passes
+- [ ] Full PHP suite passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

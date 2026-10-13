@@ -35,3 +35,26 @@ Sensitive documents use private Laravel storage.
 
 Only explicitly public assets such as company branding may use the
 public disk.
+
+## M05 Architecture
+
+Commercial baseline:
+
+Signed Contract
+→ Project
+
+Project references remain linked to:
+
+- Contract
+- Client
+- Approved Requirement Version
+- Approved Estimate
+
+Project operational data is separated into:
+
+- ProjectCharter
+- ProjectPhase
+- ProjectMilestone
+- ProjectStakeholder
+- ProjectRisk
+- ProjectDecision

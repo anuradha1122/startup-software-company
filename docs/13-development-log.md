@@ -102,3 +102,24 @@ Implemented:
 - private signed-contract storage
 - queued commercial notifications
 - M04 automated tests
+
+## M05 — Project Setup & Governance
+
+Implemented:
+
+- signed-contract project setup
+- immutable commercial baseline
+- project numbering
+- project manager/client sponsor
+- charter versioning and approval
+- project lifecycle
+- project health
+- phases
+- milestones
+- governance stakeholders
+- risk register and escalation
+- governance decisions
+- kickoff email
+- charter PDF
+- project Excel export
+- M05 automated tests

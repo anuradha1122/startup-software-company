@@ -64,3 +64,17 @@
 - Contracts
 - Private signed-contract storage
 - Commercial emails and notifications
+
+### Added — M05
+
+- Project setup
+- Project charter
+- Charter approval/versioning
+- Project phases and milestones
+- Project governance stakeholders
+- Risk register
+- Risk escalation
+- Decision register
+- Project charter PDF
+- Project Excel export
+- Project notifications and kickoff email

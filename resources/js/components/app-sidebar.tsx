@@ -11,6 +11,7 @@ import {
     FileSignature,
     ReceiptText,
     ScrollText,
+    BriefcaseBusiness,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -137,6 +138,16 @@ export function AppSidebar() {
         });
     }
 
+    const projectNavItems: NavItem[] = [];
+
+    if (can('projects.view')) {
+        projectNavItems.push({
+            title: 'Projects',
+            href: '/admin/projects',
+            icon: BriefcaseBusiness,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -160,6 +171,10 @@ export function AppSidebar() {
 
                 {commercialNavItems.length > 0 && (
                     <NavMain items={commercialNavItems} label="Commercial" />
+                )}
+
+                {projectNavItems.length > 0 && (
+                    <NavMain items={projectNavItems} label="Projects" />
                 )}
 
                 {administrationNavItems.length > 0 && (

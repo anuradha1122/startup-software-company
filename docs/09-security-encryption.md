@@ -83,3 +83,18 @@ Signed contracts and supporting documents use private storage.
 Downloads are permission protected.
 
 Commercial status changes and exports are audited.
+
+## M05 Security
+
+Project commercial baseline references are immutable.
+
+Project charter exports exclude:
+
+- internal estimate cost
+- cost rates
+- gross margin
+- internal estimation notes
+
+Governance actions use permission gates.
+
+Risk escalations and project lifecycle changes are audit logged.

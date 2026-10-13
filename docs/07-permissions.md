@@ -114,3 +114,21 @@ Estimation:
 - contracts.export
 - contracts.documents.manage
 - contracts.documents.download
+
+## M05 Permissions
+
+- projects.view
+- projects.create
+- projects.update
+- projects.activate
+- projects.complete
+- projects.export
+- projects.charter.manage
+- projects.charter.approve
+- projects.phases.manage
+- projects.milestones.manage
+- projects.stakeholders.manage
+- projects.risks.manage
+- projects.risks.escalate
+- projects.decisions.manage
+- projects.kickoff.send

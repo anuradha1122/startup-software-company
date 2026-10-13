@@ -12,6 +12,7 @@ import {
     ReceiptText,
     ScrollText,
     BriefcaseBusiness,
+    ListTodo,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -145,6 +146,14 @@ export function AppSidebar() {
             title: 'Projects',
             href: '/admin/projects',
             icon: BriefcaseBusiness,
+        });
+    }
+
+    if (can('tasks.view')) {
+        projectNavItems.push({
+            title: 'Task Workflow',
+            href: '/admin/projects',
+            icon: ListTodo,
         });
     }
 

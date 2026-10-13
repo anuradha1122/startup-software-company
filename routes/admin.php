@@ -18,6 +18,9 @@ use App\Http\Controllers\Admin\ProjectMilestoneController;
 use App\Http\Controllers\Admin\ProjectPhaseController;
 use App\Http\Controllers\Admin\ProjectRiskController;
 use App\Http\Controllers\Admin\ProjectStakeholderController;
+use App\Http\Controllers\Admin\ProjectTaskCommentController;
+use App\Http\Controllers\Admin\ProjectTaskController;
+use App\Http\Controllers\Admin\ProjectTaskWorkflowController;
 use App\Http\Controllers\Admin\ProposalController;
 use App\Http\Controllers\Admin\QuotationController;
 use App\Http\Controllers\Admin\RequirementApprovalController;
@@ -26,6 +29,8 @@ use App\Http\Controllers\Admin\RequirementController;
 use App\Http\Controllers\Admin\RequirementVersionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\WorkSubmissionAttachmentController;
+use App\Http\Controllers\Admin\WorkSubmissionController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware([
@@ -1375,6 +1380,164 @@ Route::middleware([
                     )
                     ->name(
                         'decisions.store'
+                    );
+            });
+
+        Route::prefix('projects/{project}/tasks')
+            ->name('projects.tasks.')
+            ->group(function (): void {
+                Route::get(
+                    'board',
+                    [
+                        ProjectTaskController::class,
+                        'board',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.view'
+                    )
+                    ->name('board');
+
+                Route::post(
+                    '/',
+                    [
+                        ProjectTaskController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ProjectTaskController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ProjectTaskController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.export'
+                    )
+                    ->name('pdf');
+            });
+
+        Route::prefix('tasks')
+            ->name('tasks.')
+            ->group(function (): void {
+                Route::get(
+                    '{task}',
+                    [
+                        ProjectTaskController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.view'
+                    )
+                    ->name('show');
+
+                Route::put(
+                    '{task}',
+                    [
+                        ProjectTaskController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.update'
+                    )
+                    ->name('update');
+
+                Route::delete(
+                    '{task}',
+                    [
+                        ProjectTaskController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.delete'
+                    )
+                    ->name('destroy');
+
+                Route::post(
+                    '{task}/move',
+                    [
+                        ProjectTaskWorkflowController::class,
+                        'move',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.move'
+                    )
+                    ->name('move');
+
+                Route::post(
+                    '{task}/comments',
+                    [
+                        ProjectTaskCommentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:tasks.comment'
+                    )
+                    ->name('comments.store');
+
+                Route::post(
+                    '{task}/submissions',
+                    [
+                        WorkSubmissionController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:work-submissions.create'
+                    )
+                    ->name('submissions.store');
+            });
+
+        Route::prefix('work-submissions')
+            ->name('work-submissions.')
+            ->group(function (): void {
+                Route::post(
+                    '{submission}/review',
+                    [
+                        WorkSubmissionController::class,
+                        'review',
+                    ]
+                )
+                    ->middleware(
+                        'permission:work-submissions.review'
+                    )
+                    ->name('review');
+
+                Route::get(
+                    '{submission}/attachments/{attachment}/download',
+                    [
+                        WorkSubmissionAttachmentController::class,
+                        'download',
+                    ]
+                )
+                    ->middleware(
+                        'permission:work-submissions.attachments.download'
+                    )
+                    ->name(
+                        'attachments.download'
                     );
             });
     });

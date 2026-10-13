@@ -44,3 +44,11 @@ governed software project.
 
 A project inherits its commercial and scope baseline from the signed
 contract and cannot redefine that baseline.
+
+## M06
+
+M06 adds project execution workflow.
+
+Work originates inside an active M05 project and is organized through
+tasks, workflow statuses, dependencies, work submissions and formal
+review.

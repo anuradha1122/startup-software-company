@@ -194,3 +194,44 @@ M06 — Tasks, Workflow & Work Submission
 
 M06 must operate inside an active M05 project and may use project
 phases and milestones as task/workflow grouping structures.
+
+## Current Module
+
+M06 — Tasks, Workflow & Work Submission
+
+## Completion Gate
+
+Before M07:
+
+1. workflow statuses seeded
+2. task numbering tested
+3. active-project gate tested
+4. task relation ownership tested
+5. dependency blocking tested
+6. workflow transitions tested
+7. task comments tested
+8. work submission tested
+9. submission versioning tested
+10. changes-required workflow tested
+11. approval workflow tested
+12. task completion gate tested
+13. private attachments tested
+14. queued notifications tested
+15. Excel export checked
+16. PDF export checked
+17. M01-M05 regressions pass
+18. full PHP suite passes
+19. TypeScript passes
+20. production build passes
+21. npm run check passes
+22. M06 Git commit created
+
+## Next Module
+
+M07 — People & Assignments
+
+M07 will formalize who may participate in a project and will connect
+project-resource assignments to M06 task responsibility.
+
+Existing M06 assignee_id remains compatible and M07 should validate
+assignees against active project assignments.

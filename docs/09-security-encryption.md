@@ -98,3 +98,17 @@ Project charter exports exclude:
 Governance actions use permission gates.
 
 Risk escalations and project lifecycle changes are audit logged.
+
+## M06 Security
+
+Work submission evidence uses private storage.
+
+Attachment downloads require explicit permissions.
+
+Tasks may contain internal project information and are not exposed
+through public URLs.
+
+Client-visible task/comment flags prepare data for M12 but do not
+automatically publish data.
+
+Workflow transitions and reviews are audit logged.

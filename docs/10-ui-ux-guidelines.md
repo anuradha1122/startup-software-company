@@ -27,3 +27,19 @@ Red/amber/green project health must also include readable text and must
 not rely on color alone.
 
 Commercial baseline fields should be displayed read-only.
+
+## M06 UI
+
+Task workflow is displayed as a Kanban-style column board.
+
+Task cards must show:
+
+- task number
+- title
+- priority
+- assignee
+- workflow state
+
+Status, priority and completion must not rely on color alone.
+
+Task detail pages show work-submission and workflow history.

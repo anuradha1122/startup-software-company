@@ -113,3 +113,27 @@
 16. Project charter PDF must not expose internal estimate costs or
     margins.
 17. Project completion requires an active/on-hold project.
+
+## M06
+
+1. Tasks belong to a project.
+2. New tasks require an active project.
+3. Task numbering is sequential within each project.
+4. Task phases and milestones must belong to the same project.
+5. Parent tasks must belong to the same project.
+6. Dependencies must belong to the same project.
+7. A task cannot depend on itself.
+8. A task with incomplete dependencies cannot begin.
+9. Workflow changes are recorded in task_transitions.
+10. Work submissions are versioned.
+11. Only one submission may await review at a time.
+12. A new revision supersedes the previous submission.
+13. Work submissions move tasks to Review.
+14. Rejected work moves tasks to Changes Required.
+15. Approved work moves tasks to Done.
+16. Tasks cannot move to Done without an approved work submission.
+17. Submission attachments use private storage.
+18. Task assignee changes trigger notifications.
+19. M06 task assignment is operational responsibility; M07 adds formal
+    project-resource assignments.
+20. M08 will record time against M06 tasks.

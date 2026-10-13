@@ -164,6 +164,13 @@ class Project extends Model
         )->latest('decided_at');
     }
 
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(
+            ProjectTask::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

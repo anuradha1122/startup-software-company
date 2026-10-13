@@ -169,3 +169,19 @@ Therefore one signed contract can create only one project.
 
 Project commercial fields are copied from the signed contract and
 treated as immutable baseline data.
+
+## M06 Tables
+
+- task_workflow_statuses
+- project_tasks
+- project_task_dependencies
+- project_task_comments
+- work_submissions
+- work_submission_attachments
+- task_transitions
+
+Task numbers are unique and contain the parent project number.
+
+Work submissions are versioned per task.
+
+Task transitions retain workflow audit history.

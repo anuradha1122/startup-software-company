@@ -58,3 +58,19 @@ Project operational data is separated into:
 - ProjectStakeholder
 - ProjectRisk
 - ProjectDecision
+
+## M06 Architecture
+
+Project execution hierarchy:
+
+Project
+→ Phase / Milestone
+→ Task
+→ Workflow Transition
+→ Work Submission
+→ Review
+
+Task workflow status is normalized through task_workflow_statuses
+instead of hard-coded task status strings.
+
+Work submission versions preserve review history.

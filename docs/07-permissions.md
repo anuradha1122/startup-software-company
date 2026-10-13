@@ -132,3 +132,24 @@ Estimation:
 - projects.risks.escalate
 - projects.decisions.manage
 - projects.kickoff.send
+
+## M06 Permissions
+
+### Tasks
+
+- tasks.view
+- tasks.create
+- tasks.update
+- tasks.delete
+- tasks.assign
+- tasks.move
+- tasks.comment
+- tasks.export
+
+### Work Submissions
+
+- work-submissions.view
+- work-submissions.create
+- work-submissions.review
+- work-submissions.attachments.manage
+- work-submissions.attachments.download

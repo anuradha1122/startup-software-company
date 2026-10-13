@@ -78,3 +78,16 @@
 - Project charter PDF
 - Project Excel export
 - Project notifications and kickoff email
+
+### Added — M06
+
+- Project task workflow
+- Kanban board
+- Task dependencies
+- Task comments
+- Work submissions
+- Submission review/versioning
+- Private work evidence
+- Task workflow notifications
+- Task Excel export
+- Project task PDF report

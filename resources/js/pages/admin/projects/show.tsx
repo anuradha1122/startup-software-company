@@ -158,6 +158,15 @@ export default function ProjectShow({ project, users }: any) {
                                 Resume
                             </button>
                         )}
+
+                        {['active', 'on_hold'].includes(project.status) && (
+                            <Link
+                                href={`/admin/projects/${project.public_id}/tasks/board`}
+                                className="rounded border px-3 py-2"
+                            >
+                                Task Board
+                            </Link>
+                        )}
                     </div>
                 </div>
 

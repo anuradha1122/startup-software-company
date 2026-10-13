@@ -155,3 +155,34 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M06
+
+- [ ] Workflow statuses seeded
+- [ ] Active project creates task
+- [ ] Inactive project task creation rejected
+- [ ] Project task number generated
+- [ ] Task assignment notification queued
+- [ ] Phase ownership validated
+- [ ] Milestone ownership validated
+- [ ] Parent task validated
+- [ ] Dependencies validated
+- [ ] Self-dependency rejected
+- [ ] Incomplete dependency blocks start
+- [ ] Workflow transition logged
+- [ ] Work submission creates version 1
+- [ ] Submission moves task to Review
+- [ ] Changes-required review works
+- [ ] Resubmission creates next version
+- [ ] Previous submission superseded
+- [ ] Approval completes task
+- [ ] Done blocked without approved submission
+- [ ] Attachments private
+- [ ] Task comments work
+- [ ] Task Excel export works
+- [ ] Task PDF works
+- [ ] M01-M05 regression passes
+- [ ] Full PHP suite passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

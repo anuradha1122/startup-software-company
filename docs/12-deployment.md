@@ -39,3 +39,18 @@ M05 uses the existing queue worker for:
 No public storage link is required for M05.
 
 After deployment regenerate Wayfinder and restart queue workers.
+
+## M06 Deployment Notes
+
+Seed task workflow statuses during deployment.
+
+M06 uses the existing queue worker for:
+
+- task assignment notifications
+- work-submission review notifications
+- changes-required notifications
+- work-approval notifications
+
+Work submission attachments remain on private storage.
+
+No public storage link is required.

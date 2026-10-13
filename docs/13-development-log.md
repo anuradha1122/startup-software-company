@@ -123,3 +123,25 @@ Implemented:
 - charter PDF
 - project Excel export
 - M05 automated tests
+
+## M06 — Tasks, Workflow & Work Submission
+
+Implemented:
+
+- task numbering
+- task CRUD
+- task priorities/types
+- phase/milestone linkage
+- parent tasks
+- dependencies
+- Kanban workflow
+- workflow transition history
+- task comments
+- work submission versioning
+- private submission evidence
+- approval/changes-required workflow
+- task completion gate
+- queued task/work notifications
+- Excel task export
+- task PDF report
+- M06 automated tests

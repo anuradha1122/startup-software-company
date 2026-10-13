@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             CompanySettingSeeder::class,
             LeadStageSeeder::class,
             LeadSourceSeeder::class,
+            TaskWorkflowStatusSeeder::class,
         ]);
 
         $admin = User::firstOrCreate(

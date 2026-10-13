@@ -105,3 +105,31 @@ Frontend:
 PDF:
 
 - pdf/project-charter.blade.php
+
+## M06
+
+Backend:
+
+- Models/ProjectTask
+- Models/TaskWorkflowStatus
+- Models/ProjectTaskDependency
+- Models/ProjectTaskComment
+- Models/WorkSubmission
+- Models/WorkSubmissionAttachment
+- Models/TaskTransition
+- Controllers/Admin/ProjectTask\*
+- Controllers/Admin/WorkSubmission\*
+- Services/Tasks
+- Notifications/Task\*
+- Notifications/WorkSubmission\*
+- Exports/ProjectTasksExport
+
+Frontend:
+
+- pages/admin/projects/tasks
+- pages/admin/tasks
+- components/m06
+
+PDF:
+
+- pdf/project-tasks.blade.php

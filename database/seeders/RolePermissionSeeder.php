@@ -108,6 +108,21 @@ class RolePermissionSeeder extends Seeder
 
             'projects.decisions.manage',
             'projects.kickoff.send',
+
+            'tasks.view',
+            'tasks.create',
+            'tasks.update',
+            'tasks.delete',
+            'tasks.assign',
+            'tasks.move',
+            'tasks.comment',
+            'tasks.export',
+
+            'work-submissions.view',
+            'work-submissions.create',
+            'work-submissions.review',
+            'work-submissions.attachments.manage',
+            'work-submissions.attachments.download',
         ];
 
         foreach ($permissions as $permission) {
@@ -199,6 +214,21 @@ class RolePermissionSeeder extends Seeder
 
                 'projects.decisions.manage',
                 'projects.kickoff.send',
+
+                'tasks.view',
+                'tasks.create',
+                'tasks.update',
+                'tasks.delete',
+                'tasks.assign',
+                'tasks.move',
+                'tasks.comment',
+                'tasks.export',
+
+                'work-submissions.view',
+                'work-submissions.create',
+                'work-submissions.review',
+                'work-submissions.attachments.manage',
+                'work-submissions.attachments.download',
             ]);
 
         Role::findByName('Sales')

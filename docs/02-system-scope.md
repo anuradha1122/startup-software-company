@@ -144,3 +144,27 @@ Includes:
 - kickoff email
 - project charter PDF
 - project Excel export
+
+## M06 — Tasks, Workflow & Work Submission
+
+Includes:
+
+- project task creation
+- project task numbering
+- task types and priorities
+- task assignees
+- phase/milestone linkage
+- parent/sub-task linkage
+- dependencies
+- Kanban workflow
+- workflow transition history
+- task comments
+- work submissions
+- work submission versioning
+- private submission attachments
+- review approval
+- changes-required workflow
+- task completion gate
+- task Excel export
+- task PDF report
+- assignment/review notifications

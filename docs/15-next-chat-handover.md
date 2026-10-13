@@ -235,3 +235,41 @@ project-resource assignments to M06 task responsibility.
 
 Existing M06 assignee_id remains compatible and M07 should validate
 assignees against active project assignments.
+
+## Current Module
+
+M07 — People & Assignments
+
+## Completion Gate
+
+Before M08:
+
+1. resource profile tested
+2. skills tested
+3. project assignment tested
+4. duplicate assignment guard tested
+5. active-project guard tested
+6. PM auto-assignment tested
+7. PM activation tested
+8. M06 task-assignee eligibility tested
+9. outsider task assignment rejected
+10. assignment-end guard tested
+11. notification queue tested
+12. project team PDF checked
+13. assignment Excel checked
+14. M01-M06 regression tests pass
+15. full PHP suite passes
+16. TypeScript passes
+17. production build passes
+18. npm run check passes
+19. M07 Git commit created
+
+## Next Module
+
+M08 — Timesheets & Internal Costing
+
+M08 will record actual work time against M06 tasks and M07 project
+assignments.
+
+Internal costing must remain private and must not be exposed on client
+documents or portal screens.

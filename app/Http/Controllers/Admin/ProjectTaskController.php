@@ -10,8 +10,8 @@ use App\Models\CompanySetting;
 use App\Models\Project;
 use App\Models\ProjectTask;
 use App\Models\TaskWorkflowStatus;
-use App\Models\User;
 use App\Notifications\TaskAssignedNotification;
+use App\Services\People\AssignmentEligibilityService;
 use App\Services\Tasks\TaskNumberService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\RedirectResponse;
@@ -93,19 +93,39 @@ class ProjectTaskController extends Controller
 
                 'tasksByStatus' => $tasks,
 
-                'users' => User::query()
+                'users' => $project
+                    ->assignments()
                     ->where(
                         'status',
                         'active'
                     )
-                    ->orderBy(
-                        'name'
-                    )
-                    ->get([
-                        'id',
-                        'name',
-                        'email',
-                    ]),
+                    ->where(function ($query): void {
+                        $query
+                            ->whereNull(
+                                'start_date'
+                            )
+                            ->orWhereDate(
+                                'start_date',
+                                '<=',
+                                today()
+                            );
+                    })
+                    ->where(function ($query): void {
+                        $query
+                            ->whereNull(
+                                'end_date'
+                            )
+                            ->orWhereDate(
+                                'end_date',
+                                '>=',
+                                today()
+                            );
+                    })
+                    ->with('user')
+                    ->get()
+                    ->pluck('user')
+                    ->filter()
+                    ->values(),
             ]
         );
     }
@@ -113,7 +133,8 @@ class ProjectTaskController extends Controller
     public function store(
         StoreProjectTaskRequest $request,
         Project $project,
-        TaskNumberService $numbers
+        TaskNumberService $numbers,
+        AssignmentEligibilityService $eligibility
     ): RedirectResponse {
         abort_unless(
             $project->status
@@ -124,6 +145,13 @@ class ProjectTaskController extends Controller
 
         $data =
             $request->validated();
+
+        $eligibility->assertAssignable(
+            $project,
+            isset($data['assignee_id'])
+                ? (int) $data['assignee_id']
+                : null
+        );
 
         $this->validateRelations(
             $project,
@@ -282,17 +310,39 @@ class ProjectTaskController extends Controller
                     )
                     ->get(),
 
-                'users' => User::query()
+                'users' => $project
+                    ->assignments()
                     ->where(
                         'status',
                         'active'
                     )
-                    ->orderBy('name')
-                    ->get([
-                        'id',
-                        'name',
-                        'email',
-                    ]),
+                    ->where(function ($query): void {
+                        $query
+                            ->whereNull(
+                                'start_date'
+                            )
+                            ->orWhereDate(
+                                'start_date',
+                                '<=',
+                                today()
+                            );
+                    })
+                    ->where(function ($query): void {
+                        $query
+                            ->whereNull(
+                                'end_date'
+                            )
+                            ->orWhereDate(
+                                'end_date',
+                                '>=',
+                                today()
+                            );
+                    })
+                    ->with('user')
+                    ->get()
+                    ->pluck('user')
+                    ->filter()
+                    ->values(),
 
                 'availableDependencies' => ProjectTask::query()
                     ->where(
@@ -319,7 +369,8 @@ class ProjectTaskController extends Controller
 
     public function update(
         UpdateProjectTaskRequest $request,
-        ProjectTask $task
+        ProjectTask $task,
+        AssignmentEligibilityService $eligibility
     ): RedirectResponse {
         Gate::authorize(
             'update',
@@ -328,6 +379,13 @@ class ProjectTaskController extends Controller
 
         $data =
             $request->validated();
+
+        $eligibility->assertAssignable(
+            $task->project,
+            isset($data['assignee_id'])
+                ? (int) $data['assignee_id']
+                : null
+        );
 
         $this->validateRelations(
             $task->project,

@@ -5,13 +5,15 @@ namespace App\Services\Projects;
 use App\Models\Contract;
 use App\Models\Project;
 use App\Services\DocumentNumberService;
+use App\Services\People\ProjectManagerAssignmentService;
 use Illuminate\Support\Facades\DB;
 use RuntimeException;
 
 class ProjectSetupService
 {
     public function __construct(
-        private readonly DocumentNumberService $numbers
+        private readonly DocumentNumberService $numbers,
+        private readonly ProjectManagerAssignmentService $managerAssignments
     ) {}
 
     public function create(
@@ -93,6 +95,12 @@ class ProjectSetupService
                         'status' => 'draft',
                         'created_by' => $userId,
                     ]);
+
+                $this->managerAssignments->sync(
+                    $project,
+                    $project->project_manager_id,
+                    $userId
+                );
 
                 return $project;
             }

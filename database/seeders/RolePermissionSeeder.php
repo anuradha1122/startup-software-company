@@ -123,6 +123,17 @@ class RolePermissionSeeder extends Seeder
             'work-submissions.review',
             'work-submissions.attachments.manage',
             'work-submissions.attachments.download',
+
+            'people.view',
+            'people.update',
+            'people.skills.manage',
+            'people.export',
+
+            'project-assignments.view',
+            'project-assignments.create',
+            'project-assignments.update',
+            'project-assignments.end',
+            'project-assignments.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -229,6 +240,14 @@ class RolePermissionSeeder extends Seeder
                 'work-submissions.review',
                 'work-submissions.attachments.manage',
                 'work-submissions.attachments.download',
+
+                'people.view',
+
+                'project-assignments.view',
+                'project-assignments.create',
+                'project-assignments.update',
+                'project-assignments.end',
+                'project-assignments.export',
             ]);
 
         Role::findByName('Sales')
@@ -263,6 +282,9 @@ class RolePermissionSeeder extends Seeder
 
                 'projects.view',
                 'projects.export',
+
+                'people.view',
+                'project-assignments.view',
             ]);
 
         Role::findByName('Finance')
@@ -281,6 +303,9 @@ class RolePermissionSeeder extends Seeder
 
                 'projects.view',
                 'projects.export',
+
+                'project-assignments.view',
+                'project-assignments.export',
             ]);
 
         Role::findByName('Director')

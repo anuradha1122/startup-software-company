@@ -29,6 +29,22 @@ it('creates task inside active project', function (): void {
             'status' => 'active',
         ]);
 
+    $project
+        ->assignments()
+        ->create([
+            'user_id' => $admin->id,
+
+            'role' => 'Developer',
+
+            'allocation_percent' => 100,
+
+            'status' => 'active',
+
+            'billable' => true,
+
+            'created_by' => $admin->id,
+        ]);
+
     $this
         ->actingAs($admin)
         ->post(

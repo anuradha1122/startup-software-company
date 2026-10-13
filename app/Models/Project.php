@@ -171,6 +171,13 @@ class Project extends Model
         );
     }
 
+    public function assignments(): HasMany
+    {
+        return $this->hasMany(
+            ProjectAssignment::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

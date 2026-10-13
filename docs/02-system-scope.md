@@ -168,3 +168,22 @@ Includes:
 - task Excel export
 - task PDF report
 - assignment/review notifications
+
+## M07 — People & Assignments
+
+Includes:
+
+- operational people directory
+- resource profiles
+- skills catalogue
+- resource skills/proficiency
+- project team assignments
+- project roles
+- allocation percentage
+- planned/active/ended assignment lifecycle
+- billable assignment flag
+- project manager auto-assignment
+- task assignee eligibility
+- project assignment notifications
+- project team PDF
+- project assignment Excel

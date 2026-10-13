@@ -137,3 +137,21 @@
 19. M06 task assignment is operational responsibility; M07 adds formal
     project-resource assignments.
 20. M08 will record time against M06 tasks.
+
+## M07
+
+1. Only active system users may receive project assignments.
+2. One user may have one assignment record per project.
+3. Assignment allocation must be between 1% and 100%.
+4. Active assignments require an active project.
+5. Planned projects may have planned assignments.
+6. Project managers receive an assignment automatically.
+7. Project activation activates the planned PM assignment.
+8. An M06 task assignee must have an active assignment on that project.
+9. Expired or future-dated assignments are not currently assignable.
+10. Users with open tasks cannot have their assignment ended.
+11. An open project's current project-manager assignment cannot be ended.
+12. Ending an assignment retains history.
+13. Resource profiles contain operational capability information only.
+14. Salary, payroll, leave, attendance, banking and HR employment fields
+    belong to M15.

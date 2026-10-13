@@ -153,3 +153,20 @@ Estimation:
 - work-submissions.review
 - work-submissions.attachments.manage
 - work-submissions.attachments.download
+
+## M07 Permissions
+
+### People
+
+- people.view
+- people.update
+- people.skills.manage
+- people.export
+
+### Project Assignments
+
+- project-assignments.view
+- project-assignments.create
+- project-assignments.update
+- project-assignments.end
+- project-assignments.export

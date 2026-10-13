@@ -52,3 +52,13 @@ M06 adds project execution workflow.
 Work originates inside an active M05 project and is organized through
 tasks, workflow statuses, dependencies, work submissions and formal
 review.
+
+## M07
+
+M07 formalizes operational people, skills and project staffing.
+
+Users become eligible M06 task assignees only while they hold an
+active assignment on the relevant project.
+
+HR employment administration remains outside this module and is
+reserved for M15.

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -68,6 +70,20 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     public function isActive(): bool
     {
         return $this->status === 'active';
+    }
+
+    public function resourceProfile(): HasOne
+    {
+        return $this->hasOne(
+            ResourceProfile::class
+        );
+    }
+
+    public function projectAssignments(): HasMany
+    {
+        return $this->hasMany(
+            ProjectAssignment::class
+        );
     }
 
     public function getActivitylogOptions(): LogOptions

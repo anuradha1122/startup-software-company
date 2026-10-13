@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\ContractDocumentController;
 use App\Http\Controllers\Admin\EstimateController;
 use App\Http\Controllers\Admin\LeadActivityController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\PeopleController;
+use App\Http\Controllers\Admin\ProjectAssignmentController;
 use App\Http\Controllers\Admin\ProjectCharterController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ProjectDecisionController;
@@ -28,6 +30,7 @@ use App\Http\Controllers\Admin\RequirementAttachmentController;
 use App\Http\Controllers\Admin\RequirementController;
 use App\Http\Controllers\Admin\RequirementVersionController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WorkSubmissionAttachmentController;
 use App\Http\Controllers\Admin\WorkSubmissionController;
@@ -1539,5 +1542,163 @@ Route::middleware([
                     ->name(
                         'attachments.download'
                     );
+            });
+
+        Route::prefix('people')
+            ->name('people.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        PeopleController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:people.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    '{user}',
+                    [
+                        PeopleController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:people.view'
+                    )
+                    ->name('show');
+
+                Route::put(
+                    '{user}',
+                    [
+                        PeopleController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:people.update'
+                    )
+                    ->name('update');
+
+                Route::put(
+                    '{user}/skills',
+                    [
+                        PeopleController::class,
+                        'syncSkills',
+                    ]
+                )
+                    ->middleware(
+                        'permission:people.skills.manage'
+                    )
+                    ->name('skills.sync');
+            });
+
+        Route::prefix('skills')
+            ->name('skills.')
+            ->group(function (): void {
+                Route::post(
+                    '/',
+                    [
+                        SkillController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:people.skills.manage'
+                    )
+                    ->name('store');
+
+                Route::post(
+                    '{skill}/toggle',
+                    [
+                        SkillController::class,
+                        'toggle',
+                    ]
+                )
+                    ->middleware(
+                        'permission:people.skills.manage'
+                    )
+                    ->name('toggle');
+            });
+
+        Route::prefix(
+            'projects/{project}/team'
+        )
+            ->name('projects.team.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ProjectAssignmentController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-assignments.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        ProjectAssignmentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-assignments.create'
+                    )
+                    ->name('store');
+
+                Route::put(
+                    '{assignment}',
+                    [
+                        ProjectAssignmentController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-assignments.update'
+                    )
+                    ->name('update');
+
+                Route::post(
+                    '{assignment}/end',
+                    [
+                        ProjectAssignmentController::class,
+                        'end',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-assignments.end'
+                    )
+                    ->name('end');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ProjectAssignmentController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-assignments.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ProjectAssignmentController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-assignments.export'
+                    )
+                    ->name('pdf');
             });
     });

@@ -133,3 +133,27 @@ Frontend:
 PDF:
 
 - pdf/project-tasks.blade.php
+
+## M07
+
+Backend:
+
+- Models/ResourceProfile
+- Models/Skill
+- Models/ProjectAssignment
+- Controllers/Admin/PeopleController
+- Controllers/Admin/SkillController
+- Controllers/Admin/ProjectAssignmentController
+- Services/People
+- Notifications/ProjectAssignment\*
+- Exports/ProjectAssignmentsExport
+
+Frontend:
+
+- pages/admin/people
+- pages/admin/projects/team
+- components/m07
+
+PDF:
+
+- pdf/project-team.blade.php

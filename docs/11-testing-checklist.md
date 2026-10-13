@@ -186,3 +186,31 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M07
+
+- [ ] Resource profile creates
+- [ ] Resource profile updates
+- [ ] Skills sync
+- [ ] Active user assignment works
+- [ ] Inactive user rejected
+- [ ] Duplicate project/user assignment rejected
+- [ ] Allocation validation works
+- [ ] Active assignment requires active project
+- [ ] PM assignment created automatically
+- [ ] PM assignment activates with project
+- [ ] M06 active project member may receive task
+- [ ] M06 outsider task assignment rejected
+- [ ] Future assignment not eligible
+- [ ] End assignment works
+- [ ] Assignment with open tasks cannot end
+- [ ] Current PM assignment cannot end on open project
+- [ ] Assignment notification queued
+- [ ] Assignment-end notification queued
+- [ ] Project team Excel works
+- [ ] Project team PDF works
+- [ ] M01-M06 regression passes
+- [ ] Full PHP suite passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

@@ -91,3 +91,16 @@
 - Task workflow notifications
 - Task Excel export
 - Project task PDF report
+
+### Added — M07
+
+- Resource profiles
+- Skills catalogue
+- Project resource assignments
+- Assignment lifecycle
+- Allocation percentage
+- Project manager auto-assignment
+- Task assignment eligibility
+- Project team PDF
+- Project team Excel
+- Assignment notifications

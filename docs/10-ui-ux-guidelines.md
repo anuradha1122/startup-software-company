@@ -43,3 +43,21 @@ Task cards must show:
 Status, priority and completion must not rely on color alone.
 
 Task detail pages show work-submission and workflow history.
+
+## M07 UI
+
+People pages display operational project information only.
+
+Project-team screens should clearly show:
+
+- person
+- project role
+- allocation
+- assignment status
+- assignment dates
+- billable status
+
+Ended assignments remain visible as history.
+
+M06 assignee selectors must only display currently eligible project
+members.

@@ -13,6 +13,7 @@ import {
     ScrollText,
     BriefcaseBusiness,
     ListTodo,
+    UsersRound,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -157,6 +158,16 @@ export function AppSidebar() {
         });
     }
 
+    const peopleNavItems: NavItem[] = [];
+
+    if (can('people.view')) {
+        peopleNavItems.push({
+            title: 'People',
+            href: '/admin/people',
+            icon: UsersRound,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -184,6 +195,10 @@ export function AppSidebar() {
 
                 {projectNavItems.length > 0 && (
                     <NavMain items={projectNavItems} label="Projects" />
+                )}
+
+                {peopleNavItems.length > 0 && (
+                    <NavMain items={peopleNavItems} label="People" />
                 )}
 
                 {administrationNavItems.length > 0 && (

@@ -145,3 +145,21 @@ Implemented:
 - Excel task export
 - task PDF report
 - M06 automated tests
+
+## M07 — People & Assignments
+
+Implemented:
+
+- operational people directory
+- resource profiles
+- skills
+- skill proficiency
+- project assignments
+- assignment lifecycle
+- allocation tracking
+- project manager auto-assignment
+- M06 task-assignee enforcement
+- assignment notifications
+- project team PDF
+- assignment Excel
+- M07 automated tests

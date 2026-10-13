@@ -112,3 +112,20 @@ Client-visible task/comment flags prepare data for M12 but do not
 automatically publish data.
 
 Workflow transitions and reviews are audit logged.
+
+## M07 Security
+
+M07 stores operational resource information only.
+
+It does not store:
+
+- salary
+- bank details
+- payroll data
+- attendance
+- leave records
+- private HR records
+
+People and assignment mutations require explicit permissions.
+
+Project team exports are audited.

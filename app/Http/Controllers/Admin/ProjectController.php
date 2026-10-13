@@ -344,6 +344,20 @@ class ProjectController extends Controller
             'activated_at' => now(),
         ]);
 
+        $project
+            ->assignments()
+            ->where(
+                'user_id',
+                $project->project_manager_id
+            )
+            ->where(
+                'status',
+                'planned'
+            )
+            ->update([
+                'status' => 'active',
+            ]);
+
         return back()->with(
             'success',
             'Project activated.'

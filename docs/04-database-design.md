@@ -185,3 +185,17 @@ Task numbers are unique and contain the parent project number.
 Work submissions are versioned per task.
 
 Task transitions retain workflow audit history.
+
+## M07 Tables
+
+- resource_profiles
+- skills
+- resource_profile_skill
+- project_assignments
+
+A user has at most one resource profile.
+
+A user has at most one assignment record per project.
+
+Historical project assignment records are retained through status and
+soft deletes.

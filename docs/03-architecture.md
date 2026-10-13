@@ -74,3 +74,20 @@ Task workflow status is normalized through task_workflow_statuses
 instead of hard-coded task status strings.
 
 Work submission versions preserve review history.
+
+## M07 Architecture
+
+User
+→ ResourceProfile
+→ Skills
+
+Project
+→ ProjectAssignment
+→ User
+
+M06 task ownership is validated through ProjectAssignment.
+
+ProjectAssignment is the operational project membership boundary.
+
+M15 remains responsible for HR employment, attendance, leave and
+payroll.

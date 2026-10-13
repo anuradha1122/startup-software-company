@@ -167,6 +167,13 @@ export default function ProjectShow({ project, users }: any) {
                                 Task Board
                             </Link>
                         )}
+
+                        <Link
+                            href={`/admin/projects/${project.public_id}/team`}
+                            className="rounded border px-3 py-2"
+                        >
+                            Project Team
+                        </Link>
                     </div>
                 </div>
 

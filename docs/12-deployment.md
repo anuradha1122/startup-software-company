@@ -54,3 +54,15 @@ M06 uses the existing queue worker for:
 Work submission attachments remain on private storage.
 
 No public storage link is required.
+
+## M07 Deployment Notes
+
+M07 uses the existing queue worker for project assignment emails and
+database notifications.
+
+No public storage is introduced.
+
+Existing projects should receive a project-manager assignment before
+M07 task-assignee enforcement is enabled in a production upgrade.
+
+Fresh installations receive this automatically through project setup.

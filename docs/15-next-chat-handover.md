@@ -358,3 +358,55 @@ outstanding receivables and collection status.
 
 M10 may use approved M09 billable-to-client costs as invoice inputs,
 but such expenses must never be invoiced automatically.
+
+## Current Module
+
+M10 — Invoices, Payments & Receivables
+
+## Completion Gate
+
+Before M11:
+
+1. invoice numbering tested
+2. draft invoice creation tested
+3. invoice calculations tested
+4. issue workflow tested
+5. invoice locking tested
+6. invoice PDF tested
+7. invoice email tested
+8. M09 billable expense import tested
+9. duplicate expense billing prevented
+10. payment numbering tested
+11. payment creation tested
+12. partial allocation tested
+13. full allocation tested
+14. cross-client allocation rejected
+15. currency mismatch rejected
+16. over-allocation rejected
+17. allocation removal tested
+18. receipt PDF tested
+19. receipt email tested
+20. receivables tested
+21. overdue command tested
+22. exports tested
+23. M01-M09 regressions pass
+24. full PHP suite passes
+25. TypeScript passes
+26. production build passes
+27. npm run check passes
+28. M10 Git commit created
+
+## Next Module
+
+M11 — Project Profitability & Finance
+
+M11 will combine:
+
+- project contract/revenue baseline
+- M08 approved internal labor cost
+- M09 approved non-labor cost
+- M10 invoiced revenue
+- M10 collected cash
+
+to produce project-level revenue, cost, gross profit, margin,
+receivable and collection reporting.

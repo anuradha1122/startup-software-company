@@ -224,3 +224,26 @@ Includes:
 - expense PDF/Excel
 - approved non-labor cost PDF/Excel
 - queued approval notifications
+
+## M10 — Invoices, Payments & Receivables
+
+Includes:
+
+- invoice numbering
+- draft invoices
+- invoice lines
+- tax calculation
+- approved M09 billable expense import
+- invoice issue workflow
+- client invoice PDF
+- invoice email
+- payment recording
+- receipt numbering
+- payment allocation
+- partial payments
+- full payment settlement
+- payment receipt PDF/email
+- outstanding receivables
+- overdue detection
+- Excel/PDF reports
+- queued notifications and emails

@@ -215,3 +215,29 @@ Estimation:
 
 - non-labor-costs.view
 - non-labor-costs.export
+
+## M10 Permissions
+
+### Invoices
+
+- invoices.view
+- invoices.create
+- invoices.update
+- invoices.delete
+- invoices.issue
+- invoices.send
+- invoices.void
+- invoices.export
+
+### Payments
+
+- payments.view
+- payments.create
+- payments.allocate
+- payments.export
+- payments.receipt.send
+
+### Receivables
+
+- receivables.view
+- receivables.export

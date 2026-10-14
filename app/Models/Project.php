@@ -192,6 +192,13 @@ class Project extends Model
         );
     }
 
+    public function invoices(): HasMany
+    {
+        return $this->hasMany(
+            Invoice::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

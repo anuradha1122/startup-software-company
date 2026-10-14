@@ -11,3 +11,7 @@ Artisan::command('inspire', function () {
 Schedule::command('leads:send-reminders')
     ->hourly()
     ->withoutOverlapping();
+
+Schedule::command(
+    'invoices:mark-overdue'
+)->dailyAt('00:10');

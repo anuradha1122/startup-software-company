@@ -213,3 +213,39 @@ PDF:
 
 - pdf/project-expenses.blade.php
 - pdf/project-non-labor-cost.blade.php
+
+## M10
+
+Backend:
+
+- Models/Invoice
+- Models/InvoiceLine
+- Models/Payment
+- Models/PaymentAllocation
+- Controllers/Admin/InvoiceController
+- Controllers/Admin/InvoiceLineController
+- Controllers/Admin/PaymentController
+- Controllers/Admin/PaymentAllocationController
+- Controllers/Admin/ReceivableController
+- Services/Billing
+- Notifications/Invoice\*
+- Notifications/Payment\*
+- Mail/InvoiceIssuedMail
+- Mail/PaymentReceiptMail
+- Exports/InvoicesExport
+- Exports/PaymentsExport
+- Exports/ReceivablesExport
+- Console/Commands/MarkOverdueInvoices
+
+Frontend:
+
+- pages/admin/invoices
+- pages/admin/payments
+- pages/admin/receivables
+- components/m10
+
+PDF:
+
+- pdf/invoice.blade.php
+- pdf/payment-receipt.blade.php
+- pdf/receivables.blade.php

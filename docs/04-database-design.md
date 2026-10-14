@@ -227,3 +227,19 @@ references.
 Expense evidence is stored privately.
 
 Approved expenses provide M11 non-labor project cost.
+
+## M10 Tables
+
+- invoices
+- invoice_lines
+- payments
+- payment_allocations
+
+Invoices snapshot client billing information.
+
+Invoice lines snapshot quantity, price, tax and total.
+
+Payment allocations connect client payments to invoices.
+
+Invoice amount_paid and balance_due are maintained when allocations are
+created or removed.

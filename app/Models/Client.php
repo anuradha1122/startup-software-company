@@ -104,6 +104,20 @@ class Client extends Model
         );
     }
 
+    public function invoices(): HasMany
+    {
+        return $this->hasMany(
+            Invoice::class
+        );
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(
+            Payment::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

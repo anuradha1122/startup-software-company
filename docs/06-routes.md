@@ -314,3 +314,66 @@ Starting with M10, every module implementation must include a complete replaceme
 - client-facing routes when applicable
 
 The documentation must be updated in the same module response rather than deferred to a later cleanup step.
+
+## M10 – Invoices, Payments & Receivables
+
+### Invoices
+
+| Method | URI                               | Permission / Authorization        |
+| ------ | --------------------------------- | --------------------------------- |
+| GET    | `/admin/invoices/export/excel`    | `invoices.export`                 |
+| GET    | `/admin/invoices`                 | `invoices.view`                   |
+| GET    | `/admin/invoices/create`          | `invoices.create`                 |
+| POST   | `/admin/invoices`                 | `invoices.create`                 |
+| GET    | `/admin/invoices/{invoice}`       | `invoices.view`                   |
+| PUT    | `/admin/invoices/{invoice}`       | `invoices.update` + draft invoice |
+| DELETE | `/admin/invoices/{invoice}`       | `invoices.delete` + draft invoice |
+| POST   | `/admin/invoices/{invoice}/issue` | `invoices.issue` + draft invoice  |
+| POST   | `/admin/invoices/{invoice}/send`  | `invoices.send`                   |
+| GET    | `/admin/invoices/{invoice}/pdf`   | `invoices.view`                   |
+
+### Invoice Lines
+
+| Method | URI                                      | Permission / Authorization        |
+| ------ | ---------------------------------------- | --------------------------------- |
+| POST   | `/admin/invoices/{invoice}/lines`        | `invoices.update` + draft invoice |
+| PUT    | `/admin/invoices/{invoice}/lines/{line}` | `invoices.update` + draft invoice |
+| DELETE | `/admin/invoices/{invoice}/lines/{line}` | `invoices.update` + draft invoice |
+
+### M09 Billable Expense Import
+
+| Method | URI                                                   | Permission / Authorization                                        |
+| ------ | ----------------------------------------------------- | ----------------------------------------------------------------- |
+| POST   | `/admin/invoices/{invoice}/expenses/{expense}/import` | `invoices.update` + draft invoice + approved billable M09 expense |
+
+### Payments
+
+| Method | URI                                      | Permission              |
+| ------ | ---------------------------------------- | ----------------------- |
+| GET    | `/admin/payments/export/excel`           | `payments.export`       |
+| GET    | `/admin/payments`                        | `payments.view`         |
+| POST   | `/admin/payments`                        | `payments.create`       |
+| GET    | `/admin/payments/{payment}`              | `payments.view`         |
+| GET    | `/admin/payments/{payment}/pdf`          | `payments.view`         |
+| POST   | `/admin/payments/{payment}/send-receipt` | `payments.receipt.send` |
+
+### Payment Allocations
+
+| Method | URI                                                  | Permission          |
+| ------ | ---------------------------------------------------- | ------------------- |
+| POST   | `/admin/payments/{payment}/allocations`              | `payments.allocate` |
+| DELETE | `/admin/payments/{payment}/allocations/{allocation}` | `payments.allocate` |
+
+### Receivables
+
+| Method | URI                               | Permission           |
+| ------ | --------------------------------- | -------------------- |
+| GET    | `/admin/receivables`              | `receivables.view`   |
+| GET    | `/admin/receivables/export/excel` | `receivables.export` |
+| GET    | `/admin/receivables/export/pdf`   | `receivables.export` |
+
+### Scheduled Billing Operations
+
+| Schedule    | Command                 | Purpose                                                          |
+| ----------- | ----------------------- | ---------------------------------------------------------------- |
+| Daily 00:10 | `invoices:mark-overdue` | Refresh issued/partially-paid invoices and mark overdue balances |

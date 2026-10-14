@@ -197,3 +197,23 @@ Implemented:
 - non-labor cost PDF/Excel
 - queued expense notifications
 - M09 automated tests
+
+## M10 — Invoices, Payments & Receivables
+
+Implemented:
+
+- invoice numbering
+- draft invoice workflow
+- invoice lines/tax calculation
+- explicit M09 billable expense import
+- invoice issuance
+- invoice PDF/email
+- payment recording
+- receipt numbering
+- payment allocations
+- partial/full payment status
+- receipt PDF/email
+- receivable reporting
+- overdue invoice scheduler
+- Excel exports
+- M10 automated tests

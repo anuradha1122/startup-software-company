@@ -159,3 +159,20 @@ Supplier and project-cost exports are audited.
 
 Internal supplier pricing and receipts must not be exposed through the
 client portal unless explicitly approved in a future workflow.
+
+## M10 Security
+
+Invoice PDFs and client emails contain client-facing commercial data.
+
+They must never contain:
+
+- M08 internal hourly rates
+- M08 internal labor cost
+- M09 supplier pricing evidence
+- supplier invoices
+- internal profitability
+- internal margin data
+
+Payment and receivable access requires explicit billing permissions.
+
+Invoice/payment exports are internal administrative reports.

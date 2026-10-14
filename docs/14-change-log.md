@@ -128,3 +128,16 @@
 - Expense PDF/Excel
 - Non-labor cost PDF/Excel
 - Expense notifications
+
+### Added — M10
+
+- Client invoices
+- Invoice line calculation
+- Billable M09 expense import
+- Invoice PDF/email
+- Client payments
+- Payment allocations
+- Payment receipt PDF/email
+- Outstanding receivables
+- Overdue invoice detection
+- Invoice/payment/receivable Excel exports

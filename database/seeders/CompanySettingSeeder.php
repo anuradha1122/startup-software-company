@@ -34,7 +34,7 @@ class CompanySettingSeeder extends Seeder
             'expense' => 'EXP-',
             'invoice' => 'INV-',
             'credit_note' => 'CRN-',
-            'receipt' => 'RCT-',
+            'receipt' => 'RCP-',
             'purchase_order' => 'PO-',
         ];
 

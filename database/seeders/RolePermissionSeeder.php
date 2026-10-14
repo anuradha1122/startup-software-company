@@ -165,6 +165,24 @@ class RolePermissionSeeder extends Seeder
 
             'non-labor-costs.view',
             'non-labor-costs.export',
+
+            'invoices.view',
+            'invoices.create',
+            'invoices.update',
+            'invoices.delete',
+            'invoices.issue',
+            'invoices.send',
+            'invoices.void',
+            'invoices.export',
+
+            'payments.view',
+            'payments.create',
+            'payments.allocate',
+            'payments.export',
+            'payments.receipt.send',
+
+            'receivables.view',
+            'receivables.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -306,6 +324,9 @@ class RolePermissionSeeder extends Seeder
 
                 'non-labor-costs.view',
                 'non-labor-costs.export',
+
+                'invoices.view',
+                'receivables.view',
             ]);
 
         Role::findByName('Sales')
@@ -397,6 +418,24 @@ class RolePermissionSeeder extends Seeder
 
                 'non-labor-costs.view',
                 'non-labor-costs.export',
+
+                'invoices.view',
+                'invoices.create',
+                'invoices.update',
+                'invoices.delete',
+                'invoices.issue',
+                'invoices.send',
+                'invoices.void',
+                'invoices.export',
+
+                'payments.view',
+                'payments.create',
+                'payments.allocate',
+                'payments.export',
+                'payments.receipt.send',
+
+                'receivables.view',
+                'receivables.export',
             ]);
 
         Role::findByName('Director')

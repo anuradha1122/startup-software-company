@@ -9,8 +9,12 @@ use App\Http\Controllers\Admin\CompanySettingController;
 use App\Http\Controllers\Admin\ContractController;
 use App\Http\Controllers\Admin\ContractDocumentController;
 use App\Http\Controllers\Admin\EstimateController;
+use App\Http\Controllers\Admin\InvoiceController;
+use App\Http\Controllers\Admin\InvoiceLineController;
 use App\Http\Controllers\Admin\LeadActivityController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\PaymentAllocationController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\PeopleController;
 use App\Http\Controllers\Admin\ProjectAssignmentController;
 use App\Http\Controllers\Admin\ProjectCharterController;
@@ -30,6 +34,7 @@ use App\Http\Controllers\Admin\ProjectTaskController;
 use App\Http\Controllers\Admin\ProjectTaskWorkflowController;
 use App\Http\Controllers\Admin\ProposalController;
 use App\Http\Controllers\Admin\QuotationController;
+use App\Http\Controllers\Admin\ReceivableController;
 use App\Http\Controllers\Admin\RequirementApprovalController;
 use App\Http\Controllers\Admin\RequirementAttachmentController;
 use App\Http\Controllers\Admin\RequirementController;
@@ -2184,6 +2189,326 @@ Route::middleware([
                 )
                     ->middleware(
                         'permission:non-labor-costs.export'
+                    )
+                    ->name('pdf');
+            });
+
+        Route::prefix('invoices')
+            ->name('invoices.')
+            ->group(function (): void {
+                Route::get(
+                    'export/excel',
+                    [
+                        InvoiceController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '/',
+                    [
+                        InvoiceController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    'create',
+                    [
+                        InvoiceController::class,
+                        'create',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.create'
+                    )
+                    ->name('create');
+
+                Route::post(
+                    '/',
+                    [
+                        InvoiceController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{invoice}',
+                    [
+                        InvoiceController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.view'
+                    )
+                    ->name('show');
+
+                Route::put(
+                    '{invoice}',
+                    [
+                        InvoiceController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.update'
+                    )
+                    ->name('update');
+
+                Route::delete(
+                    '{invoice}',
+                    [
+                        InvoiceController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.delete'
+                    )
+                    ->name('destroy');
+
+                Route::post(
+                    '{invoice}/issue',
+                    [
+                        InvoiceController::class,
+                        'issue',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.issue'
+                    )
+                    ->name('issue');
+
+                Route::post(
+                    '{invoice}/send',
+                    [
+                        InvoiceController::class,
+                        'send',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.send'
+                    )
+                    ->name('send');
+
+                Route::get(
+                    '{invoice}/pdf',
+                    [
+                        InvoiceController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.view'
+                    )
+                    ->name('pdf');
+
+                Route::post(
+                    '{invoice}/lines',
+                    [
+                        InvoiceLineController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.update'
+                    )
+                    ->name('lines.store');
+
+                Route::put(
+                    '{invoice}/lines/{line}',
+                    [
+                        InvoiceLineController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.update'
+                    )
+                    ->name('lines.update');
+
+                Route::delete(
+                    '{invoice}/lines/{line}',
+                    [
+                        InvoiceLineController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.update'
+                    )
+                    ->name('lines.destroy');
+
+                Route::post(
+                    '{invoice}/expenses/{expense}/import',
+                    [
+                        InvoiceController::class,
+                        'importExpense',
+                    ]
+                )
+                    ->middleware(
+                        'permission:invoices.update'
+                    )
+                    ->name(
+                        'expenses.import'
+                    );
+            });
+
+        Route::prefix('payments')
+            ->name('payments.')
+            ->group(function (): void {
+                Route::get(
+                    'export/excel',
+                    [
+                        PaymentController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '/',
+                    [
+                        PaymentController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        PaymentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{payment}',
+                    [
+                        PaymentController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.view'
+                    )
+                    ->name('show');
+
+                Route::get(
+                    '{payment}/pdf',
+                    [
+                        PaymentController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.view'
+                    )
+                    ->name('pdf');
+
+                Route::post(
+                    '{payment}/send-receipt',
+                    [
+                        PaymentController::class,
+                        'sendReceipt',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.receipt.send'
+                    )
+                    ->name(
+                        'send-receipt'
+                    );
+
+                Route::post(
+                    '{payment}/allocations',
+                    [
+                        PaymentAllocationController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.allocate'
+                    )
+                    ->name(
+                        'allocations.store'
+                    );
+
+                Route::delete(
+                    '{payment}/allocations/{allocation}',
+                    [
+                        PaymentAllocationController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payments.allocate'
+                    )
+                    ->name(
+                        'allocations.destroy'
+                    );
+            });
+
+        Route::prefix('receivables')
+            ->name('receivables.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ReceivableController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:receivables.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ReceivableController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:receivables.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ReceivableController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:receivables.export'
                     )
                     ->name('pdf');
             });

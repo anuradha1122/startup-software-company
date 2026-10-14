@@ -121,3 +121,22 @@ Only approved ProjectExpense records contribute to actual project
 non-labor cost.
 
 M11 consumes M08 labor cost and M09 approved non-labor cost.
+
+## M10 Architecture
+
+Client
+→ Invoice
+→ InvoiceLine
+
+M09 ProjectExpense
+→ optional explicit InvoiceLine import
+
+Client
+→ Payment
+→ PaymentAllocation
+→ Invoice
+
+Outstanding receivables are derived from issued invoices with positive
+balance_due.
+
+M11 consumes M10 revenue/billing information for profitability.

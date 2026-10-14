@@ -78,3 +78,13 @@ M09 manages project non-labor expenses and supplier costs.
 
 Approved M09 costs combine with approved M08 labor costs in M11
 project profitability.
+
+## M10
+
+M10 manages client invoices, payment recording and accounts receivable.
+
+Invoices may contain manually entered service lines or explicitly
+imported approved M09 billable expenses.
+
+Payments are separately recorded and allocated against outstanding
+invoices.

@@ -278,3 +278,42 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M10
+
+- [ ] Invoice number generated
+- [ ] Draft invoice creates
+- [ ] Client/project relationship validated
+- [ ] Billing contact validated
+- [ ] Invoice line calculation correct
+- [ ] Invoice totals recalculate
+- [ ] Empty invoice issue rejected
+- [ ] Invoice issue locks invoice
+- [ ] Invoice email queued
+- [ ] Invoice PDF generated
+- [ ] Invoice Excel generated
+- [ ] Approved billable M09 expense imports
+- [ ] Unapproved M09 expense rejected
+- [ ] Non-billable M09 expense rejected
+- [ ] Duplicate expense invoice prevented
+- [ ] Payment number generated
+- [ ] Payment creates
+- [ ] Same-client allocation works
+- [ ] Cross-client allocation rejected
+- [ ] Currency mismatch rejected
+- [ ] Excess payment allocation rejected
+- [ ] Excess invoice allocation rejected
+- [ ] Partial payment status works
+- [ ] Full payment status works
+- [ ] Removing allocation restores balance
+- [ ] Receipt PDF generated
+- [ ] Receipt email queued
+- [ ] Outstanding receivable listing works
+- [ ] Overdue command works
+- [ ] Receivables Excel works
+- [ ] Receivables PDF works
+- [ ] M01-M09 regressions pass
+- [ ] Full PHP suite passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

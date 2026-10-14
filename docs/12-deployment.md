@@ -87,3 +87,17 @@ Expense evidence uses private local storage.
 No public storage link is required.
 
 M09 requires supplier and expense document sequences.
+
+## M10 Deployment Notes
+
+M10 uses the existing queue worker for invoice and receipt emails.
+
+The scheduler must run Laravel scheduled tasks so overdue invoice status
+is refreshed daily.
+
+Required scheduled command:
+
+invoices:mark-overdue
+
+Production cron should continue invoking Laravel schedule:run according
+to the application's deployment standard.

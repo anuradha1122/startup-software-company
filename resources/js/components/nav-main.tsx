@@ -9,7 +9,7 @@ import type { NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
 
 export function NavMain({
-    items = [],
+    items,
     label,
 }: {
     items: NavItem[];
@@ -42,7 +42,6 @@ export function NavMain({
                             >
                                 <Link href={item.href} prefetch>
                                     {item.icon && <item.icon />}
-
                                     <span>{item.title}</span>
                                 </Link>
                             </SidebarMenuButton>

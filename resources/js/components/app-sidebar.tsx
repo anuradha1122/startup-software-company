@@ -16,6 +16,9 @@ import {
     UsersRound,
     Clock3,
     Truck,
+    Banknote,
+    FileText,
+    WalletCards,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -198,6 +201,32 @@ export function AppSidebar() {
         });
     }
 
+    const billingNavItems: NavItem[] = [];
+
+    if (can('invoices.view')) {
+        billingNavItems.push({
+            title: 'Invoices',
+            href: '/admin/invoices',
+            icon: FileText,
+        });
+    }
+
+    if (can('payments.view')) {
+        billingNavItems.push({
+            title: 'Payments',
+            href: '/admin/payments',
+            icon: WalletCards,
+        });
+    }
+
+    if (can('receivables.view')) {
+        billingNavItems.push({
+            title: 'Receivables',
+            href: '/admin/receivables',
+            icon: Banknote,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -237,6 +266,10 @@ export function AppSidebar() {
 
                 {financeOpsNavItems.length > 0 && (
                     <NavMain items={financeOpsNavItems} label="Costs" />
+                )}
+
+                {billingNavItems.length > 0 && (
+                    <NavMain items={billingNavItems} label="Billing" />
                 )}
 
                 {administrationNavItems.length > 0 && (

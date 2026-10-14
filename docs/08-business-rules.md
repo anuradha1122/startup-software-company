@@ -196,3 +196,30 @@
 14. Billable-to-client does not automatically create an invoice.
 15. Supplier invoices and receipts are not automatically client-visible.
 16. M11 combines M08 labor cost with M09 approved non-labor cost.
+
+## M10
+
+1. Invoices belong to a client.
+2. Project invoices derive the client from the project.
+3. Draft invoices may be edited.
+4. Issued invoices are immutable under the ordinary edit workflow.
+5. Invoice totals are recalculated from invoice lines.
+6. Invoices must contain at least one line before issue.
+7. Invoice totals must be greater than zero.
+8. Approved M09 billable expenses may be imported explicitly.
+9. M09 expenses are never invoiced automatically.
+10. A single M09 expense cannot be imported into multiple invoices.
+11. Expense and invoice currencies must match.
+12. Issuing an invoice establishes its initial receivable balance.
+13. Payments belong to a client.
+14. Payment and invoice clients must match for allocation.
+15. Payment and invoice currencies must match.
+16. Allocation cannot exceed payment unallocated balance.
+17. Allocation cannot exceed invoice outstanding balance.
+18. Partial allocation sets invoice status to partially_paid unless overdue.
+19. Full allocation sets invoice status to paid.
+20. Past-due outstanding invoices become overdue.
+21. Removing an allocation restores the outstanding invoice balance.
+22. Invoice PDF contains client-facing billing data only.
+23. M08 internal labor cost must never appear on invoices.
+24. M09 supplier evidence/internal supplier documents must never appear on invoices.

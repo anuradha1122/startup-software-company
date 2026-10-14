@@ -97,3 +97,30 @@ Approval status must not rely on color alone.
 
 Private supporting documents must be presented as authenticated
 downloads.
+
+## M10 UI
+
+Invoice pages should clearly show:
+
+- invoice number
+- client
+- project
+- invoice date
+- due date
+- status
+- subtotal
+- tax
+- total
+- paid amount
+- balance
+
+Payment pages should show:
+
+- receipt number
+- client
+- amount
+- allocated amount
+- unallocated amount
+- allocation history
+
+Overdue state must not rely on color alone.

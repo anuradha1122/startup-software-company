@@ -66,3 +66,13 @@ Existing projects should receive a project-manager assignment before
 M07 task-assignee enforcement is enabled in a production upgrade.
 
 Fresh installations receive this automatically through project setup.
+
+## M08 Deployment Notes
+
+M08 uses the existing queue worker for timesheet submission,
+approval and rejection notifications.
+
+No public file storage is introduced.
+
+Internal cost permissions should be restricted to authorized finance,
+management and project-governance roles.

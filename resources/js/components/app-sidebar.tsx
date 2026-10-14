@@ -14,6 +14,7 @@ import {
     BriefcaseBusiness,
     ListTodo,
     UsersRound,
+    Clock3,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -168,6 +169,16 @@ export function AppSidebar() {
         });
     }
 
+    const workNavItems: NavItem[] = [];
+
+    if (can('timesheets.view-own') || can('timesheets.view-all')) {
+        workNavItems.push({
+            title: 'Timesheets',
+            href: '/admin/timesheets',
+            icon: Clock3,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -199,6 +210,10 @@ export function AppSidebar() {
 
                 {peopleNavItems.length > 0 && (
                     <NavMain items={peopleNavItems} label="People" />
+                )}
+
+                {workNavItems.length > 0 && (
+                    <NavMain items={workNavItems} label="Work" />
                 )}
 
                 {administrationNavItems.length > 0 && (

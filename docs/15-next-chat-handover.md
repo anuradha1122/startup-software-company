@@ -273,3 +273,47 @@ assignments.
 
 Internal costing must remain private and must not be exposed on client
 documents or portal screens.
+
+## Current Module
+
+M08 — Timesheets & Internal Costing
+
+## Completion Gate
+
+Before M09:
+
+1. weekly timesheet creation tested
+2. project assignment validation tested
+3. project task validation tested
+4. work-date validation tested
+5. daily-hour limit tested
+6. cost-rate period validation tested
+7. submission workflow tested
+8. approval workflow tested
+9. rejection/resubmission tested
+10. historical cost snapshot tested
+11. approved-project-cost aggregation tested
+12. timesheet PDF checked
+13. timesheet Excel checked
+14. internal cost PDF checked
+15. internal cost Excel checked
+16. employee export privacy checked
+17. queued notifications tested
+18. M01-M07 regressions pass
+19. full PHP suite passes
+20. TypeScript passes
+21. production build passes
+22. npm run check passes
+23. M08 Git commit created
+
+## Next Module
+
+M09 — Expenses & Supplier Costs
+
+M09 will add non-labor project costs.
+
+M11 profitability will later combine:
+
+- M08 approved internal labor cost
+- M09 approved expense/supplier cost
+- M10 invoice/payment revenue

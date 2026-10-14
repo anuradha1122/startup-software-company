@@ -199,3 +199,18 @@ A user has at most one assignment record per project.
 
 Historical project assignment records are retained through status and
 soft deletes.
+
+## M08 Tables
+
+- resource_cost_rates
+- timesheets
+- timesheet_entries
+
+Resource cost rates are effective-dated.
+
+Timesheets are unique per user and week.
+
+Timesheet entries retain project, task and project-assignment
+references.
+
+Approved entries snapshot hourly cost rate, currency and internal cost.

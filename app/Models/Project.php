@@ -178,6 +178,13 @@ class Project extends Model
         );
     }
 
+    public function timesheetEntries(): HasMany
+    {
+        return $this->hasMany(
+            TimesheetEntry::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

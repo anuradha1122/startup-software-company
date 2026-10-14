@@ -174,6 +174,13 @@ export default function ProjectShow({ project, users }: any) {
                         >
                             Project Team
                         </Link>
+
+                        <Link
+                            href={`/admin/projects/${project.public_id}/internal-costs`}
+                            className="rounded border px-3 py-2"
+                        >
+                            Internal Costs
+                        </Link>
                     </div>
                 </div>
 

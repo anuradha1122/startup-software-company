@@ -155,3 +155,24 @@
 13. Resource profiles contain operational capability information only.
 14. Salary, payroll, leave, attendance, banking and HR employment fields
     belong to M15.
+
+## M08
+
+1. A user may have one timesheet per week.
+2. Timesheet weeks run Monday through Sunday.
+3. Draft/rejected timesheets may be edited.
+4. Submitted/approved timesheets are locked.
+5. Time entries must fall within the timesheet week.
+6. Entries require a valid M07 project assignment on the work date.
+7. Entries require a valid M06 task belonging to the selected project.
+8. Total logged time may not exceed 24 hours per day.
+9. Empty timesheets cannot be submitted.
+10. Submission requires an internal cost rate for every entry date.
+11. Internal cost is calculated only on approval.
+12. Approved entries snapshot the effective hourly cost rate.
+13. Historical cost snapshots must not change when later cost rates change.
+14. Rejected timesheets may be corrected and resubmitted.
+15. Only approved entries contribute to internal project cost.
+16. Internal cost rates are not salary or payroll values.
+17. Internal cost information must never appear in client-facing outputs.
+18. M11 consumes approved M08 internal cost for profitability.

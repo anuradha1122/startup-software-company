@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ProjectAssignmentController;
 use App\Http\Controllers\Admin\ProjectCharterController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ProjectDecisionController;
+use App\Http\Controllers\Admin\ProjectInternalCostController;
 use App\Http\Controllers\Admin\ProjectMilestoneController;
 use App\Http\Controllers\Admin\ProjectPhaseController;
 use App\Http\Controllers\Admin\ProjectRiskController;
@@ -29,8 +30,12 @@ use App\Http\Controllers\Admin\RequirementApprovalController;
 use App\Http\Controllers\Admin\RequirementAttachmentController;
 use App\Http\Controllers\Admin\RequirementController;
 use App\Http\Controllers\Admin\RequirementVersionController;
+use App\Http\Controllers\Admin\ResourceCostRateController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\TimesheetApprovalController;
+use App\Http\Controllers\Admin\TimesheetController;
+use App\Http\Controllers\Admin\TimesheetEntryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WorkSubmissionAttachmentController;
 use App\Http\Controllers\Admin\WorkSubmissionController;
@@ -1698,6 +1703,210 @@ Route::middleware([
                 )
                     ->middleware(
                         'permission:project-assignments.export'
+                    )
+                    ->name('pdf');
+            });
+
+        Route::prefix('timesheets')
+            ->name('timesheets.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        TimesheetController::class,
+                        'index',
+                    ]
+                )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        TimesheetController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{timesheet}',
+                    [
+                        TimesheetController::class,
+                        'show',
+                    ]
+                )
+                    ->name('show');
+
+                Route::post(
+                    '{timesheet}/entries',
+                    [
+                        TimesheetEntryController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.update'
+                    )
+                    ->name('entries.store');
+
+                Route::put(
+                    '{timesheet}/entries/{entry}',
+                    [
+                        TimesheetEntryController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.update'
+                    )
+                    ->name('entries.update');
+
+                Route::delete(
+                    '{timesheet}/entries/{entry}',
+                    [
+                        TimesheetEntryController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.update'
+                    )
+                    ->name('entries.destroy');
+
+                Route::post(
+                    '{timesheet}/submit',
+                    [
+                        TimesheetApprovalController::class,
+                        'submit',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.submit'
+                    )
+                    ->name('submit');
+
+                Route::post(
+                    '{timesheet}/review',
+                    [
+                        TimesheetApprovalController::class,
+                        'review',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.review'
+                    )
+                    ->name('review');
+
+                Route::get(
+                    '{timesheet}/pdf',
+                    [
+                        TimesheetController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.export'
+                    )
+                    ->name('pdf');
+
+                Route::get(
+                    '{timesheet}/excel',
+                    [
+                        TimesheetController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:timesheets.export'
+                    )
+                    ->name('excel');
+            });
+
+        Route::prefix(
+            'people/{user}/cost-rates'
+        )
+            ->name('people.cost-rates.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ResourceCostRateController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:internal-costs.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        ResourceCostRateController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:internal-costs.manage-rates'
+                    )
+                    ->name('store');
+            });
+
+        Route::post(
+            'cost-rates/{rate}/deactivate',
+            [
+                ResourceCostRateController::class,
+                'deactivate',
+            ]
+        )
+            ->middleware(
+                'permission:internal-costs.manage-rates'
+            )
+            ->name(
+                'cost-rates.deactivate'
+            );
+
+        Route::prefix(
+            'projects/{project}/internal-costs'
+        )
+            ->name('projects.internal-costs.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ProjectInternalCostController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:internal-costs.view'
+                    )
+                    ->name('show');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ProjectInternalCostController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:internal-costs.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ProjectInternalCostController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:internal-costs.export'
                     )
                     ->name('pdf');
             });

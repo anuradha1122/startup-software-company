@@ -163,3 +163,20 @@ Implemented:
 - project team PDF
 - assignment Excel
 - M07 automated tests
+
+## M08 — Timesheets & Internal Costing
+
+Implemented:
+
+- weekly timesheets
+- task-level time entries
+- assignment/date validation
+- daily hour validation
+- timesheet workflow
+- effective-dated internal cost rates
+- approval-time cost snapshots
+- project internal cost reporting
+- timesheet PDF/Excel
+- internal cost PDF/Excel
+- queued timesheet notifications
+- M08 automated tests

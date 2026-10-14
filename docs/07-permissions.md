@@ -170,3 +170,21 @@ Estimation:
 - project-assignments.update
 - project-assignments.end
 - project-assignments.export
+
+## M08 Permissions
+
+### Timesheets
+
+- timesheets.view-own
+- timesheets.view-all
+- timesheets.create
+- timesheets.update
+- timesheets.submit
+- timesheets.review
+- timesheets.export
+
+### Internal Costing
+
+- internal-costs.view
+- internal-costs.manage-rates
+- internal-costs.export

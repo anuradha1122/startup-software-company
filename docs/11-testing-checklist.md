@@ -214,3 +214,35 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M08
+
+- [ ] Weekly timesheet creates
+- [ ] Duplicate user/week prevented
+- [ ] Entry within week accepted
+- [ ] Entry outside week rejected
+- [ ] Project assignment validated
+- [ ] Project task ownership validated
+- [ ] Daily 24-hour limit enforced
+- [ ] Empty timesheet submission blocked
+- [ ] Missing cost rate blocks submission
+- [ ] Timesheet submission works
+- [ ] Review notification queued
+- [ ] Rejection unlocks timesheet
+- [ ] Approval locks timesheet
+- [ ] Effective cost rate selected
+- [ ] Hourly cost snapshot stored
+- [ ] Internal cost calculated correctly
+- [ ] Rate changes do not alter approved history
+- [ ] Approved entries included in project cost
+- [ ] Unapproved entries excluded
+- [ ] Timesheet PDF works
+- [ ] Timesheet Excel works
+- [ ] Internal cost PDF works
+- [ ] Internal cost Excel works
+- [ ] Employee exports exclude internal cost
+- [ ] M01-M07 regression passes
+- [ ] Full PHP suite passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

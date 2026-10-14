@@ -104,3 +104,15 @@
 - Project team PDF
 - Project team Excel
 - Assignment notifications
+
+### Added — M08
+
+- Weekly timesheets
+- Project task time entries
+- Timesheet approval workflow
+- Effective-dated internal cost rates
+- Historical internal cost snapshots
+- Internal project labor costing
+- Timesheet PDF/Excel
+- Internal cost PDF/Excel
+- Timesheet notifications

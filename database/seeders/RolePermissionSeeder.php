@@ -134,6 +134,18 @@ class RolePermissionSeeder extends Seeder
             'project-assignments.update',
             'project-assignments.end',
             'project-assignments.export',
+
+            'timesheets.view-own',
+            'timesheets.view-all',
+            'timesheets.create',
+            'timesheets.update',
+            'timesheets.submit',
+            'timesheets.review',
+            'timesheets.export',
+
+            'internal-costs.view',
+            'internal-costs.manage-rates',
+            'internal-costs.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -248,6 +260,17 @@ class RolePermissionSeeder extends Seeder
                 'project-assignments.update',
                 'project-assignments.end',
                 'project-assignments.export',
+
+                'timesheets.view-own',
+                'timesheets.view-all',
+                'timesheets.create',
+                'timesheets.update',
+                'timesheets.submit',
+                'timesheets.review',
+                'timesheets.export',
+
+                'internal-costs.view',
+                'internal-costs.export',
             ]);
 
         Role::findByName('Sales')
@@ -285,6 +308,12 @@ class RolePermissionSeeder extends Seeder
 
                 'people.view',
                 'project-assignments.view',
+
+                'timesheets.view-own',
+                'timesheets.create',
+                'timesheets.update',
+                'timesheets.submit',
+                'timesheets.export',
             ]);
 
         Role::findByName('Finance')
@@ -306,6 +335,17 @@ class RolePermissionSeeder extends Seeder
 
                 'project-assignments.view',
                 'project-assignments.export',
+
+                'timesheets.view-own',
+                'timesheets.view-all',
+                'timesheets.create',
+                'timesheets.update',
+                'timesheets.submit',
+                'timesheets.export',
+
+                'internal-costs.view',
+                'internal-costs.manage-rates',
+                'internal-costs.export',
             ]);
 
         Role::findByName('Director')

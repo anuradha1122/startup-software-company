@@ -157,3 +157,30 @@ Frontend:
 PDF:
 
 - pdf/project-team.blade.php
+
+## M08
+
+Backend:
+
+- Models/ResourceCostRate
+- Models/Timesheet
+- Models/TimesheetEntry
+- Controllers/Admin/Timesheet\*
+- Controllers/Admin/ResourceCostRateController
+- Controllers/Admin/ProjectInternalCostController
+- Services/Timesheets
+- Notifications/Timesheet\*
+- Exports/TimesheetExport
+- Exports/ProjectInternalCostExport
+
+Frontend:
+
+- pages/admin/timesheets
+- pages/admin/people/cost-rates
+- pages/admin/projects/internal-costs
+- components/m08
+
+PDF:
+
+- pdf/timesheet.blade.php
+- pdf/project-internal-cost.blade.php

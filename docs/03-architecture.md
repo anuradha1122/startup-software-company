@@ -91,3 +91,19 @@ ProjectAssignment is the operational project membership boundary.
 
 M15 remains responsible for HR employment, attendance, leave and
 payroll.
+
+## M08 Architecture
+
+User
+→ ResourceCostRate
+
+User
+→ Timesheet
+→ TimesheetEntry
+→ ProjectAssignment
+→ ProjectTask
+
+Only approved timesheet entries contribute to internal project cost.
+
+Cost rate values are snapshotted onto approved entries to preserve
+historical profitability calculations.

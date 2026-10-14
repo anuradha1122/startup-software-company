@@ -61,3 +61,19 @@ Ended assignments remain visible as history.
 
 M06 assignee selectors must only display currently eligible project
 members.
+
+## M08 UI
+
+Timesheets should clearly display:
+
+- week
+- project
+- task
+- work date
+- hours
+- billable status
+- approval status
+
+Employee timesheet screens must not display internal hourly cost.
+
+Internal project cost screens require separate privileged access.

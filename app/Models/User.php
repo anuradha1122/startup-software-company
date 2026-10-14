@@ -86,6 +86,20 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
         );
     }
 
+    public function resourceCostRates(): HasMany
+    {
+        return $this->hasMany(
+            ResourceCostRate::class
+        );
+    }
+
+    public function timesheets(): HasMany
+    {
+        return $this->hasMany(
+            Timesheet::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

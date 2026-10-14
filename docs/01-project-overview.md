@@ -62,3 +62,12 @@ active assignment on the relevant project.
 
 HR employment administration remains outside this module and is
 reserved for M15.
+
+## M08
+
+M08 records actual project work time and converts approved hours into
+private internal project cost.
+
+Time entries reference M06 tasks and M07 project assignments.
+
+Internal cost information is never client-facing.

@@ -4,6 +4,7 @@ namespace App\Services\People;
 
 use App\Models\Project;
 use App\Models\ProjectAssignment;
+use Carbon\CarbonInterface;
 use RuntimeException;
 
 class AssignmentEligibilityService
@@ -12,17 +13,34 @@ class AssignmentEligibilityService
         Project $project,
         int $userId
     ): ?ProjectAssignment {
+        return $this->assignmentForDate(
+            $project,
+            $userId,
+            today()
+        );
+    }
+
+    public function assignmentForDate(
+        Project $project,
+        int $userId,
+        CarbonInterface $date
+    ): ?ProjectAssignment {
         return $project
             ->assignments()
             ->where(
                 'user_id',
                 $userId
             )
-            ->where(
+            ->whereIn(
                 'status',
-                'active'
+                [
+                    'active',
+                    'ended',
+                ]
             )
-            ->where(function ($query): void {
+            ->where(function ($query) use (
+                $date
+            ): void {
                 $query
                     ->whereNull(
                         'start_date'
@@ -30,10 +48,12 @@ class AssignmentEligibilityService
                     ->orWhereDate(
                         'start_date',
                         '<=',
-                        today()
+                        $date->toDateString()
                     );
             })
-            ->where(function ($query): void {
+            ->where(function ($query) use (
+                $date
+            ): void {
                 $query
                     ->whereNull(
                         'end_date'
@@ -41,7 +61,7 @@ class AssignmentEligibilityService
                     ->orWhereDate(
                         'end_date',
                         '>=',
-                        today()
+                        $date->toDateString()
                     );
             })
             ->first();

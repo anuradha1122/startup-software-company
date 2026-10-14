@@ -187,3 +187,22 @@ Includes:
 - project assignment notifications
 - project team PDF
 - project assignment Excel
+
+## M08 — Timesheets & Internal Costing
+
+Includes:
+
+- weekly timesheets
+- task-level time entries
+- project-assignment validation
+- daily hour validation
+- timesheet submission
+- approval/rejection
+- effective-dated internal hourly cost rates
+- historical cost snapshots
+- internal project cost reporting
+- timesheet PDF
+- timesheet Excel
+- internal cost PDF
+- internal cost Excel
+- queued review notifications

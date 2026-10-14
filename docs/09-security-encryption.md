@@ -129,3 +129,21 @@ It does not store:
 People and assignment mutations require explicit permissions.
 
 Project team exports are audited.
+
+## M08 Security
+
+Internal hourly cost and project labor cost are confidential internal
+finance information.
+
+They must not appear in:
+
+- proposals
+- quotations
+- contracts
+- client-facing project PDFs
+- client portal data
+- employee-facing timesheet exports
+
+Access requires internal-cost permissions.
+
+Cost-rate changes and cost exports are audited.

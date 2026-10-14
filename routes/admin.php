@@ -15,7 +15,11 @@ use App\Http\Controllers\Admin\PeopleController;
 use App\Http\Controllers\Admin\ProjectAssignmentController;
 use App\Http\Controllers\Admin\ProjectCharterController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ProjectCostController;
 use App\Http\Controllers\Admin\ProjectDecisionController;
+use App\Http\Controllers\Admin\ProjectExpenseApprovalController;
+use App\Http\Controllers\Admin\ProjectExpenseAttachmentController;
+use App\Http\Controllers\Admin\ProjectExpenseController;
 use App\Http\Controllers\Admin\ProjectInternalCostController;
 use App\Http\Controllers\Admin\ProjectMilestoneController;
 use App\Http\Controllers\Admin\ProjectPhaseController;
@@ -33,6 +37,7 @@ use App\Http\Controllers\Admin\RequirementVersionController;
 use App\Http\Controllers\Admin\ResourceCostRateController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\TimesheetApprovalController;
 use App\Http\Controllers\Admin\TimesheetController;
 use App\Http\Controllers\Admin\TimesheetEntryController;
@@ -1907,6 +1912,278 @@ Route::middleware([
                 )
                     ->middleware(
                         'permission:internal-costs.export'
+                    )
+                    ->name('pdf');
+            });
+
+        Route::prefix('suppliers')
+            ->name('suppliers.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        SupplierController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:suppliers.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    'create',
+                    [
+                        SupplierController::class,
+                        'create',
+                    ]
+                )
+                    ->middleware(
+                        'permission:suppliers.create'
+                    )
+                    ->name('create');
+
+                Route::post(
+                    '/',
+                    [
+                        SupplierController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:suppliers.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{supplier}',
+                    [
+                        SupplierController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:suppliers.view'
+                    )
+                    ->name('show');
+
+                Route::put(
+                    '{supplier}',
+                    [
+                        SupplierController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:suppliers.update'
+                    )
+                    ->name('update');
+
+                Route::delete(
+                    '{supplier}',
+                    [
+                        SupplierController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:suppliers.delete'
+                    )
+                    ->name('destroy');
+            });
+
+        Route::prefix(
+            'projects/{project}/expenses'
+        )
+            ->name('projects.expenses.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ProjectExpenseController::class,
+                        'index',
+                    ]
+                )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        ProjectExpenseController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ProjectExpenseController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ProjectExpenseController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.export'
+                    )
+                    ->name('pdf');
+            });
+
+        Route::prefix('expenses')
+            ->name('expenses.')
+            ->group(function (): void {
+                Route::get(
+                    '{expense}',
+                    [
+                        ProjectExpenseController::class,
+                        'show',
+                    ]
+                )
+                    ->name('show');
+
+                Route::put(
+                    '{expense}',
+                    [
+                        ProjectExpenseController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.update'
+                    )
+                    ->name('update');
+
+                Route::delete(
+                    '{expense}',
+                    [
+                        ProjectExpenseController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.delete'
+                    )
+                    ->name('destroy');
+
+                Route::post(
+                    '{expense}/submit',
+                    [
+                        ProjectExpenseApprovalController::class,
+                        'submit',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.submit'
+                    )
+                    ->name('submit');
+
+                Route::post(
+                    '{expense}/review',
+                    [
+                        ProjectExpenseApprovalController::class,
+                        'review',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.review'
+                    )
+                    ->name('review');
+
+                Route::post(
+                    '{expense}/attachments',
+                    [
+                        ProjectExpenseAttachmentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.attachments.manage'
+                    )
+                    ->name(
+                        'attachments.store'
+                    );
+
+                Route::get(
+                    '{expense}/attachments/{attachment}/download',
+                    [
+                        ProjectExpenseAttachmentController::class,
+                        'download',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.attachments.download'
+                    )
+                    ->name(
+                        'attachments.download'
+                    );
+
+                Route::delete(
+                    '{expense}/attachments/{attachment}',
+                    [
+                        ProjectExpenseAttachmentController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:expenses.attachments.manage'
+                    )
+                    ->name(
+                        'attachments.destroy'
+                    );
+            });
+
+        Route::prefix(
+            'projects/{project}/non-labor-costs'
+        )
+            ->name('projects.non-labor-costs.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ProjectCostController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:non-labor-costs.view'
+                    )
+                    ->name('show');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ProjectCostController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:non-labor-costs.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ProjectCostController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:non-labor-costs.export'
                     )
                     ->name('pdf');
             });

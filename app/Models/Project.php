@@ -185,6 +185,13 @@ class Project extends Model
         );
     }
 
+    public function expenses(): HasMany
+    {
+        return $this->hasMany(
+            ProjectExpense::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

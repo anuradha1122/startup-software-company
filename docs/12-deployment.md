@@ -76,3 +76,14 @@ No public file storage is introduced.
 
 Internal cost permissions should be restricted to authorized finance,
 management and project-governance roles.
+
+## M09 Deployment Notes
+
+M09 uses the existing queue worker for expense submission, approval and
+rejection notifications.
+
+Expense evidence uses private local storage.
+
+No public storage link is required.
+
+M09 requires supplier and expense document sequences.

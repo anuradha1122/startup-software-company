@@ -188,3 +188,30 @@ Estimation:
 - internal-costs.view
 - internal-costs.manage-rates
 - internal-costs.export
+
+## M09 Permissions
+
+### Suppliers
+
+- suppliers.view
+- suppliers.create
+- suppliers.update
+- suppliers.delete
+
+### Expenses
+
+- expenses.view-own
+- expenses.view-all
+- expenses.create
+- expenses.update
+- expenses.delete
+- expenses.submit
+- expenses.review
+- expenses.attachments.manage
+- expenses.attachments.download
+- expenses.export
+
+### Non-Labor Costs
+
+- non-labor-costs.view
+- non-labor-costs.export

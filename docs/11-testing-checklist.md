@@ -246,3 +246,35 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M09
+
+- [ ] Supplier creates with number
+- [ ] Supplier updates
+- [ ] Supplier with expenses cannot be deleted
+- [ ] Expense creates in draft
+- [ ] Expense number generated
+- [ ] Expense total calculated
+- [ ] Active/on-hold project accepted
+- [ ] Closed project expense creation rejected
+- [ ] Private attachment upload works
+- [ ] Attachment download permission enforced
+- [ ] Empty-evidence submission rejected
+- [ ] Submission notification queued
+- [ ] Approval works
+- [ ] Approval notification queued
+- [ ] Rejection works
+- [ ] Rejection requires notes
+- [ ] Rejected expense editable again
+- [ ] Approved expense locked
+- [ ] Approved expense included in non-labor cost
+- [ ] Unapproved expense excluded
+- [ ] Expense Excel works
+- [ ] Expense PDF works
+- [ ] Non-labor cost Excel works
+- [ ] Non-labor cost PDF works
+- [ ] M01-M08 regression passes
+- [ ] Full PHP suite passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

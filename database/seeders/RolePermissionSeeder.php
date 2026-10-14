@@ -146,6 +146,25 @@ class RolePermissionSeeder extends Seeder
             'internal-costs.view',
             'internal-costs.manage-rates',
             'internal-costs.export',
+
+            'suppliers.view',
+            'suppliers.create',
+            'suppliers.update',
+            'suppliers.delete',
+
+            'expenses.view-own',
+            'expenses.view-all',
+            'expenses.create',
+            'expenses.update',
+            'expenses.delete',
+            'expenses.submit',
+            'expenses.review',
+            'expenses.attachments.manage',
+            'expenses.attachments.download',
+            'expenses.export',
+
+            'non-labor-costs.view',
+            'non-labor-costs.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -271,6 +290,22 @@ class RolePermissionSeeder extends Seeder
 
                 'internal-costs.view',
                 'internal-costs.export',
+
+                'suppliers.view',
+
+                'expenses.view-own',
+                'expenses.view-all',
+                'expenses.create',
+                'expenses.update',
+                'expenses.delete',
+                'expenses.submit',
+                'expenses.review',
+                'expenses.attachments.manage',
+                'expenses.attachments.download',
+                'expenses.export',
+
+                'non-labor-costs.view',
+                'non-labor-costs.export',
             ]);
 
         Role::findByName('Sales')
@@ -346,6 +381,22 @@ class RolePermissionSeeder extends Seeder
                 'internal-costs.view',
                 'internal-costs.manage-rates',
                 'internal-costs.export',
+
+                'suppliers.view',
+                'suppliers.create',
+                'suppliers.update',
+
+                'expenses.view-all',
+                'expenses.create',
+                'expenses.update',
+                'expenses.submit',
+                'expenses.review',
+                'expenses.attachments.manage',
+                'expenses.attachments.download',
+                'expenses.export',
+
+                'non-labor-costs.view',
+                'non-labor-costs.export',
             ]);
 
         Role::findByName('Director')

@@ -15,6 +15,7 @@ import {
     ListTodo,
     UsersRound,
     Clock3,
+    Truck,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -179,6 +180,24 @@ export function AppSidebar() {
         });
     }
 
+    const financeOpsNavItems: NavItem[] = [];
+
+    if (can('suppliers.view')) {
+        financeOpsNavItems.push({
+            title: 'Suppliers',
+            href: '/admin/suppliers',
+            icon: Truck,
+        });
+    }
+
+    if (can('expenses.view-own') || can('expenses.view-all')) {
+        financeOpsNavItems.push({
+            title: 'Project Expenses',
+            href: '/admin/projects',
+            icon: ReceiptText,
+        });
+    }
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -214,6 +233,10 @@ export function AppSidebar() {
 
                 {workNavItems.length > 0 && (
                     <NavMain items={workNavItems} label="Work" />
+                )}
+
+                {financeOpsNavItems.length > 0 && (
+                    <NavMain items={financeOpsNavItems} label="Costs" />
                 )}
 
                 {administrationNavItems.length > 0 && (

@@ -184,3 +184,32 @@ PDF:
 
 - pdf/timesheet.blade.php
 - pdf/project-internal-cost.blade.php
+
+## M09
+
+Backend:
+
+- Models/Supplier
+- Models/ProjectExpense
+- Models/ProjectExpenseAttachment
+- Controllers/Admin/SupplierController
+- Controllers/Admin/ProjectExpenseController
+- Controllers/Admin/ProjectExpenseAttachmentController
+- Controllers/Admin/ProjectExpenseApprovalController
+- Controllers/Admin/ProjectCostController
+- Services/Expenses
+- Notifications/ProjectExpense\*
+- Exports/ProjectExpensesExport
+- Exports/ProjectNonLaborCostExport
+
+Frontend:
+
+- pages/admin/suppliers
+- pages/admin/projects/expenses
+- pages/admin/projects/non-labor-costs
+- components/m09
+
+PDF:
+
+- pdf/project-expenses.blade.php
+- pdf/project-non-labor-cost.blade.php

@@ -71,3 +71,10 @@ private internal project cost.
 Time entries reference M06 tasks and M07 project assignments.
 
 Internal cost information is never client-facing.
+
+## M09
+
+M09 manages project non-labor expenses and supplier costs.
+
+Approved M09 costs combine with approved M08 labor costs in M11
+project profitability.

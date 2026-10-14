@@ -107,3 +107,17 @@ Only approved timesheet entries contribute to internal project cost.
 
 Cost rate values are snapshotted onto approved entries to preserve
 historical profitability calculations.
+
+## M09 Architecture
+
+Supplier
+→ ProjectExpense
+→ ProjectExpenseAttachment
+
+Project
+→ ProjectExpense
+
+Only approved ProjectExpense records contribute to actual project
+non-labor cost.
+
+M11 consumes M08 labor cost and M09 approved non-labor cost.

@@ -147,3 +147,15 @@ They must not appear in:
 Access requires internal-cost permissions.
 
 Cost-rate changes and cost exports are audited.
+
+## M09 Security
+
+Receipts, supplier invoices, quotations and payment evidence use
+private storage.
+
+Downloads require explicit expense attachment permissions.
+
+Supplier and project-cost exports are audited.
+
+Internal supplier pricing and receipts must not be exposed through the
+client portal unless explicitly approved in a future workflow.

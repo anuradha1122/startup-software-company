@@ -30,6 +30,8 @@ class CompanySettingSeeder extends Seeder
             'quotation' => 'QTN-',
             'contract' => 'CON-',
             'project' => 'PRJ-',
+            'supplier' => 'SUP-',
+            'expense' => 'EXP-',
             'invoice' => 'INV-',
             'credit_note' => 'CRN-',
             'receipt' => 'RCT-',

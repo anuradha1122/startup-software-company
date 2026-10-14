@@ -317,3 +317,44 @@ M11 profitability will later combine:
 - M08 approved internal labor cost
 - M09 approved expense/supplier cost
 - M10 invoice/payment revenue
+
+## Current Module
+
+M09 — Expenses & Supplier Costs
+
+## Completion Gate
+
+Before M10:
+
+1. supplier numbering tested
+2. supplier CRUD tested
+3. expense numbering tested
+4. expense calculation tested
+5. project-state validation tested
+6. private attachments tested
+7. expense submission tested
+8. approval tested
+9. rejection tested
+10. approved-expense lock tested
+11. non-labor-cost aggregation tested
+12. expense PDF tested
+13. expense Excel tested
+14. non-labor-cost PDF tested
+15. non-labor-cost Excel tested
+16. notifications tested
+17. M01-M08 regressions pass
+18. full PHP suite passes
+19. TypeScript passes
+20. production build passes
+21. npm run check passes
+22. M09 Git commit created
+
+## Next Module
+
+M10 — Invoices, Payments & Receivables
+
+M10 will introduce client invoices, invoice lines, payment recording,
+outstanding receivables and collection status.
+
+M10 may use approved M09 billable-to-client costs as invoice inputs,
+but such expenses must never be invoiced automatically.

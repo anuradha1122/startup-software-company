@@ -214,3 +214,16 @@ Timesheet entries retain project, task and project-assignment
 references.
 
 Approved entries snapshot hourly cost rate, currency and internal cost.
+
+## M09 Tables
+
+- suppliers
+- project_expenses
+- project_expense_attachments
+
+Project expenses retain project, supplier, incurred-by and approval
+references.
+
+Expense evidence is stored privately.
+
+Approved expenses provide M11 non-labor project cost.

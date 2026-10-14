@@ -176,3 +176,23 @@
 16. Internal cost rates are not salary or payroll values.
 17. Internal cost information must never appear in client-facing outputs.
 18. M11 consumes approved M08 internal cost for profitability.
+
+## M09
+
+1. Expenses belong to a project.
+2. Expenses may be recorded only for active/on-hold projects.
+3. Expense totals are subtotal plus tax.
+4. Expense amount cannot be negative.
+5. Draft/rejected expenses are editable.
+6. Submitted/approved expenses are locked from ordinary editing.
+7. Submission requires at least one supporting attachment.
+8. Rejection requires review notes.
+9. Approved expenses contribute to actual non-labor project cost.
+10. Draft/submitted/rejected/cancelled expenses do not contribute to
+    project cost.
+11. Supplier records may be optional for internal expenses.
+12. Supplier-linked costs should identify the supplier whenever known.
+13. Expense evidence is private.
+14. Billable-to-client does not automatically create an invoice.
+15. Supplier invoices and receipts are not automatically client-visible.
+16. M11 combines M08 labor cost with M09 approved non-labor cost.

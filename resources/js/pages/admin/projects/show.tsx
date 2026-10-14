@@ -181,6 +181,20 @@ export default function ProjectShow({ project, users }: any) {
                         >
                             Internal Costs
                         </Link>
+
+                        <Link
+                            href={`/admin/projects/${project.public_id}/expenses`}
+                            className="rounded border px-3 py-2"
+                        >
+                            Expenses
+                        </Link>
+
+                        <Link
+                            href={`/admin/projects/${project.public_id}/non-labor-costs`}
+                            className="rounded border px-3 py-2"
+                        >
+                            Non-Labor Cost
+                        </Link>
                     </div>
                 </div>
 

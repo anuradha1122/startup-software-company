@@ -116,3 +116,15 @@
 - Timesheet PDF/Excel
 - Internal cost PDF/Excel
 - Timesheet notifications
+
+### Added — M09
+
+- Supplier management
+- Project expenses
+- Supplier-linked project costs
+- Private receipts/invoices
+- Expense approval workflow
+- Approved non-labor costing
+- Expense PDF/Excel
+- Non-labor cost PDF/Excel
+- Expense notifications

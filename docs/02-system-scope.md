@@ -206,3 +206,21 @@ Includes:
 - internal cost PDF
 - internal cost Excel
 - queued review notifications
+
+## M09 — Expenses & Supplier Costs
+
+Includes:
+
+- supplier directory
+- supplier numbering
+- project expenses
+- supplier-linked costs
+- expense categories
+- tax and total calculation
+- billable-to-client marker
+- private receipts and supplier invoices
+- submission workflow
+- approval/rejection
+- expense PDF/Excel
+- approved non-labor cost PDF/Excel
+- queued approval notifications

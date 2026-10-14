@@ -180,3 +180,20 @@ Implemented:
 - internal cost PDF/Excel
 - queued timesheet notifications
 - M08 automated tests
+
+## M09 — Expenses & Supplier Costs
+
+Implemented:
+
+- supplier directory
+- supplier numbering
+- project expenses
+- expense numbering
+- expense tax/total calculation
+- private expense evidence
+- submission/review workflow
+- approved non-labor project cost
+- expense PDF/Excel
+- non-labor cost PDF/Excel
+- queued expense notifications
+- M09 automated tests

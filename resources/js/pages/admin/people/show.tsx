@@ -1,4 +1,4 @@
-import { Head, useForm, Link } from "@inertiajs/react";
+import { Head, useForm, Link } from '@inertiajs/react';
 
 type ProfileForm = {
     job_title: string;
@@ -14,9 +14,9 @@ export default function PersonShow({ person, skills }: any) {
     const profile = person.resource_profile;
 
     const form = useForm<ProfileForm>({
-        job_title: profile?.job_title ?? "",
+        job_title: profile?.job_title ?? '',
 
-        department: profile?.department ?? "",
+        department: profile?.department ?? '',
 
         capacity_hours_per_week: Number(profile?.capacity_hours_per_week ?? 40),
 
@@ -24,9 +24,9 @@ export default function PersonShow({ person, skills }: any) {
             profile?.default_allocation_percent ?? 100,
         ),
 
-        seniority: profile?.seniority ?? "",
+        seniority: profile?.seniority ?? '',
 
-        bio: profile?.bio ?? "",
+        bio: profile?.bio ?? '',
 
         available_for_projects: profile?.available_for_projects ?? true,
     });
@@ -65,7 +65,7 @@ export default function PersonShow({ person, skills }: any) {
                             placeholder="Job title"
                             value={form.data.job_title}
                             onChange={(e) =>
-                                form.setData("job_title", e.target.value)
+                                form.setData('job_title', e.target.value)
                             }
                         />
 
@@ -74,7 +74,7 @@ export default function PersonShow({ person, skills }: any) {
                             placeholder="Department"
                             value={form.data.department}
                             onChange={(e) =>
-                                form.setData("department", e.target.value)
+                                form.setData('department', e.target.value)
                             }
                         />
 
@@ -86,7 +86,7 @@ export default function PersonShow({ person, skills }: any) {
                             value={form.data.capacity_hours_per_week}
                             onChange={(e) =>
                                 form.setData(
-                                    "capacity_hours_per_week",
+                                    'capacity_hours_per_week',
                                     Number(e.target.value),
                                 )
                             }
@@ -100,7 +100,7 @@ export default function PersonShow({ person, skills }: any) {
                             value={form.data.default_allocation_percent}
                             onChange={(e) =>
                                 form.setData(
-                                    "default_allocation_percent",
+                                    'default_allocation_percent',
                                     Number(e.target.value),
                                 )
                             }
@@ -110,18 +110,18 @@ export default function PersonShow({ person, skills }: any) {
                             className="rounded border p-2"
                             value={form.data.seniority}
                             onChange={(e) =>
-                                form.setData("seniority", e.target.value)
+                                form.setData('seniority', e.target.value)
                             }
                         >
                             <option value="">Seniority</option>
 
                             {[
-                                "trainee",
-                                "junior",
-                                "mid",
-                                "senior",
-                                "lead",
-                                "principal",
+                                'trainee',
+                                'junior',
+                                'mid',
+                                'senior',
+                                'lead',
+                                'principal',
                             ].map((value: string) => (
                                 <option key={value} value={value}>
                                     {value}
@@ -135,7 +135,7 @@ export default function PersonShow({ person, skills }: any) {
                                 checked={form.data.available_for_projects}
                                 onChange={(e) =>
                                     form.setData(
-                                        "available_for_projects",
+                                        'available_for_projects',
                                         e.target.checked,
                                     )
                                 }
@@ -148,7 +148,7 @@ export default function PersonShow({ person, skills }: any) {
                         className="min-h-28 w-full rounded border p-2"
                         placeholder="Operational profile notes"
                         value={form.data.bio}
-                        onChange={(e) => form.setData("bio", e.target.value)}
+                        onChange={(e) => form.setData('bio', e.target.value)}
                     />
 
                     <button className="rounded bg-primary px-4 py-2 text-primary-foreground">
@@ -182,8 +182,8 @@ export default function PersonShow({ person, skills }: any) {
                     )}
 
                     <p className="mt-4 text-sm text-muted-foreground">
-                        Available skill catalogue:{" "}
-                        {skills.map((skill: any) => skill.name).join(", ")}
+                        Available skill catalogue:{' '}
+                        {skills.map((skill: any) => skill.name).join(', ')}
                     </p>
                 </section>
 
@@ -199,12 +199,12 @@ export default function PersonShow({ person, skills }: any) {
                         >
                             <strong>{assignment.project.project_number}</strong>
 
-                            {" — "}
+                            {' — '}
 
                             {assignment.role}
 
                             <p className="text-sm text-muted-foreground">
-                                {assignment.allocation_percent}%{" · "}
+                                {assignment.allocation_percent}%{' · '}
                                 {assignment.status}
                             </p>
                         </div>

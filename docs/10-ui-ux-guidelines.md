@@ -77,3 +77,23 @@ Timesheets should clearly display:
 Employee timesheet screens must not display internal hourly cost.
 
 Internal project cost screens require separate privileged access.
+
+## M09 UI
+
+Expense screens should display:
+
+- expense number
+- project
+- date
+- type
+- supplier
+- subtotal
+- tax
+- total
+- billable flag
+- status
+
+Approval status must not rely on color alone.
+
+Private supporting documents must be presented as authenticated
+downloads.

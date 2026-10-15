@@ -36,6 +36,7 @@ class CompanySettingSeeder extends Seeder
             'credit_note' => 'CRN-',
             'receipt' => 'RCP-',
             'purchase_order' => 'PO-',
+            'client_approval' => 'APR-',
         ];
 
         foreach ($sequences as $type => $prefix) {

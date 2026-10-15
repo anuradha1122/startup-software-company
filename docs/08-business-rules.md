@@ -247,3 +247,26 @@
 18. Margin warnings use project-specific warning thresholds.
 19. Margin warnings are limited to one alert per project per day.
 20. Daily snapshots do not modify source transactions.
+
+## M12
+
+1. Client portal authentication is separate from internal user authentication.
+2. Portal users belong to exactly one client.
+3. Portal users may access only records belonging to their client.
+4. Invited users cannot sign in until password setup activates the account.
+5. Suspended or revoked users cannot access the portal.
+6. Portal projects are filtered by client ownership.
+7. Only tasks explicitly marked client_visible may be shown.
+8. Documents become visible only through explicit M12 publication.
+9. Existing internal document records are not automatically portal-visible.
+10. Expired portal documents cannot be downloaded.
+11. Draft and void invoices are not visible to portal users.
+12. Issued, partially-paid, paid and overdue invoices may be visible.
+13. Client approval summaries must be written as client-safe content.
+14. Internal source models are never automatically serialized to the portal.
+15. Only pending approvals may be answered.
+16. Rejection requires a client comment.
+17. An approval may be answered only once.
+18. Internal users may cancel only pending approval requests.
+19. Portal responses notify the internal requester.
+20. M11 profitability data must never be exposed to portal users.

@@ -203,3 +203,31 @@ Restricted values include:
 
 Exports require dedicated profitability/finance permissions and are
 audit logged.
+
+## M12 Security
+
+M12 creates a strict client-facing security boundary.
+
+Portal users use:
+
+- separate auth guard
+- separate auth provider
+- separate password-reset broker
+- client-scoped authorization
+- active-account middleware
+
+Portal documents remain on private storage.
+
+Every portal project, approval, document and invoice access must verify
+client ownership.
+
+Never expose:
+
+- internal labor rates/costs
+- supplier evidence
+- profitability
+- margin
+- internal notes
+- workforce allocations
+- internal audit data
+- bank secrets

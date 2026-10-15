@@ -454,3 +454,48 @@ M12 must expose only explicitly client-safe information.
 
 M11 internal profitability, internal labor cost, supplier cost, gross
 profit and gross margin must never be exposed to M12.
+
+## Current Module
+
+M12 — Client Portal & Approvals
+
+## Completion Gate
+
+Before M13:
+
+1. portal invitation tested
+2. password setup tested
+3. portal login tested
+4. suspension/revocation tested
+5. cross-client isolation tested
+6. project safety mapping tested
+7. client-visible tasks tested
+8. document publishing tested
+9. document expiry tested
+10. portal invoice access tested
+11. draft invoice protection tested
+12. approval request tested
+13. approval response tested
+14. duplicate response protection tested
+15. rejection comment tested
+16. approval notifications tested
+17. approval PDF tested
+18. approval Excel tested
+19. project summary PDF tested
+20. M11/internal finance leakage test passes
+21. M01-M11 regressions pass
+22. full PHP suite passes
+23. Pint passes
+24. TypeScript passes
+25. production build passes
+26. npm run check passes
+27. M12 Git commit created
+
+## Next Module
+
+M13 — Reports, Exports & Admin Operations
+
+M13 will consolidate internal reporting, administrative exports,
+operational health/status tools and cross-module administration.
+
+M13 must maintain the M12 client-portal security boundary.

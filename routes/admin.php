@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\Admin\AuditLogController;
+use App\Http\Controllers\Admin\ClientApprovalController;
 use App\Http\Controllers\Admin\ClientBillingProfileController;
 use App\Http\Controllers\Admin\ClientContactController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ClientDocumentController;
+use App\Http\Controllers\Admin\ClientPortalDocumentController;
+use App\Http\Controllers\Admin\ClientPortalUserController;
 use App\Http\Controllers\Admin\CompanySettingController;
 use App\Http\Controllers\Admin\ContractController;
 use App\Http\Controllers\Admin\ContractDocumentController;
@@ -2623,5 +2626,197 @@ Route::middleware([
                         'permission:finance.dashboard.export'
                     )
                     ->name('pdf');
+            });
+
+        Route::prefix(
+            'clients/{client}/portal-users'
+        )
+            ->name(
+                'clients.portal-users.'
+            )
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ClientPortalUserController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-users.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        ClientPortalUserController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-users.create'
+                    )
+                    ->name('store');
+
+                Route::put(
+                    '{portalUser}',
+                    [
+                        ClientPortalUserController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-users.update'
+                    )
+                    ->name('update');
+
+                Route::post(
+                    '{portalUser}/resend',
+                    [
+                        ClientPortalUserController::class,
+                        'resend',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-users.create'
+                    )
+                    ->name('resend');
+
+                Route::post(
+                    '{portalUser}/revoke',
+                    [
+                        ClientPortalUserController::class,
+                        'revoke',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-users.revoke'
+                    )
+                    ->name('revoke');
+            });
+
+        Route::prefix(
+            'projects/{project}/client-approvals'
+        )
+            ->name(
+                'projects.client-approvals.'
+            )
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ClientApprovalController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-approvals.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        ClientApprovalController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-approvals.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ClientApprovalController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-approvals.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ClientApprovalController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-approvals.export'
+                    )
+                    ->name('pdf');
+
+                Route::post(
+                    '{approval}/cancel',
+                    [
+                        ClientApprovalController::class,
+                        'cancel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-approvals.cancel'
+                    )
+                    ->name('cancel');
+            });
+
+        Route::prefix(
+            'projects/{project}/portal-documents'
+        )
+            ->name(
+                'projects.portal-documents.'
+            )
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ClientPortalDocumentController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-documents.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        ClientPortalDocumentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-documents.manage'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{document}/download',
+                    [
+                        ClientPortalDocumentController::class,
+                        'download',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-documents.download'
+                    )
+                    ->name('download');
+
+                Route::delete(
+                    '{document}',
+                    [
+                        ClientPortalDocumentController::class,
+                        'destroy',
+                    ]
+                )
+                    ->middleware(
+                        'permission:client-portal-documents.manage'
+                    )
+                    ->name('destroy');
             });
     });

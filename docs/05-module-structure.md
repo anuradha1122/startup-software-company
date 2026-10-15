@@ -280,3 +280,39 @@ PDF:
 
 - pdf/project-profitability.blade.php
 - pdf/finance-portfolio.blade.php
+
+## M12
+
+Backend:
+
+- Models/ClientPortalUser
+- Models/ClientApprovalRequest
+- Models/ClientPortalDocument
+- Controllers/Admin/ClientPortalUserController
+- Controllers/Admin/ClientApprovalController
+- Controllers/Admin/ClientPortalDocumentController
+- Controllers/Portal/AuthController
+- Controllers/Portal/PasswordResetController
+- Controllers/Portal/DashboardController
+- Controllers/Portal/ProjectController
+- Controllers/Portal/ApprovalController
+- Controllers/Portal/DocumentController
+- Controllers/Portal/InvoiceController
+- Services/Portal
+- Notifications/ClientApproval\*
+- Notifications/ClientPortalResetPasswordNotification
+- Exports/ClientApprovalsExport
+
+Frontend:
+
+- pages/portal
+- pages/admin/clients/portal-users
+- pages/admin/projects/client-approvals
+- pages/admin/projects/portal-documents
+- components/m12
+
+PDF:
+
+- pdf/client-approvals.blade.php
+- pdf/client-project-summary.blade.php
+- existing M10 pdf/invoice.blade.php reused for portal invoice download

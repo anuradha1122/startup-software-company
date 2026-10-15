@@ -119,3 +119,18 @@ Current schedule:
 00:30 finance:capture-snapshots
 
 Financial reports require no public storage.
+
+## M12 Deployment Notes
+
+M12 requires:
+
+- client_portal session guard
+- client_portal_users auth provider
+- client_portal password broker
+- queue worker for invitations and approval notifications
+- private storage access through authenticated controllers
+- HTTPS in production
+
+No public storage link is required for portal documents.
+
+Portal password reset URLs must use the production APP_URL.

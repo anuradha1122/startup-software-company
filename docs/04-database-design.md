@@ -256,3 +256,19 @@ project_financial_snapshots preserves daily profitability and cashflow
 metrics.
 
 M11 does not duplicate M08/M09/M10 source transactions.
+
+## M12 Tables
+
+- client_portal_users
+- client_password_reset_tokens
+- client_approval_requests
+- client_portal_documents
+
+Client portal users use a separate authentication provider and session
+guard.
+
+Client approval requests retain a safe client-facing summary and
+optional internal source reference.
+
+Portal documents are explicit publication records backed by private
+storage.

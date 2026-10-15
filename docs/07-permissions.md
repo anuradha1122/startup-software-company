@@ -259,3 +259,28 @@ Estimation:
 - finance.dashboard.view
 - finance.dashboard.export
 - finance.alerts.receive
+
+## M12 Permissions
+
+### Portal Users
+
+- client-portal-users.view
+- client-portal-users.create
+- client-portal-users.update
+- client-portal-users.revoke
+
+### Client Approvals
+
+- client-approvals.view
+- client-approvals.create
+- client-approvals.cancel
+- client-approvals.export
+
+### Portal Documents
+
+- client-portal-documents.view
+- client-portal-documents.manage
+- client-portal-documents.download
+
+Client portal authorization is client-scoped and does not use internal
+Spatie roles/permissions.

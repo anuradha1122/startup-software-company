@@ -193,6 +193,20 @@ class RolePermissionSeeder extends Seeder
             'finance.dashboard.view',
             'finance.dashboard.export',
             'finance.alerts.receive',
+
+            'client-portal-users.view',
+            'client-portal-users.create',
+            'client-portal-users.update',
+            'client-portal-users.revoke',
+
+            'client-approvals.view',
+            'client-approvals.create',
+            'client-approvals.cancel',
+            'client-approvals.export',
+
+            'client-portal-documents.view',
+            'client-portal-documents.manage',
+            'client-portal-documents.download',
         ];
 
         foreach ($permissions as $permission) {
@@ -340,6 +354,17 @@ class RolePermissionSeeder extends Seeder
 
                 'project-profitability.view',
                 'project-profitability.export',
+
+                'client-portal-users.view',
+
+                'client-approvals.view',
+                'client-approvals.create',
+                'client-approvals.cancel',
+                'client-approvals.export',
+
+                'client-portal-documents.view',
+                'client-portal-documents.manage',
+                'client-portal-documents.download',
             ]);
 
         Role::findByName('Sales')
@@ -459,6 +484,13 @@ class RolePermissionSeeder extends Seeder
                 'finance.dashboard.view',
                 'finance.dashboard.export',
                 'finance.alerts.receive',
+
+                'client-portal-users.view',
+
+                'client-approvals.view',
+
+                'client-portal-documents.view',
+                'client-portal-documents.download',
             ]);
 
         Role::findByName('Director')

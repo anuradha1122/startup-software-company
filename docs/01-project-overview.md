@@ -98,3 +98,13 @@ It provides internal project profitability, cost, billing, collection,
 receivable and margin reporting.
 
 M11 financial information is strictly internal.
+
+## M12
+
+M12 introduces a separate authenticated client portal.
+
+Client users can access only explicitly client-safe project information,
+published documents, issued invoices and client approval requests.
+
+Internal finance, costing, profitability, supplier and workforce data
+remain outside the portal security boundary.

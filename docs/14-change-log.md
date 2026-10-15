@@ -155,3 +155,16 @@
 - Margin alerts
 - Project profitability PDF/Excel
 - Finance portfolio PDF/Excel
+
+### Added — M12
+
+- Client portal authentication
+- Client portal user administration
+- Portal password setup
+- Client project dashboard
+- Published client documents
+- Client invoice access
+- Client approval workflow
+- Approval notifications
+- Approval PDF/Excel
+- Client project summary PDF

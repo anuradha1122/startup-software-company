@@ -240,3 +240,22 @@ Implemented:
 - profitability PDF/Excel
 - finance portfolio PDF/Excel
 - M11 automated tests
+
+## M12 — Client Portal & Approvals
+
+Implemented:
+
+- separate client portal authentication
+- invitation/password setup
+- portal user suspension/revocation
+- client dashboard
+- safe project view
+- client-visible task filtering
+- published portal documents
+- portal invoice access
+- client approval requests
+- approval/rejection workflow
+- approval emails/notifications
+- approval PDF/Excel
+- client project summary PDF
+- client ownership isolation tests

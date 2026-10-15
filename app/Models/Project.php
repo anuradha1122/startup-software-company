@@ -214,6 +214,20 @@ class Project extends Model
         );
     }
 
+    public function clientApprovalRequests(): HasMany
+    {
+        return $this->hasMany(
+            ClientApprovalRequest::class
+        );
+    }
+
+    public function portalDocuments(): HasMany
+    {
+        return $this->hasMany(
+            ClientPortalDocument::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

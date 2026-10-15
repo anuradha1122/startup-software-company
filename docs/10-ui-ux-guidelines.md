@@ -147,3 +147,22 @@ Currency integrity warnings must be visible and must not rely on color
 alone.
 
 Portfolio summaries must remain grouped by currency.
+
+## M12 UI
+
+The portal must clearly distinguish:
+
+- project status
+- milestones
+- client-visible tasks
+- documents
+- invoices
+- approvals
+
+Approval decisions must require an explicit user action.
+
+Rejection must provide a visible comment field.
+
+Portal pages must not display internal navigation or admin controls.
+
+Approval status must not rely on color alone.

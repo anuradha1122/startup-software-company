@@ -271,3 +271,23 @@ Includes:
 - margin warning notifications/emails
 - project profitability PDF/Excel
 - finance portfolio PDF/Excel
+
+## M12 — Client Portal & Approvals
+
+Includes:
+
+- separate client portal authentication
+- portal invitations/password setup
+- client access suspension/revocation
+- client dashboard
+- client project summaries
+- client-visible milestones
+- client-visible tasks
+- explicit private document publication
+- portal invoice access
+- client approval requests
+- approval/rejection responses
+- approval notification emails
+- internal response notifications
+- approval Excel/PDF exports
+- client-safe project summary PDF

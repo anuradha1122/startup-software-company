@@ -354,3 +354,40 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M12
+
+- [ ] Portal invitation creates invited account
+- [ ] Invitation email queued
+- [ ] Password setup activates portal account
+- [ ] Active portal login works
+- [ ] Invalid portal login rejected
+- [ ] Suspended portal user rejected
+- [ ] Revoked portal user rejected
+- [ ] Cross-client project access blocked
+- [ ] Cross-client approval access blocked
+- [ ] Cross-client document access blocked
+- [ ] Cross-client invoice access blocked
+- [ ] Client-visible task displayed
+- [ ] Internal task excluded
+- [ ] Published document downloads
+- [ ] Expired document blocked
+- [ ] Draft invoice excluded
+- [ ] Issued invoice accessible
+- [ ] Client approval request creates
+- [ ] Approval email queued
+- [ ] Client approval response works
+- [ ] Rejection requires comment
+- [ ] Approval cannot be answered twice
+- [ ] Approval response notification queued
+- [ ] Approval cancellation works
+- [ ] Approval Excel works
+- [ ] Approval PDF works
+- [ ] Client project summary PDF works
+- [ ] M11 profitability fields absent from portal payloads
+- [ ] M01-M11 regressions pass
+- [ ] Full PHP suite passes
+- [ ] Pint passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

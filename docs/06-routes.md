@@ -404,3 +404,75 @@ The documentation must be updated in the same module response rather than deferr
 | ----------- | --------------------------- | ---------------------------------------------------------------- |
 | Daily 00:10 | `invoices:mark-overdue`     | Refresh M10 overdue invoice state                                |
 | Daily 00:30 | `finance:capture-snapshots` | Capture M11 project finance snapshots and evaluate margin alerts |
+
+## M12 – Client Portal & Approvals
+
+### Internal Client Portal User Administration
+
+| Method | URI                                                        | Permission / Authorization   |
+| ------ | ---------------------------------------------------------- | ---------------------------- |
+| GET    | `/admin/clients/{client}/portal-users`                     | `client-portal-users.view`   |
+| POST   | `/admin/clients/{client}/portal-users`                     | `client-portal-users.create` |
+| PUT    | `/admin/clients/{client}/portal-users/{portalUser}`        | `client-portal-users.update` |
+| POST   | `/admin/clients/{client}/portal-users/{portalUser}/resend` | `client-portal-users.create` |
+| POST   | `/admin/clients/{client}/portal-users/{portalUser}/revoke` | `client-portal-users.revoke` |
+
+### Internal Client Approval Administration
+
+| Method | URI                                                            | Permission / Authorization                   |
+| ------ | -------------------------------------------------------------- | -------------------------------------------- |
+| GET    | `/admin/projects/{project}/client-approvals`                   | `client-approvals.view`                      |
+| POST   | `/admin/projects/{project}/client-approvals`                   | `client-approvals.create`                    |
+| GET    | `/admin/projects/{project}/client-approvals/export/excel`      | `client-approvals.export`                    |
+| GET    | `/admin/projects/{project}/client-approvals/export/pdf`        | `client-approvals.export`                    |
+| POST   | `/admin/projects/{project}/client-approvals/{approval}/cancel` | `client-approvals.cancel` + pending approval |
+
+### Internal Portal Document Publishing
+
+| Method | URI                                                              | Permission / Authorization         |
+| ------ | ---------------------------------------------------------------- | ---------------------------------- |
+| GET    | `/admin/projects/{project}/portal-documents`                     | `client-portal-documents.view`     |
+| POST   | `/admin/projects/{project}/portal-documents`                     | `client-portal-documents.manage`   |
+| GET    | `/admin/projects/{project}/portal-documents/{document}/download` | `client-portal-documents.download` |
+| DELETE | `/admin/projects/{project}/portal-documents/{document}`          | `client-portal-documents.manage`   |
+
+### Client Portal Authentication
+
+| Method | URI                              | Access                           |
+| ------ | -------------------------------- | -------------------------------- |
+| GET    | `/portal/login`                  | Guest `client_portal`            |
+| POST   | `/portal/login`                  | Guest `client_portal`            |
+| GET    | `/portal/forgot-password`        | Guest `client_portal`            |
+| POST   | `/portal/forgot-password`        | Guest `client_portal`            |
+| GET    | `/portal/reset-password/{token}` | Guest `client_portal`            |
+| POST   | `/portal/reset-password`         | Guest `client_portal`            |
+| POST   | `/portal/logout`                 | Authenticated active portal user |
+
+### Client Portal Dashboard & Projects
+
+| Method | URI                              | Access                                    |
+| ------ | -------------------------------- | ----------------------------------------- |
+| GET    | `/portal`                        | Authenticated active portal user          |
+| GET    | `/portal/projects/{project}`     | Portal user whose client owns the project |
+| GET    | `/portal/projects/{project}/pdf` | Portal user whose client owns the project |
+
+### Client Portal Approvals
+
+| Method | URI                                    | Access                                             |
+| ------ | -------------------------------------- | -------------------------------------------------- |
+| GET    | `/portal/approvals`                    | Authenticated active portal user                   |
+| GET    | `/portal/approvals/{approval}`         | Portal user whose client owns the approval         |
+| POST   | `/portal/approvals/{approval}/respond` | Portal user whose client owns the pending approval |
+
+### Client Portal Documents
+
+| Method | URI                                     | Access                                                   |
+| ------ | --------------------------------------- | -------------------------------------------------------- |
+| GET    | `/portal/documents/{document}/download` | Same-client portal user + published/non-expired document |
+
+### Client Portal Invoices
+
+| Method | URI                              | Access                                                               |
+| ------ | -------------------------------- | -------------------------------------------------------------------- |
+| GET    | `/portal/invoices`               | Authenticated active portal user                                     |
+| GET    | `/portal/invoices/{invoice}/pdf` | Same-client portal user + issued/partially-paid/paid/overdue invoice |

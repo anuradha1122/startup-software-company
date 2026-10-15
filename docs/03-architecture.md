@@ -164,3 +164,26 @@ These sources are consolidated by ProjectProfitabilityService.
 ProjectFinancialSnapshot stores daily historical financial states.
 
 FinancePortfolioService groups portfolio totals by currency.
+
+## M12 Architecture
+
+Internal User
+→ explicit publication / approval request
+→ Client Portal Boundary
+
+ClientPortalUser
+→ Client
+→ Project
+
+ClientApprovalRequest
+→ Project
+→ Client
+→ optional internal source reference
+
+ClientPortalDocument
+→ Client
+→ optional Project
+
+Portal invoice access consumes M10 issued invoices.
+
+M12 never consumes or exposes M11 profitability values.

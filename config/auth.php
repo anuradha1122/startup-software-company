@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ClientPortalUser;
 use App\Models\User;
 
 return [
@@ -42,6 +43,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'client_portal' => [
+            'driver' => 'session',
+            'provider' => 'client_portal_users',
+        ],
     ],
 
     /*
@@ -65,6 +71,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),
+        ],
+
+        'client_portal_users' => [
+            'driver' => 'eloquent',
+            'model' => ClientPortalUser::class,
         ],
 
         // 'users' => [
@@ -96,6 +107,13 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'client_portal' => [
+            'provider' => 'client_portal_users',
+            'table' => 'client_password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
         ],

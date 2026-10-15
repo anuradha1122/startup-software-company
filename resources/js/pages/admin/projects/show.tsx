@@ -195,6 +195,13 @@ export default function ProjectShow({ project, users }: any) {
                         >
                             Non-Labor Cost
                         </Link>
+
+                        <Link
+                            href={`/admin/projects/${project.public_id}/profitability`}
+                            className="rounded border px-3 py-2"
+                        >
+                            Profitability
+                        </Link>
                     </div>
                 </div>
 

@@ -43,15 +43,15 @@ class ProjectCostController extends Controller
                 'expenses' => $expenses,
 
                 'summary' => [
-                'approved_count' => $expenses->count(),
+                    'approved_count' => $expenses->count(),
 
-                'total_non_labor_cost' => round(
-                    (float) $expenses
-                        ->sum(
-                            'total_amount'
-                        ),
-                    2
-                ),
+                    'total_non_labor_cost' => round(
+                        (float) $expenses
+                            ->sum(
+                                'total_amount'
+                            ),
+                        2
+                    ),
                 ],
             ]
         );

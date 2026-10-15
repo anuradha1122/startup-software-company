@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CompanySettingController;
 use App\Http\Controllers\Admin\ContractController;
 use App\Http\Controllers\Admin\ContractDocumentController;
 use App\Http\Controllers\Admin\EstimateController;
+use App\Http\Controllers\Admin\FinanceDashboardController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\InvoiceLineController;
 use App\Http\Controllers\Admin\LeadActivityController;
@@ -24,9 +25,12 @@ use App\Http\Controllers\Admin\ProjectDecisionController;
 use App\Http\Controllers\Admin\ProjectExpenseApprovalController;
 use App\Http\Controllers\Admin\ProjectExpenseAttachmentController;
 use App\Http\Controllers\Admin\ProjectExpenseController;
+use App\Http\Controllers\Admin\ProjectFinanceSettingController;
+use App\Http\Controllers\Admin\ProjectFinancialSnapshotController;
 use App\Http\Controllers\Admin\ProjectInternalCostController;
 use App\Http\Controllers\Admin\ProjectMilestoneController;
 use App\Http\Controllers\Admin\ProjectPhaseController;
+use App\Http\Controllers\Admin\ProjectProfitabilityController;
 use App\Http\Controllers\Admin\ProjectRiskController;
 use App\Http\Controllers\Admin\ProjectStakeholderController;
 use App\Http\Controllers\Admin\ProjectTaskCommentController;
@@ -2509,6 +2513,114 @@ Route::middleware([
                 )
                     ->middleware(
                         'permission:receivables.export'
+                    )
+                    ->name('pdf');
+            });
+
+        Route::prefix(
+            'projects/{project}/profitability'
+        )
+            ->name(
+                'projects.profitability.'
+            )
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ProjectProfitabilityController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-profitability.view'
+                    )
+                    ->name('show');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ProjectProfitabilityController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-profitability.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        ProjectProfitabilityController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-profitability.export'
+                    )
+                    ->name('pdf');
+
+                Route::post(
+                    'snapshot',
+                    [
+                        ProjectFinancialSnapshotController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-profitability.snapshot'
+                    )
+                    ->name('snapshot');
+
+                Route::put(
+                    'settings',
+                    [
+                        ProjectFinanceSettingController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:project-finance-settings.manage'
+                    )
+                    ->name('settings.update');
+            });
+
+        Route::prefix('finance')
+            ->name('finance.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        FinanceDashboardController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:finance.dashboard.view'
+                    )
+                    ->name('dashboard');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        FinanceDashboardController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:finance.dashboard.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    'export/pdf',
+                    [
+                        FinanceDashboardController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:finance.dashboard.export'
                     )
                     ->name('pdf');
             });

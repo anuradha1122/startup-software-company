@@ -141,3 +141,17 @@
 - Outstanding receivables
 - Overdue invoice detection
 - Invoice/payment/receivable Excel exports
+
+### Added — M11
+
+- Project profitability reporting
+- Revenue/cost consolidation
+- Gross profit and gross margin
+- Unbilled revenue
+- Collection metrics
+- Currency-integrity checking
+- Financial snapshots
+- Margin threshold configuration
+- Margin alerts
+- Project profitability PDF/Excel
+- Finance portfolio PDF/Excel

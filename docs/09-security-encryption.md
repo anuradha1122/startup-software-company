@@ -176,3 +176,30 @@ They must never contain:
 Payment and receivable access requires explicit billing permissions.
 
 Invoice/payment exports are internal administrative reports.
+
+## M11 Security
+
+Project profitability is confidential internal financial information.
+
+It must never be exposed through:
+
+- client portal
+- client invoice
+- proposal
+- quotation
+- contract PDF
+- client project reports
+- client-facing email
+
+Restricted values include:
+
+- internal labor cost
+- internal hourly rates
+- supplier cost
+- gross profit
+- gross margin
+- cost consumption
+- profitability snapshots
+
+Exports require dedicated profitability/finance permissions and are
+audit logged.

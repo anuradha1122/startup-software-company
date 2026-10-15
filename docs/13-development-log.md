@@ -217,3 +217,26 @@ Implemented:
 - overdue invoice scheduler
 - Excel exports
 - M10 automated tests
+
+## M11 — Project Profitability & Finance
+
+Implemented:
+
+- project profitability engine
+- contracted revenue
+- invoiced revenue
+- collected cash
+- M08 labor cost integration
+- M09 non-labor cost integration
+- M10 billing/payment integration
+- gross profit/margin
+- unbilled revenue
+- receivables
+- collection percentage
+- currency-integrity validation
+- daily financial snapshots
+- configurable margin thresholds
+- margin warning notifications/email
+- profitability PDF/Excel
+- finance portfolio PDF/Excel
+- M11 automated tests

@@ -88,3 +88,13 @@ imported approved M09 billable expenses.
 
 Payments are separately recorded and allocated against outstanding
 invoices.
+
+## M11
+
+M11 consolidates project financial information from M05, M08, M09 and
+M10.
+
+It provides internal project profitability, cost, billing, collection,
+receivable and margin reporting.
+
+M11 financial information is strictly internal.

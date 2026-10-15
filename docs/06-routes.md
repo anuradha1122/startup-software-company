@@ -377,3 +377,30 @@ The documentation must be updated in the same module response rather than deferr
 | Schedule    | Command                 | Purpose                                                          |
 | ----------- | ----------------------- | ---------------------------------------------------------------- |
 | Daily 00:10 | `invoices:mark-overdue` | Refresh issued/partially-paid invoices and mark overdue balances |
+
+## M11 – Project Profitability & Finance
+
+### Project Profitability
+
+| Method | URI                                                    | Permission / Authorization        |
+| ------ | ------------------------------------------------------ | --------------------------------- |
+| GET    | `/admin/projects/{project}/profitability`              | `project-profitability.view`      |
+| GET    | `/admin/projects/{project}/profitability/export/excel` | `project-profitability.export`    |
+| GET    | `/admin/projects/{project}/profitability/export/pdf`   | `project-profitability.export`    |
+| POST   | `/admin/projects/{project}/profitability/snapshot`     | `project-profitability.snapshot`  |
+| PUT    | `/admin/projects/{project}/profitability/settings`     | `project-finance-settings.manage` |
+
+### Finance Portfolio
+
+| Method | URI                           | Permission                 |
+| ------ | ----------------------------- | -------------------------- |
+| GET    | `/admin/finance`              | `finance.dashboard.view`   |
+| GET    | `/admin/finance/export/excel` | `finance.dashboard.export` |
+| GET    | `/admin/finance/export/pdf`   | `finance.dashboard.export` |
+
+### Scheduled Finance Operations
+
+| Schedule    | Command                     | Purpose                                                          |
+| ----------- | --------------------------- | ---------------------------------------------------------------- |
+| Daily 00:10 | `invoices:mark-overdue`     | Refresh M10 overdue invoice state                                |
+| Daily 00:30 | `finance:capture-snapshots` | Capture M11 project finance snapshots and evaluate margin alerts |

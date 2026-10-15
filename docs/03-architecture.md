@@ -140,3 +140,27 @@ Outstanding receivables are derived from issued invoices with positive
 balance_due.
 
 M11 consumes M10 revenue/billing information for profitability.
+
+## M11 Architecture
+
+M05 Project
+→ Contracted Revenue
+
+M08 Approved Timesheet Entries
+→ Labor Cost
+
+M09 Approved Project Expenses
+→ Non-Labor Cost
+
+M10 Project Invoices
+→ Invoiced Revenue
+→ Outstanding Receivable
+
+M10 Payment Allocations
+→ Collected Cash
+
+These sources are consolidated by ProjectProfitabilityService.
+
+ProjectFinancialSnapshot stores daily historical financial states.
+
+FinancePortfolioService groups portfolio totals by currency.

@@ -124,3 +124,26 @@ Payment pages should show:
 - allocation history
 
 Overdue state must not rely on color alone.
+
+## M11 UI
+
+Project profitability screens should clearly distinguish:
+
+- contracted revenue
+- invoiced revenue
+- collected cash
+- labor cost
+- non-labor cost
+- actual cost
+- gross profit
+- gross margin
+- receivable
+- unbilled revenue
+
+Revenue, billing and cash collection must not be presented as equivalent
+concepts.
+
+Currency integrity warnings must be visible and must not rely on color
+alone.
+
+Portfolio summaries must remain grouped by currency.

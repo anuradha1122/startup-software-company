@@ -410,3 +410,47 @@ M11 will combine:
 
 to produce project-level revenue, cost, gross profit, margin,
 receivable and collection reporting.
+
+## Current Module
+
+M11 — Project Profitability & Finance
+
+## Completion Gate
+
+Before M12:
+
+1. M05 contract baseline tested
+2. M08 approved labor integration tested
+3. M09 approved cost integration tested
+4. M10 invoice integration tested
+5. M10 payment-allocation integration tested
+6. gross-profit calculation tested
+7. margin calculation tested
+8. receivable calculation tested
+9. collection percentage tested
+10. currency mismatch tested
+11. snapshots tested
+12. snapshot currency gate tested
+13. portfolio currency grouping tested
+14. margin settings tested
+15. margin alerts tested
+16. profitability PDF tested
+17. profitability Excel tested
+18. finance PDF tested
+19. finance Excel tested
+20. M01-M10 regressions pass
+21. full PHP suite passes
+22. Pint passes
+23. TypeScript passes
+24. production build passes
+25. npm run check passes
+26. M11 Git commit created
+
+## Next Module
+
+M12 — Client Portal & Approvals
+
+M12 must expose only explicitly client-safe information.
+
+M11 internal profitability, internal labor cost, supplier cost, gross
+profit and gross margin must never be exposed to M12.

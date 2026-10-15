@@ -249,3 +249,34 @@ PDF:
 - pdf/invoice.blade.php
 - pdf/payment-receipt.blade.php
 - pdf/receivables.blade.php
+
+## M11
+
+Backend:
+
+- Models/ProjectFinanceSetting
+- Models/ProjectFinancialSnapshot
+- Controllers/Admin/ProjectProfitabilityController
+- Controllers/Admin/FinanceDashboardController
+- Controllers/Admin/ProjectFinanceSettingController
+- Controllers/Admin/ProjectFinancialSnapshotController
+- Services/Finance/ProjectFinancialResult
+- Services/Finance/ProjectProfitabilityService
+- Services/Finance/ProjectFinancialSnapshotService
+- Services/Finance/FinancePortfolioService
+- Services/Finance/ProjectMarginAlertService
+- Notifications/ProjectMarginAlertNotification
+- Exports/ProjectProfitabilityExport
+- Exports/FinancePortfolioExport
+- Console/Commands/CaptureProjectFinancialSnapshots
+
+Frontend:
+
+- pages/admin/projects/profitability
+- pages/admin/finance
+- components/m11
+
+PDF:
+
+- pdf/project-profitability.blade.php
+- pdf/finance-portfolio.blade.php

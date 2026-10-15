@@ -43,19 +43,19 @@ class ProjectInternalCostController extends Controller
                 'entries' => $entries,
 
                 'summary' => [
-                'hours' => round(
-                    (float) $entries
-                        ->sum('hours'),
-                    2
-                ),
+                    'hours' => round(
+                        (float) $entries
+                            ->sum('hours'),
+                        2
+                    ),
 
-                'internal_cost' => round(
-                    (float) $entries
-                        ->sum(
-                            'internal_cost_amount'
-                        ),
-                    2
-                ),
+                    'internal_cost' => round(
+                        (float) $entries
+                            ->sum(
+                                'internal_cost_amount'
+                            ),
+                        2
+                    ),
                 ],
             ]
         );

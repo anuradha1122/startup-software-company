@@ -15,3 +15,7 @@ Schedule::command('leads:send-reminders')
 Schedule::command(
     'invoices:mark-overdue'
 )->dailyAt('00:10');
+
+Schedule::command(
+    'finance:capture-snapshots'
+)->dailyAt('00:30');

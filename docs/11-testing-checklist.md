@@ -317,3 +317,40 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M11
+
+- [ ] Contracted revenue calculated
+- [ ] Approved M08 labor cost included
+- [ ] Unapproved M08 labor excluded
+- [ ] Approved M09 non-labor cost included
+- [ ] Unapproved M09 cost excluded
+- [ ] Draft M10 invoices excluded
+- [ ] Issued M10 invoices included
+- [ ] Void invoices excluded
+- [ ] Project payment allocations counted as collected cash
+- [ ] Unallocated payments excluded
+- [ ] Actual cost calculation correct
+- [ ] Gross profit calculation correct
+- [ ] Gross margin calculation correct
+- [ ] Unbilled revenue correct
+- [ ] Outstanding receivable correct
+- [ ] Collection percentage correct
+- [ ] Currency mismatch detected
+- [ ] Foreign-currency source excluded from same-currency aggregate
+- [ ] Snapshot creates
+- [ ] One snapshot per project/day
+- [ ] Snapshot blocked on currency mismatch
+- [ ] Finance dashboard groups by currency
+- [ ] Margin settings update
+- [ ] Margin warning notification/email queued
+- [ ] Duplicate same-day margin alert prevented
+- [ ] Project profitability Excel works
+- [ ] Project profitability PDF works
+- [ ] Finance portfolio Excel works
+- [ ] Finance portfolio PDF works
+- [ ] M01-M10 regressions pass
+- [ ] Full PHP suite passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

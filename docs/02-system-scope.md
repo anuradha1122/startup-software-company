@@ -247,3 +247,27 @@ Includes:
 - overdue detection
 - Excel/PDF reports
 - queued notifications and emails
+
+## M11 — Project Profitability & Finance
+
+Includes:
+
+- contracted revenue
+- invoiced revenue
+- collected cash
+- approved labor cost
+- approved non-labor cost
+- actual project cost
+- gross profit
+- gross margin
+- unbilled revenue
+- outstanding receivables
+- collection percentage
+- cost consumption percentage
+- invoice progress percentage
+- multi-currency integrity checking
+- daily financial snapshots
+- configurable project margin thresholds
+- margin warning notifications/emails
+- project profitability PDF/Excel
+- finance portfolio PDF/Excel

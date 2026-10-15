@@ -19,6 +19,7 @@ import {
     Banknote,
     FileText,
     WalletCards,
+    ChartNoAxesCombined,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -225,6 +226,14 @@ export function AppSidebar() {
             href: '/admin/receivables',
             icon: Banknote,
         });
+
+        if (can('finance.dashboard.view')) {
+            billingNavItems.push({
+                title: 'Finance',
+                href: '/admin/finance',
+                icon: ChartNoAxesCombined,
+            });
+        }
     }
 
     return (

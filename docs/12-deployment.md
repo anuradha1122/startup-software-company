@@ -101,3 +101,21 @@ invoices:mark-overdue
 
 Production cron should continue invoking Laravel schedule:run according
 to the application's deployment standard.
+
+## M11 Deployment Notes
+
+M11 uses the existing queue worker for margin warning mail and database
+notifications.
+
+Laravel scheduler must execute:
+
+finance:capture-snapshots
+
+daily after the M10 overdue invoice refresh.
+
+Current schedule:
+
+00:10 invoices:mark-overdue
+00:30 finance:capture-snapshots
+
+Financial reports require no public storage.

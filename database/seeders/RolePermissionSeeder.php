@@ -183,6 +183,16 @@ class RolePermissionSeeder extends Seeder
 
             'receivables.view',
             'receivables.export',
+
+            'project-profitability.view',
+            'project-profitability.export',
+            'project-profitability.snapshot',
+
+            'project-finance-settings.manage',
+
+            'finance.dashboard.view',
+            'finance.dashboard.export',
+            'finance.alerts.receive',
         ];
 
         foreach ($permissions as $permission) {
@@ -327,6 +337,9 @@ class RolePermissionSeeder extends Seeder
 
                 'invoices.view',
                 'receivables.view',
+
+                'project-profitability.view',
+                'project-profitability.export',
             ]);
 
         Role::findByName('Sales')
@@ -436,6 +449,16 @@ class RolePermissionSeeder extends Seeder
 
                 'receivables.view',
                 'receivables.export',
+
+                'project-profitability.view',
+                'project-profitability.export',
+                'project-profitability.snapshot',
+
+                'project-finance-settings.manage',
+
+                'finance.dashboard.view',
+                'finance.dashboard.export',
+                'finance.alerts.receive',
             ]);
 
         Role::findByName('Director')

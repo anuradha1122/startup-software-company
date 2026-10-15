@@ -243,3 +243,16 @@ Payment allocations connect client payments to invoices.
 
 Invoice amount_paid and balance_due are maintained when allocations are
 created or removed.
+
+## M11 Tables
+
+- project_finance_settings
+- project_financial_snapshots
+
+project_finance_settings stores project-specific target/warning margins
+and alert configuration.
+
+project_financial_snapshots preserves daily profitability and cashflow
+metrics.
+
+M11 does not duplicate M08/M09/M10 source transactions.

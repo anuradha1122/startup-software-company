@@ -241,3 +241,21 @@ Estimation:
 
 - receivables.view
 - receivables.export
+
+## M11 Permissions
+
+### Project Profitability
+
+- project-profitability.view
+- project-profitability.export
+- project-profitability.snapshot
+
+### Finance Settings
+
+- project-finance-settings.manage
+
+### Finance Portfolio
+
+- finance.dashboard.view
+- finance.dashboard.export
+- finance.alerts.receive

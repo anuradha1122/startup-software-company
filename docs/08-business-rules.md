@@ -223,3 +223,27 @@
 22. Invoice PDF contains client-facing billing data only.
 23. M08 internal labor cost must never appear on invoices.
 24. M09 supplier evidence/internal supplier documents must never appear on invoices.
+
+## M11
+
+1. Project profitability is internal-only.
+2. Contracted revenue comes from the M05 project commercial baseline.
+3. Labor cost comes only from approved M08 timesheet entries.
+4. Non-labor cost comes only from approved M09 project expenses.
+5. Invoiced revenue comes only from issued, partially-paid, paid or
+   overdue M10 invoices.
+6. Draft and void invoices are excluded from invoiced revenue.
+7. Collected cash comes from M10 payment allocations to project invoices.
+8. Unallocated client payments are not project collected cash.
+9. Actual project cost equals approved labor plus approved non-labor cost.
+10. Gross profit equals contracted revenue minus actual project cost.
+11. Gross margin uses contracted revenue as its denominator.
+12. Outstanding receivable comes from positive M10 invoice balances.
+13. Currency values must not be aggregated across currencies.
+14. M11 only aggregates values matching the project's base currency.
+15. Currency mismatches are reported separately.
+16. Financial snapshots are blocked while currency mismatches exist.
+17. Portfolio totals are grouped by currency.
+18. Margin warnings use project-specific warning thresholds.
+19. Margin warnings are limited to one alert per project per day.
+20. Daily snapshots do not modify source transactions.

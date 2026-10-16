@@ -108,3 +108,11 @@ published documents, issued invoices and client approval requests.
 
 Internal finance, costing, profitability, supplier and workforce data
 remain outside the portal security boundary.
+
+## M13
+
+M13 provides centralized internal reporting, export discovery, report
+run auditing and administrative operational health monitoring.
+
+It consolidates data from earlier modules without duplicating their
+transactional records.

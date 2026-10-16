@@ -168,3 +168,14 @@
 - Approval notifications
 - Approval PDF/Excel
 - Client project summary PDF
+
+### Added — M13
+
+- Internal Report Center
+- Project Operations report
+- Cross-module operational reporting
+- Report generation audit records
+- Report history exports
+- Admin Operations dashboard
+- Operational health checking
+- Scheduled health notifications

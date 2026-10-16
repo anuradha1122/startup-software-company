@@ -499,3 +499,58 @@ M13 will consolidate internal reporting, administrative exports,
 operational health/status tools and cross-module administration.
 
 M13 must maintain the M12 client-portal security boundary.
+
+## Current Module
+
+M13 — Reports, Exports & Admin Operations
+
+## Completion Gate
+
+Before M14:
+
+1. report center tested
+2. report permissions tested
+3. project operations report tested
+4. project operations Excel tested
+5. project operations PDF tested
+6. report run audit tested
+7. report run history tested
+8. report run Excel tested
+9. report run PDF tested
+10. database health check tested
+11. failed queue job health check tested
+12. overdue invoice check tested
+13. overdue client approval check tested
+14. finance snapshot health tested
+15. manual health check tested
+16. scheduled health command tested
+17. health notification tested
+18. duplicate alert suppression tested
+19. client portal isolation from M13 tested
+20. M01-M12 regressions pass
+21. full PHP suite passes
+22. Pint passes
+23. TypeScript passes
+24. production build passes
+25. npm run check passes
+26. M13 Git commit created
+
+## Next Module
+
+M14 — Support & Change Requests
+
+M14 will introduce:
+
+- support tickets
+- ticket conversations
+- priority/severity
+- assignment
+- SLA dates
+- client portal support access
+- project-linked change requests
+- effort/cost estimation
+- approval workflow
+- conversion of approved change requests into delivery work
+
+M14 must preserve the M12 client-data boundary and must not expose
+M11/M13 internal financial information to portal users.

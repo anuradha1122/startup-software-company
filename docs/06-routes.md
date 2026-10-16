@@ -476,3 +476,36 @@ The documentation must be updated in the same module response rather than deferr
 | ------ | -------------------------------- | -------------------------------------------------------------------- |
 | GET    | `/portal/invoices`               | Authenticated active portal user                                     |
 | GET    | `/portal/invoices/{invoice}/pdf` | Same-client portal user + issued/partially-paid/paid/overdue invoice |
+
+## M13 – Reports, Exports & Admin Operations
+
+### Report Center
+
+| Method | URI                                              | Permission / Authorization |
+| ------ | ------------------------------------------------ | -------------------------- |
+| GET    | `/admin/reports`                                 | `reports.view`             |
+| GET    | `/admin/reports/project-operations/export/excel` | `reports.export`           |
+| GET    | `/admin/reports/project-operations/export/pdf`   | `reports.export`           |
+
+### Report Run History
+
+| Method | URI                                | Permission / Authorization |
+| ------ | ---------------------------------- | -------------------------- |
+| GET    | `/admin/reports/runs`              | `report-runs.view`         |
+| GET    | `/admin/reports/runs/export/excel` | `report-runs.export`       |
+| GET    | `/admin/reports/runs/export/pdf`   | `report-runs.export`       |
+
+### Admin Operations
+
+| Method | URI                              | Permission / Authorization      |
+| ------ | -------------------------------- | ------------------------------- |
+| GET    | `/admin/operations`              | `admin-operations.view`         |
+| POST   | `/admin/operations/health-check` | `admin-operations.health-check` |
+
+### Scheduled Administrative Operations
+
+| Schedule    | Command                     | Purpose                                                                   |
+| ----------- | --------------------------- | ------------------------------------------------------------------------- |
+| Daily 00:10 | `invoices:mark-overdue`     | Refresh M10 overdue invoice state                                         |
+| Daily 00:30 | `finance:capture-snapshots` | Capture M11 financial snapshots and evaluate margin alerts                |
+| Daily 01:00 | `operations:health-check`   | Run M13 operational health checks and notify administrators when required |

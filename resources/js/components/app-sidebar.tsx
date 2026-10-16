@@ -20,6 +20,8 @@ import {
     FileText,
     WalletCards,
     ChartNoAxesCombined,
+    Activity,
+    FileChartColumn,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -83,6 +85,14 @@ export function AppSidebar() {
             title: 'Audit Log',
             href: '/admin/audit',
             icon: ClipboardList,
+        });
+    }
+
+    if (can('admin-operations.view')) {
+        administrationNavItems.push({
+            title: 'Operations',
+            href: '/admin/operations',
+            icon: Activity,
         });
     }
 
@@ -234,6 +244,14 @@ export function AppSidebar() {
                 icon: ChartNoAxesCombined,
             });
         }
+    }
+
+    if (can('reports.view')) {
+        billingNavItems.push({
+            title: 'Reports',
+            href: '/admin/reports',
+            icon: FileChartColumn,
+        });
     }
 
     return (

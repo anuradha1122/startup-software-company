@@ -231,3 +231,25 @@ Never expose:
 - workforce allocations
 - internal audit data
 - bank secrets
+
+## M13 Security
+
+M13 reports may aggregate sensitive internal commercial and operational
+information.
+
+Sensitive values include:
+
+- labor cost
+- non-labor cost
+- gross profit
+- gross margin
+- outstanding receivable
+- project staffing information
+- operational queue health
+
+M13 routes require explicit internal permissions.
+
+M13 data must never be exposed through M12 portal controllers or portal
+Inertia payloads.
+
+Report exports and manual health checks are activity logged.

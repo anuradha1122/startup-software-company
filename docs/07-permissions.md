@@ -284,3 +284,21 @@ Estimation:
 
 Client portal authorization is client-scoped and does not use internal
 Spatie roles/permissions.
+
+## M13 Permissions
+
+### Reports
+
+- reports.view
+- reports.export
+
+### Report History
+
+- report-runs.view
+- report-runs.export
+
+### Admin Operations
+
+- admin-operations.view
+- admin-operations.health-check
+- admin-operations.alerts.receive

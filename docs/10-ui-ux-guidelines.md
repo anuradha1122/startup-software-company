@@ -166,3 +166,23 @@ Rejection must provide a visible comment field.
 Portal pages must not display internal navigation or admin controls.
 
 Approval status must not rely on color alone.
+
+## M13 UI
+
+The Report Center should clearly identify:
+
+- report name
+- source module
+- description
+- available formats
+
+Admin Operations should display:
+
+- overall status
+- warning count
+- critical count
+- queue configuration
+- individual health checks
+- explanatory messages
+
+Operational status must not rely on color alone.

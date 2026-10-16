@@ -259,3 +259,22 @@ Implemented:
 - approval PDF/Excel
 - client project summary PDF
 - client ownership isolation tests
+
+## M13 — Reports, Exports & Admin Operations
+
+Implemented:
+
+- centralized report center
+- cross-module project operations report
+- project operations PDF/Excel
+- report run auditing
+- report run history PDF/Excel
+- admin operations dashboard
+- database health check
+- queue failure visibility
+- overdue invoice visibility
+- overdue client approval visibility
+- finance snapshot health
+- manual operational health checks
+- scheduled health checking
+- queued administrator health alerts

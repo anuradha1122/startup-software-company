@@ -391,3 +391,35 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M13
+
+- [ ] Report Center permission enforced
+- [ ] Project operations row builds
+- [ ] Active team count works
+- [ ] Open task count works
+- [ ] Pending client approval count works
+- [ ] M11 financial metrics included
+- [ ] Project operations Excel works
+- [ ] Project operations PDF works
+- [ ] Successful report run recorded
+- [ ] Failed report run can be recorded
+- [ ] Report history page works
+- [ ] Report history Excel works
+- [ ] Report history PDF works
+- [ ] Admin Operations permission enforced
+- [ ] Database health check works
+- [ ] Failed job check works
+- [ ] Overdue invoice check works
+- [ ] Overdue approval check works
+- [ ] Finance snapshot check works
+- [ ] Manual health check works
+- [ ] Health warning notification queued
+- [ ] Same-day duplicate health alert prevented
+- [ ] M12 client portal cannot access M13 routes
+- [ ] M01-M12 regressions pass
+- [ ] Full PHP suite passes
+- [ ] Pint passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

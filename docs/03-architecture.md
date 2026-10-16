@@ -187,3 +187,21 @@ ClientPortalDocument
 Portal invoice access consumes M10 issued invoices.
 
 M12 never consumes or exposes M11 profitability values.
+
+## M13 Architecture
+
+M01-M12
+→ read-only report aggregation
+→ Report Center
+→ Excel/PDF
+→ ReportRun audit record
+
+Application operational state
+→ OperationalHealthService
+→ Admin Operations Dashboard
+
+OperationalHealthAlertService
+→ daily health check
+→ internal notification/email when attention is required
+
+M13 does not mutate source module transactions.

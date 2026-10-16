@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminOperationsController;
 use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\ClientApprovalController;
 use App\Http\Controllers\Admin\ClientBillingProfileController;
@@ -32,6 +33,7 @@ use App\Http\Controllers\Admin\ProjectFinanceSettingController;
 use App\Http\Controllers\Admin\ProjectFinancialSnapshotController;
 use App\Http\Controllers\Admin\ProjectInternalCostController;
 use App\Http\Controllers\Admin\ProjectMilestoneController;
+use App\Http\Controllers\Admin\ProjectOperationsReportController;
 use App\Http\Controllers\Admin\ProjectPhaseController;
 use App\Http\Controllers\Admin\ProjectProfitabilityController;
 use App\Http\Controllers\Admin\ProjectRiskController;
@@ -42,6 +44,8 @@ use App\Http\Controllers\Admin\ProjectTaskWorkflowController;
 use App\Http\Controllers\Admin\ProposalController;
 use App\Http\Controllers\Admin\QuotationController;
 use App\Http\Controllers\Admin\ReceivableController;
+use App\Http\Controllers\Admin\ReportCenterController;
+use App\Http\Controllers\Admin\ReportRunController;
 use App\Http\Controllers\Admin\RequirementApprovalController;
 use App\Http\Controllers\Admin\RequirementAttachmentController;
 use App\Http\Controllers\Admin\RequirementController;
@@ -2818,5 +2822,121 @@ Route::middleware([
                         'permission:client-portal-documents.manage'
                     )
                     ->name('destroy');
+            });
+
+        Route::prefix('reports')
+            ->name('reports.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ReportCenterController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:reports.view'
+                    )
+                    ->name('index');
+
+                Route::get(
+                    'project-operations/export/excel',
+                    [
+                        ProjectOperationsReportController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:reports.export'
+                    )
+                    ->name(
+                        'project-operations.excel'
+                    );
+
+                Route::get(
+                    'project-operations/export/pdf',
+                    [
+                        ProjectOperationsReportController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:reports.export'
+                    )
+                    ->name(
+                        'project-operations.pdf'
+                    );
+
+                Route::get(
+                    'runs',
+                    [
+                        ReportRunController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:report-runs.view'
+                    )
+                    ->name(
+                        'runs.index'
+                    );
+
+                Route::get(
+                    'runs/export/excel',
+                    [
+                        ReportRunController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:report-runs.export'
+                    )
+                    ->name(
+                        'runs.excel'
+                    );
+
+                Route::get(
+                    'runs/export/pdf',
+                    [
+                        ReportRunController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:report-runs.export'
+                    )
+                    ->name(
+                        'runs.pdf'
+                    );
+            });
+
+        Route::prefix('operations')
+            ->name('operations.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        AdminOperationsController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:admin-operations.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    'health-check',
+                    [
+                        AdminOperationsController::class,
+                        'check',
+                    ]
+                )
+                    ->middleware(
+                        'permission:admin-operations.health-check'
+                    )
+                    ->name(
+                        'health-check'
+                    );
             });
     });

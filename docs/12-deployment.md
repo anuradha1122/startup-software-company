@@ -134,3 +134,20 @@ M12 requires:
 No public storage link is required for portal documents.
 
 Portal password reset URLs must use the production APP_URL.
+
+## M13 Deployment Notes
+
+M13 uses the existing queue worker for operational health notifications.
+
+Laravel scheduler must execute:
+
+operations:health-check
+
+Current operational schedule:
+
+00:10 invoices:mark-overdue
+00:30 finance:capture-snapshots
+01:00 operations:health-check
+
+Queue failure visibility requires the failed_jobs table when Laravel's
+failed-job storage is enabled.

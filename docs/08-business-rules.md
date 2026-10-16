@@ -270,3 +270,21 @@
 18. Internal users may cancel only pending approval requests.
 19. Portal responses notify the internal requester.
 20. M11 profitability data must never be exposed to portal users.
+
+## M13
+
+1. M13 reporting is internal-only.
+2. Reports read source data without modifying source transactions.
+3. Project operations reporting may consume M11 profitability values.
+4. Profitability values remain internal.
+5. Report generation records audit metadata in report_runs.
+6. M13 does not permanently store generated report files.
+7. Failed report generation may be recorded with a failure message.
+8. Health checks must not mutate transactional records.
+9. Failed queue jobs are reported but not automatically retried/deleted.
+10. Overdue invoices are reported but M10 remains responsible for invoice status.
+11. Financial snapshot health is reported but M11 remains responsible for snapshots.
+12. Overdue client approvals are reported but M12 remains responsible for approval workflow.
+13. Operational alerts are limited to one alert cycle per day.
+14. Report and operations access requires dedicated internal permissions.
+15. M13 report routes must never be exposed through the client portal.

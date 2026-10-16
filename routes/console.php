@@ -19,3 +19,7 @@ Schedule::command(
 Schedule::command(
     'finance:capture-snapshots'
 )->dailyAt('00:30');
+
+Schedule::command(
+    'operations:health-check'
+)->dailyAt('01:00');

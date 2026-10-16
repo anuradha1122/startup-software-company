@@ -291,3 +291,21 @@ Includes:
 - internal response notifications
 - approval Excel/PDF exports
 - client-safe project summary PDF
+
+## M13 — Reports, Exports & Admin Operations
+
+Includes:
+
+- centralized report center
+- cross-module project operations report
+- project operations Excel/PDF
+- report generation audit history
+- report history Excel/PDF
+- database health check
+- failed queue job visibility
+- overdue invoice visibility
+- overdue client approval visibility
+- finance snapshot health visibility
+- manual health-check execution
+- scheduled operational health checks
+- queued administrator health alerts

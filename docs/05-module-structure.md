@@ -316,3 +316,33 @@ PDF:
 - pdf/client-approvals.blade.php
 - pdf/client-project-summary.blade.php
 - existing M10 pdf/invoice.blade.php reused for portal invoice download
+
+## M13
+
+Backend:
+
+- Models/ReportRun
+- Controllers/Admin/ReportCenterController
+- Controllers/Admin/ProjectOperationsReportController
+- Controllers/Admin/ReportRunController
+- Controllers/Admin/AdminOperationsController
+- Services/Reports/ReportCatalogService
+- Services/Reports/ReportRunService
+- Services/Reports/ProjectOperationsReportService
+- Services/Operations/OperationalHealthService
+- Services/Operations/OperationalHealthAlertService
+- Notifications/OperationalHealthAlertNotification
+- Exports/ProjectOperationsExport
+- Exports/ReportRunsExport
+- Console/Commands/CheckOperationalHealth
+
+Frontend:
+
+- pages/admin/reports
+- pages/admin/operations
+- components/m13
+
+PDF:
+
+- pdf/project-operations.blade.php
+- pdf/report-runs.blade.php

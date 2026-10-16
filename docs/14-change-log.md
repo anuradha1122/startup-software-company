@@ -192,3 +192,14 @@
 - Change approval/rejection
 - M06 task conversion
 - Support/change Excel exports
+
+### Added — M15
+
+- Employee HR records
+- Compensation history
+- Leave management
+- Attendance
+- Payroll
+- Payslips
+- HR permissions
+- Employee self service

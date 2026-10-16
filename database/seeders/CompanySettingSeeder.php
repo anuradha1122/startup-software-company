@@ -39,6 +39,9 @@ class CompanySettingSeeder extends Seeder
             'client_approval' => 'APR-',
             'support_ticket' => 'SUP-',
             'change_request' => 'CR-',
+            'employee' => 'EMP-',
+            'leave' => 'LV-',
+            'payroll' => 'PAY-',
         ];
 
         foreach ($sequences as $type => $prefix) {

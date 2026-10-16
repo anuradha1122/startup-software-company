@@ -27,3 +27,11 @@ Schedule::command(
 Schedule::command(
     'support:check-sla'
 )->hourly();
+
+Schedule::command(
+    'leave:accrue-balances'
+)->yearlyOn(1, 1, '00:20');
+
+Schedule::command(
+    'payroll:generate-periods'
+)->monthlyOn(1, '00:40');

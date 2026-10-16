@@ -213,3 +213,26 @@ Change requests should distinguish:
 - internal estimate
 - review decision
 - delivery conversion
+
+## M15 UI
+
+HR screens should separate:
+
+- employment profile
+- compensation
+- leave
+- attendance
+- payroll
+
+Salary values must not appear on ordinary employee-directory screens.
+
+Employee self service should emphasize:
+
+- leave balance
+- leave request status
+- today's attendance
+- published payslips
+
+Payroll workflow must clearly display:
+
+Draft → Calculated → Approved → Published → Closed

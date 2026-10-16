@@ -377,3 +377,41 @@ Frontend:
 - pages/portal/support
 - pages/portal/change-requests
 - components/m14
+
+## M15
+
+Backend:
+
+- Models/EmployeeProfile
+- Models/EmployeeCompensation
+- Models/LeaveType
+- Models/LeaveBalance
+- Models/LeaveRequest
+- Models/AttendanceRecord
+- Models/PayrollPeriod
+- Models/PayrollEntry
+- Models/PayrollAdjustment
+- Services/Hr
+- Services/Leave
+- Services/Attendance
+- Services/Payroll
+- Controllers/Admin/\*
+- Controllers/Employee/\*
+- Notifications/Leave\*
+- Notifications/PayrollPublishedNotification
+- Exports/EmployeesExport
+- Exports/LeaveRequestsExport
+- Exports/AttendanceExport
+- Exports/PayrollRegisterExport
+
+Frontend:
+
+- pages/admin/hr
+- pages/employee/leave
+- pages/employee/attendance
+- pages/employee/payslips
+- components/m15
+
+PDF:
+
+- pdf/payslip.blade.php

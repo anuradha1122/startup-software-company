@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminOperationsController;
+use App\Http\Controllers\Admin\AttendanceController;
 use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\ChangeRequestController;
 use App\Http\Controllers\Admin\ChangeRequestEstimateController;
@@ -14,14 +15,18 @@ use App\Http\Controllers\Admin\ClientPortalUserController;
 use App\Http\Controllers\Admin\CompanySettingController;
 use App\Http\Controllers\Admin\ContractController;
 use App\Http\Controllers\Admin\ContractDocumentController;
+use App\Http\Controllers\Admin\EmployeeCompensationController;
+use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\EstimateController;
 use App\Http\Controllers\Admin\FinanceDashboardController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\InvoiceLineController;
 use App\Http\Controllers\Admin\LeadActivityController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\LeaveRequestController;
 use App\Http\Controllers\Admin\PaymentAllocationController;
 use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\PayrollPeriodController;
 use App\Http\Controllers\Admin\PeopleController;
 use App\Http\Controllers\Admin\ProjectAssignmentController;
 use App\Http\Controllers\Admin\ProjectCharterController;
@@ -3116,5 +3121,153 @@ Route::middleware([
                     ->name(
                         'convert-task'
                     );
+            });
+
+        Route::prefix('hr')
+            ->name('hr.')
+            ->group(function (): void {
+                Route::get(
+                    'employees/export/excel',
+                    [EmployeeController::class, 'excel']
+                )
+                    ->middleware('permission:employees.export')
+                    ->name('employees.excel');
+
+                Route::get(
+                    'employees',
+                    [EmployeeController::class, 'index']
+                )
+                    ->middleware('permission:employees.view')
+                    ->name('employees.index');
+
+                Route::post(
+                    'employees',
+                    [EmployeeController::class, 'store']
+                )
+                    ->middleware('permission:employees.create')
+                    ->name('employees.store');
+
+                Route::get(
+                    'employees/{employee}',
+                    [EmployeeController::class, 'show']
+                )
+                    ->middleware('permission:employees.view')
+                    ->name('employees.show');
+
+                Route::post(
+                    'employees/{employee}/compensation',
+                    [
+                        EmployeeCompensationController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:employee-compensation.manage'
+                    )
+                    ->name(
+                        'employees.compensation.store'
+                    );
+
+                Route::get(
+                    'leave',
+                    [LeaveRequestController::class, 'index']
+                )
+                    ->middleware(
+                        'permission:leave-requests.view-all'
+                    )
+                    ->name('leave.index');
+
+                Route::get(
+                    'attendance/export/excel',
+                    [
+                        AttendanceController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:attendance.export'
+                    )
+                    ->name(
+                        'attendance.excel'
+                    );
+
+                Route::get(
+                    'leave/export/excel',
+                    [
+                        LeaveRequestController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:leave-requests.export'
+                    )
+                    ->name(
+                        'leave.excel'
+                    );
+
+                Route::post(
+                    'leave/{leaveRequest}/review',
+                    [LeaveRequestController::class, 'review']
+                )
+                    ->middleware(
+                        'permission:leave-requests.review'
+                    )
+                    ->name('leave.review');
+
+                Route::get(
+                    'payroll',
+                    [PayrollPeriodController::class, 'index']
+                )
+                    ->middleware('permission:payroll.view')
+                    ->name('payroll.index');
+
+                Route::post(
+                    'payroll',
+                    [PayrollPeriodController::class, 'store']
+                )
+                    ->middleware('permission:payroll.calculate')
+                    ->name('payroll.store');
+
+                Route::get(
+                    'payroll/export/excel',
+                    [
+                        PayrollPeriodController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:payroll.export'
+                    )
+                    ->name(
+                        'payroll.excel'
+                    );
+
+                Route::get(
+                    'payroll/{period}',
+                    [PayrollPeriodController::class, 'show']
+                )
+                    ->middleware('permission:payroll.view')
+                    ->name('payroll.show');
+
+                Route::post(
+                    'payroll/{period}/calculate',
+                    [PayrollPeriodController::class, 'calculate']
+                )
+                    ->middleware('permission:payroll.calculate')
+                    ->name('payroll.calculate');
+
+                Route::post(
+                    'payroll/{period}/approve',
+                    [PayrollPeriodController::class, 'approve']
+                )
+                    ->middleware('permission:payroll.approve')
+                    ->name('payroll.approve');
+
+                Route::post(
+                    'payroll/{period}/publish',
+                    [PayrollPeriodController::class, 'publish']
+                )
+                    ->middleware('permission:payroll.publish')
+                    ->name('payroll.publish');
             });
     });

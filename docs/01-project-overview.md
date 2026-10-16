@@ -127,3 +127,13 @@ client portal users.
 
 Change requests provide controlled scope-change submission, estimation,
 review and optional conversion into M06 delivery work.
+
+## M15
+
+M15 introduces internal HR, employee records, leave management,
+attendance and payroll.
+
+M15 payroll and salary information is confidential.
+
+M15 remains separate from M07 operational resource management and M08
+internal project costing.

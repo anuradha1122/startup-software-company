@@ -232,6 +232,41 @@ class RolePermissionSeeder extends Seeder
             'change-requests.review',
             'change-requests.convert-task',
             'change-requests.export',
+
+            'employees.view',
+            'employees.create',
+            'employees.update',
+            'employees.terminate',
+            'employees.export',
+
+            'employee-compensation.view',
+            'employee-compensation.manage',
+
+            'leave-types.view',
+            'leave-types.manage',
+
+            'leave-requests.view-own',
+            'leave-requests.view-all',
+            'leave-requests.create',
+            'leave-requests.review',
+            'leave-requests.cancel',
+            'leave-requests.export',
+
+            'attendance.view-own',
+            'attendance.view-all',
+            'attendance.clock',
+            'attendance.manage',
+            'attendance.export',
+
+            'payroll.view',
+            'payroll.calculate',
+            'payroll.adjust',
+            'payroll.approve',
+            'payroll.publish',
+            'payroll.export',
+
+            'payslips.view-own',
+            'payslips.download-own',
         ];
 
         foreach ($permissions as $permission) {
@@ -540,6 +575,34 @@ class RolePermissionSeeder extends Seeder
                 'reports.export',
                 'report-runs.view',
                 'report-runs.export',
+            ]);
+
+        Role::findByName('HR')
+            ->givePermissionTo([
+                'employees.view',
+                'employees.create',
+                'employees.update',
+                'employees.terminate',
+                'employees.export',
+
+                'employee-compensation.view',
+                'employee-compensation.manage',
+
+                'leave-types.view',
+                'leave-types.manage',
+
+                'leave-requests.view-all',
+                'leave-requests.review',
+                'leave-requests.export',
+
+                'attendance.view-all',
+                'attendance.manage',
+                'attendance.export',
+
+                'payroll.view',
+                'payroll.calculate',
+                'payroll.adjust',
+                'payroll.export',
             ]);
 
         Role::findByName('Director')

@@ -311,3 +311,26 @@
 18. Client portal may receive client_amount, estimated_days and client_notes.
 19. Approved change requests may be converted to M06 delivery tasks.
 20. Change approval does not automatically alter contracts, invoices or M11 revenue.
+
+## M15
+
+1. One User may have at most one EmployeeProfile.
+2. Employee compensation is confidential.
+3. Salary does not automatically create/update an M08 resource cost rate.
+4. Leave requests may not overlap active leave requests.
+5. Leave approval consumes leave balance.
+6. Employees cannot review their own leave.
+7. Rejection requires review notes.
+8. Attendance and timesheets are separate concepts.
+9. Duplicate daily attendance records are prohibited.
+10. Employee cannot clock in twice on the same day.
+11. Employee cannot clock out before clocking in.
+12. Payroll uses salary snapshots.
+13. Payroll recalculation is allowed only while draft/calculated.
+14. Payroll approval requires calculated status.
+15. Payroll publication requires approved status.
+16. Published payslips are employee-private.
+17. Payroll publication does not create an M08 cost transaction.
+18. Overtime payment is zero until an explicit overtime-pay policy exists.
+19. Unpaid-leave deduction is not inferred until an explicit payroll policy exists.
+20. Payroll money calculations must avoid binary floating-point arithmetic.

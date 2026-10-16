@@ -557,3 +557,52 @@ The documentation must be updated in the same module response rather than deferr
 | Schedule | Command             | Purpose                                           |
 | -------- | ------------------- | ------------------------------------------------- |
 | Hourly   | `support:check-sla` | Check first-response and resolution SLA deadlines |
+
+## M15 – HR, Leave, Attendance & Payroll
+
+### Employee Administration
+
+| Method | URI                                           | Permission                     |
+| ------ | --------------------------------------------- | ------------------------------ |
+| GET    | `/admin/hr/employees`                         | `employees.view`               |
+| POST   | `/admin/hr/employees`                         | `employees.create`             |
+| GET    | `/admin/hr/employees/export/excel`            | `employees.export`             |
+| GET    | `/admin/hr/employees/{employee}`              | `employees.view`               |
+| POST   | `/admin/hr/employees/{employee}/compensation` | `employee-compensation.manage` |
+
+### Leave Administration
+
+| Method | URI                                     | Permission                |
+| ------ | --------------------------------------- | ------------------------- |
+| GET    | `/admin/hr/leave`                       | `leave-requests.view-all` |
+| POST   | `/admin/hr/leave/{leaveRequest}/review` | `leave-requests.review`   |
+
+### Payroll Administration
+
+| Method | URI                                    | Permission          |
+| ------ | -------------------------------------- | ------------------- |
+| GET    | `/admin/hr/payroll`                    | `payroll.view`      |
+| POST   | `/admin/hr/payroll`                    | `payroll.calculate` |
+| GET    | `/admin/hr/payroll/{period}`           | `payroll.view`      |
+| POST   | `/admin/hr/payroll/{period}/calculate` | `payroll.calculate` |
+| POST   | `/admin/hr/payroll/{period}/approve`   | `payroll.approve`   |
+| POST   | `/admin/hr/payroll/{period}/publish`   | `payroll.publish`   |
+
+### Employee Self Service
+
+| Method | URI                              | Permission                |
+| ------ | -------------------------------- | ------------------------- |
+| GET    | `/employee/leave`                | `leave-requests.view-own` |
+| POST   | `/employee/leave`                | `leave-requests.create`   |
+| GET    | `/employee/attendance`           | `attendance.view-own`     |
+| POST   | `/employee/attendance/clock-in`  | `attendance.clock`        |
+| POST   | `/employee/attendance/clock-out` | `attendance.clock`        |
+| GET    | `/employee/payslips`             | `payslips.view-own`       |
+| GET    | `/employee/payslips/{entry}/pdf` | `payslips.download-own`   |
+
+### Scheduled HR Operations
+
+| Schedule             | Command                    | Purpose                                   |
+| -------------------- | -------------------------- | ----------------------------------------- |
+| Yearly / configured  | `leave:accrue-balances`    | Initialize/accrue employee leave balances |
+| Monthly / configured | `payroll:generate-periods` | Prepare upcoming payroll period           |

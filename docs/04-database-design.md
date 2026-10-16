@@ -308,3 +308,20 @@ internal_only support messages are never client-visible.
 Change request estimates store both client-facing commercial values and
 internal estimate values. Internal fields must not be serialized to the
 portal.
+
+## M15 Tables
+
+- employee_profiles
+- employee_compensations
+- leave_types
+- leave_balances
+- leave_requests
+- attendance_records
+- payroll_periods
+- payroll_entries
+- payroll_adjustments
+
+Employee compensation is kept in a dedicated confidential table.
+
+Payroll entries contain salary snapshots so historical payslips do not
+change after compensation updates.

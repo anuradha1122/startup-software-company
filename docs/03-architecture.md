@@ -224,3 +224,21 @@ Project
 
 Client-facing DTOs explicitly exclude internal support notes, internal
 change analysis and internal costing.
+
+## M15 Architecture
+
+User
+→ EmployeeProfile
+
+EmployeeProfile
+→ EmployeeCompensation
+→ LeaveBalance
+→ LeaveRequest
+→ AttendanceRecord
+→ PayrollEntry
+
+PayrollPeriod
+→ PayrollEntry
+→ PayrollAdjustment
+
+M15 salary/payroll data is independent from M08 ResourceCostRate.

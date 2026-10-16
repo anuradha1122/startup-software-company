@@ -461,3 +461,44 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M15
+
+- [ ] Employee creates
+- [ ] Duplicate employee user rejected
+- [ ] Compensation creates
+- [ ] Compensation history retained
+- [ ] Compensation hidden without permission
+- [ ] Leave type works
+- [ ] Leave balance initializes
+- [ ] Leave request creates
+- [ ] Weekend calculation works
+- [ ] Overlapping leave blocked
+- [ ] Self approval blocked
+- [ ] Rejection notes required
+- [ ] Approved leave consumes balance
+- [ ] Insufficient balance blocked
+- [ ] Attendance clock-in works
+- [ ] Duplicate clock-in blocked
+- [ ] Clock-out works
+- [ ] Clock-out-before-in blocked
+- [ ] Payroll money helper exact
+- [ ] Payroll period creates
+- [ ] Payroll calculates
+- [ ] Salary snapshots preserved
+- [ ] Payroll adjustments recalculate
+- [ ] Payroll approval works
+- [ ] Payroll publication works
+- [ ] Payslip notification queued
+- [ ] Own payslip visible
+- [ ] Other employee payslip blocked
+- [ ] Employee export works
+- [ ] Leave export works
+- [ ] Attendance export works
+- [ ] Payroll export works
+- [ ] M01-M14 regressions pass
+- [ ] Full suite passes
+- [ ] Pint passes
+- [ ] TypeScript passes
+- [ ] Build passes
+- [ ] npm check passes

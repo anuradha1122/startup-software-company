@@ -602,3 +602,50 @@ payroll.
 
 M15 salary/payroll data must remain separate from M07 resource profiles
 and M08 operational internal costing.
+
+## Current Module
+
+M15 — HR, Leave, Attendance & Payroll
+
+## Completion Gate
+
+Before M16:
+
+1. employee creation tested
+2. employee privacy tested
+3. compensation history tested
+4. compensation permission tested
+5. leave balance tested
+6. leave creation tested
+7. overlap guard tested
+8. self approval guard tested
+9. leave approval tested
+10. leave rejection tested
+11. attendance clock-in tested
+12. duplicate clock-in tested
+13. attendance clock-out tested
+14. payroll money precision tested
+15. payroll calculation tested
+16. salary snapshot tested
+17. payroll approval tested
+18. payroll publication tested
+19. payslip privacy tested
+20. payslip PDF tested
+21. employee/leave/attendance/payroll exports tested
+22. M01-M14 regressions pass
+23. full PHP suite passes
+24. Pint passes
+25. TypeScript passes
+26. production build passes
+27. npm run check passes
+28. M15 Git commit created
+
+## Next Module
+
+M16 — Procurement & Asset Management
+
+M16 will introduce suppliers/procurement requests, purchase orders,
+company assets, asset assignment and asset lifecycle.
+
+M16 must keep procurement purchase cost internal and separate from
+client billing unless explicitly approved for M09/M10 workflows.

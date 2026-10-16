@@ -331,3 +331,26 @@ Includes:
 - approval notifications
 - optional M06 task conversion
 - support/change Excel exports
+
+## M15 — HR, Leave, Attendance & Payroll
+
+Includes:
+
+- employee profiles
+- employment status/type
+- confidential compensation history
+- leave types
+- leave balances
+- employee leave requests
+- leave review workflow
+- self-approval prevention
+- employee attendance clock-in/out
+- attendance administration
+- payroll periods
+- payroll calculation
+- payroll adjustments
+- payroll approval
+- payroll publication
+- employee self-service payslips
+- payroll PDF/Excel
+- leave/attendance/employee exports

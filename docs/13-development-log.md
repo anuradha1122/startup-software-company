@@ -299,3 +299,21 @@ Implemented:
 - portal decision notifications
 - M06 delivery-task conversion
 - support/change exports
+
+## M15 — HR, Leave, Attendance & Payroll
+
+Implemented:
+
+- employee profiles
+- confidential compensation
+- leave types/balances
+- leave request workflow
+- leave self-approval protection
+- attendance clock-in/out
+- payroll periods
+- payroll calculations
+- decimal-safe payroll money handling
+- payroll approval/publication
+- employee payslips
+- HR notifications
+- M15 exports

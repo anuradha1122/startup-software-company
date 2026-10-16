@@ -327,3 +327,48 @@ Spatie roles/permissions.
 
 Client portal access remains client-scoped and does not use internal
 Spatie roles.
+
+## M15 Permissions
+
+### Employees
+
+- employees.view
+- employees.create
+- employees.update
+- employees.terminate
+- employees.export
+
+### Compensation
+
+- employee-compensation.view
+- employee-compensation.manage
+
+### Leave
+
+- leave-types.view
+- leave-types.manage
+- leave-requests.view-own
+- leave-requests.view-all
+- leave-requests.create
+- leave-requests.review
+- leave-requests.cancel
+- leave-requests.export
+
+### Attendance
+
+- attendance.view-own
+- attendance.view-all
+- attendance.clock
+- attendance.manage
+- attendance.export
+
+### Payroll
+
+- payroll.view
+- payroll.calculate
+- payroll.adjust
+- payroll.approve
+- payroll.publish
+- payroll.export
+- payslips.view-own
+- payslips.download-own

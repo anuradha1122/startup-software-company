@@ -100,6 +100,13 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
         );
     }
 
+    public function employeeProfile(): HasOne
+    {
+        return $this->hasOne(
+            EmployeeProfile::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

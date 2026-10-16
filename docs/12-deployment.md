@@ -169,3 +169,18 @@ Hourly support:check-sla
 00:10 daily invoices:mark-overdue
 00:30 daily finance:capture-snapshots
 01:00 daily operations:health-check
+
+## M15 Deployment Notes
+
+M15 uses the existing queue worker for leave and payroll notifications.
+
+Scheduled HR operations may include:
+
+- annual leave balance accrual
+- monthly payroll-period preparation
+
+Payroll calculation, approval and publication remain explicit user
+actions and must not be automatically approved by the scheduler.
+
+Payslip PDFs are generated on demand and require authenticated
+employee authorization.

@@ -274,3 +274,22 @@ Portal change-request DTOs exclude:
 
 Every portal support and change-request endpoint verifies client
 ownership.
+
+## M15 Security
+
+Salary and payroll are confidential HR records.
+
+Never expose M15 compensation through:
+
+- client portal
+- project profitability DTOs
+- generic project reports
+- resource allocation pages
+- timesheet pages
+- support tickets
+- change requests
+
+Employee self-service may access only the authenticated employee's
+leave, attendance and published payslips.
+
+Compensation management requires dedicated permissions.

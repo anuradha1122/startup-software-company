@@ -292,3 +292,19 @@ Fields include:
 - generated at
 
 Generated report files are not permanently stored by M13.
+
+## M14 Tables
+
+- support_tickets
+- support_ticket_messages
+- change_requests
+- change_request_estimates
+
+Support ticket messages identify whether the author is internal or a
+client portal user.
+
+internal_only support messages are never client-visible.
+
+Change request estimates store both client-facing commercial values and
+internal estimate values. Internal fields must not be serialized to the
+portal.

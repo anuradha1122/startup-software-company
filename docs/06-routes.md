@@ -509,3 +509,51 @@ The documentation must be updated in the same module response rather than deferr
 | Daily 00:10 | `invoices:mark-overdue`     | Refresh M10 overdue invoice state                                         |
 | Daily 00:30 | `finance:capture-snapshots` | Capture M11 financial snapshots and evaluate margin alerts                |
 | Daily 01:00 | `operations:health-check`   | Run M13 operational health checks and notify administrators when required |
+
+## M14 – Support & Change Requests
+
+### Internal Support Tickets
+
+| Method | URI                                | Permission / Authorization |
+| ------ | ---------------------------------- | -------------------------- |
+| GET    | `/admin/support`                   | `support-tickets.view`     |
+| POST   | `/admin/support`                   | `support-tickets.create`   |
+| GET    | `/admin/support/export/excel`      | `support-tickets.export`   |
+| GET    | `/admin/support/{ticket}`          | `support-tickets.view`     |
+| PUT    | `/admin/support/{ticket}`          | `support-tickets.update`   |
+| POST   | `/admin/support/{ticket}/messages` | `support-tickets.reply`    |
+
+### Internal Change Requests
+
+| Method | URI                                                   | Permission / Authorization                               |
+| ------ | ----------------------------------------------------- | -------------------------------------------------------- |
+| GET    | `/admin/change-requests`                              | `change-requests.view`                                   |
+| POST   | `/admin/change-requests`                              | `change-requests.create`                                 |
+| GET    | `/admin/change-requests/export/excel`                 | `change-requests.export`                                 |
+| GET    | `/admin/change-requests/{changeRequest}`              | `change-requests.view`                                   |
+| POST   | `/admin/change-requests/{changeRequest}/estimate`     | `change-requests.estimate`                               |
+| POST   | `/admin/change-requests/{changeRequest}/review`       | `change-requests.review`                                 |
+| POST   | `/admin/change-requests/{changeRequest}/convert-task` | `change-requests.convert-task` + approved change request |
+
+### Client Portal Support
+
+| Method | URI                                 | Access                                  |
+| ------ | ----------------------------------- | --------------------------------------- |
+| GET    | `/portal/support`                   | Authenticated active client portal user |
+| POST   | `/portal/support`                   | Authenticated active client portal user |
+| GET    | `/portal/support/{ticket}`          | Same-client portal user                 |
+| POST   | `/portal/support/{ticket}/messages` | Same-client portal user + open ticket   |
+
+### Client Portal Change Requests
+
+| Method | URI                                          | Access                                    |
+| ------ | -------------------------------------------- | ----------------------------------------- |
+| GET    | `/portal/change-requests`                    | Authenticated active client portal user   |
+| POST   | `/portal/projects/{project}/change-requests` | Portal user whose client owns the project |
+| GET    | `/portal/change-requests/{changeRequest}`    | Same-client portal user                   |
+
+### Scheduled Support Operations
+
+| Schedule | Command             | Purpose                                           |
+| -------- | ------------------- | ------------------------------------------------- |
+| Hourly   | `support:check-sla` | Check first-response and resolution SLA deadlines |

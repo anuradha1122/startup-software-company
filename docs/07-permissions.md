@@ -302,3 +302,28 @@ Spatie roles/permissions.
 - admin-operations.view
 - admin-operations.health-check
 - admin-operations.alerts.receive
+
+## M14 Permissions
+
+### Support
+
+- support-tickets.view
+- support-tickets.create
+- support-tickets.update
+- support-tickets.assign
+- support-tickets.reply
+- support-tickets.resolve
+- support-tickets.export
+
+### Change Requests
+
+- change-requests.view
+- change-requests.create
+- change-requests.update
+- change-requests.estimate
+- change-requests.review
+- change-requests.convert-task
+- change-requests.export
+
+Client portal access remains client-scoped and does not use internal
+Spatie roles.

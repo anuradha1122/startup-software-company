@@ -216,6 +216,22 @@ class RolePermissionSeeder extends Seeder
             'admin-operations.view',
             'admin-operations.health-check',
             'admin-operations.alerts.receive',
+
+            'support-tickets.view',
+            'support-tickets.create',
+            'support-tickets.update',
+            'support-tickets.assign',
+            'support-tickets.reply',
+            'support-tickets.resolve',
+            'support-tickets.export',
+
+            'change-requests.view',
+            'change-requests.create',
+            'change-requests.update',
+            'change-requests.estimate',
+            'change-requests.review',
+            'change-requests.convert-task',
+            'change-requests.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -377,6 +393,22 @@ class RolePermissionSeeder extends Seeder
 
                 'reports.view',
                 'reports.export',
+
+                'support-tickets.view',
+                'support-tickets.create',
+                'support-tickets.update',
+                'support-tickets.assign',
+                'support-tickets.reply',
+                'support-tickets.resolve',
+                'support-tickets.export',
+
+                'change-requests.view',
+                'change-requests.create',
+                'change-requests.update',
+                'change-requests.estimate',
+                'change-requests.review',
+                'change-requests.convert-task',
+                'change-requests.export',
             ]);
 
         Role::findByName('Sales')

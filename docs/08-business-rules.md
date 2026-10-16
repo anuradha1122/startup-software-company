@@ -288,3 +288,26 @@
 13. Operational alerts are limited to one alert cycle per day.
 14. Report and operations access requires dedicated internal permissions.
 15. M13 report routes must never be exposed through the client portal.
+
+## M14
+
+1. Support tickets belong to one client.
+2. A support ticket may optionally belong to a project.
+3. Project and client ownership must match.
+4. Portal users may access only tickets belonging to their client.
+5. Internal-only ticket notes must never appear in portal responses.
+6. First response is the first non-internal internal reply.
+7. Internal notes do not satisfy first-response SLA.
+8. Closed/cancelled tickets cannot receive new messages.
+9. Client reply to waiting_client returns the ticket to in_progress.
+10. Only active users may be assigned support tickets.
+11. Change requests belong to one project and its client.
+12. Portal users may submit changes only for projects owned by their client.
+13. Change requests require an estimate before approval.
+14. Rejection requires review notes.
+15. Internal change analysis is confidential.
+16. Internal estimated cost is confidential.
+17. Internal estimate notes are confidential.
+18. Client portal may receive client_amount, estimated_days and client_notes.
+19. Approved change requests may be converted to M06 delivery tasks.
+20. Change approval does not automatically alter contracts, invoices or M11 revenue.

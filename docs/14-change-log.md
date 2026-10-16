@@ -179,3 +179,16 @@
 - Admin Operations dashboard
 - Operational health checking
 - Scheduled health notifications
+
+### Added — M14
+
+- Support tickets
+- Support conversations
+- Support assignment/SLA
+- Client portal support
+- Change request workflow
+- Change request estimates
+- Internal costing separation
+- Change approval/rejection
+- M06 task conversion
+- Support/change Excel exports

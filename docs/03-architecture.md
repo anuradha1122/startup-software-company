@@ -205,3 +205,22 @@ OperationalHealthAlertService
 → internal notification/email when attention is required
 
 M13 does not mutate source module transactions.
+
+## M14 Architecture
+
+M12 ClientPortalUser
+→ SupportTicket
+→ SupportTicketMessage
+
+Internal User
+→ SupportTicket
+→ Assignment / Reply / Workflow
+
+Project
+→ ChangeRequest
+→ ChangeRequestEstimate
+→ Review Decision
+→ optional M06 ProjectTask
+
+Client-facing DTOs explicitly exclude internal support notes, internal
+change analysis and internal costing.

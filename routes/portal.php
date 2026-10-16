@@ -2,11 +2,14 @@
 
 use App\Http\Controllers\Portal\ApprovalController;
 use App\Http\Controllers\Portal\AuthController;
+use App\Http\Controllers\Portal\ChangeRequestController as PortalChangeRequestController;
 use App\Http\Controllers\Portal\DashboardController;
 use App\Http\Controllers\Portal\DocumentController;
 use App\Http\Controllers\Portal\InvoiceController;
 use App\Http\Controllers\Portal\PasswordResetController;
 use App\Http\Controllers\Portal\ProjectController;
+use App\Http\Controllers\Portal\SupportTicketController as PortalSupportTicketController;
+use App\Http\Controllers\Portal\SupportTicketMessageController as PortalSupportTicketMessageController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('portal')
@@ -176,5 +179,75 @@ Route::prefix('portal')
                     'invoices.pdf'
                 );
             }
+        );
+
+        Route::get(
+            'support',
+            [
+                PortalSupportTicketController::class,
+                'index',
+            ]
+        )->name(
+            'support.index'
+        );
+
+        Route::post(
+            'support',
+            [
+                PortalSupportTicketController::class,
+                'store',
+            ]
+        )->name(
+            'support.store'
+        );
+
+        Route::get(
+            'support/{ticket}',
+            [
+                PortalSupportTicketController::class,
+                'show',
+            ]
+        )->name(
+            'support.show'
+        );
+
+        Route::post(
+            'support/{ticket}/messages',
+            [
+                PortalSupportTicketMessageController::class,
+                'store',
+            ]
+        )->name(
+            'support.messages.store'
+        );
+
+        Route::get(
+            'change-requests',
+            [
+                PortalChangeRequestController::class,
+                'index',
+            ]
+        )->name(
+            'change-requests.index'
+        );
+
+        Route::post(
+            'projects/{project}/change-requests',
+            [
+                PortalChangeRequestController::class,
+                'store',
+            ]
+        )->name(
+            'change-requests.store'
+        );
+
+        Route::get(
+            'change-requests/{changeRequest}',
+            [
+                PortalChangeRequestController::class,
+                'show',
+            ]
+        )->name(
+            'change-requests.show'
         );
     });

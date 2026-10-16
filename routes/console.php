@@ -23,3 +23,7 @@ Schedule::command(
 Schedule::command(
     'operations:health-check'
 )->dailyAt('01:00');
+
+Schedule::command(
+    'support:check-sla'
+)->hourly();

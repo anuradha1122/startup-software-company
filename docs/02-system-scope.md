@@ -309,3 +309,25 @@ Includes:
 - manual health-check execution
 - scheduled operational health checks
 - queued administrator health alerts
+
+## M14 — Support & Change Requests
+
+Includes:
+
+- internal support ticket creation
+- client portal support tickets
+- ticket priority and severity
+- ticket assignment
+- support conversations
+- internal-only support notes
+- first-response SLA
+- resolution SLA
+- resolution/closure workflow
+- project-linked change requests
+- client portal change requests
+- client-safe change estimates
+- internal change costing
+- change approval/rejection
+- approval notifications
+- optional M06 task conversion
+- support/change Excel exports

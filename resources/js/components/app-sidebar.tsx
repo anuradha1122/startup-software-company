@@ -22,6 +22,8 @@ import {
     ChartNoAxesCombined,
     Activity,
     FileChartColumn,
+    GitPullRequestArrow,
+    LifeBuoy,
 } from 'lucide-react';
 
 import AppLogo from '@/components/app-logo';
@@ -251,6 +253,22 @@ export function AppSidebar() {
             title: 'Reports',
             href: '/admin/reports',
             icon: FileChartColumn,
+        });
+    }
+
+    if (can('support-tickets.view')) {
+        mainNavItems.push({
+            title: 'Support',
+            href: '/admin/support',
+            icon: LifeBuoy,
+        });
+    }
+
+    if (can('change-requests.view')) {
+        mainNavItems.push({
+            title: 'Change Requests',
+            href: '/admin/change-requests',
+            icon: GitPullRequestArrow,
         });
     }
 

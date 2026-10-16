@@ -253,3 +253,24 @@ M13 data must never be exposed through M12 portal controllers or portal
 Inertia payloads.
 
 Report exports and manual health checks are activity logged.
+
+## M14 Security
+
+Portal support DTOs exclude:
+
+- internal support notes
+- internal user-only diagnostics
+- internal assignment details not intended for the client
+
+Portal change-request DTOs exclude:
+
+- internal_analysis
+- internal_estimated_cost
+- internal_notes
+- M08 internal cost
+- M09 supplier cost
+- M11 profitability/margin
+- M13 operational information
+
+Every portal support and change-request endpoint verifies client
+ownership.

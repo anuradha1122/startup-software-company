@@ -186,3 +186,30 @@ Admin Operations should display:
 - explanatory messages
 
 Operational status must not rely on color alone.
+
+## M14 UI
+
+Support tickets should clearly display:
+
+- ticket number
+- client/project
+- priority
+- severity
+- status
+- assignee
+- first-response SLA
+- resolution SLA
+- conversation
+
+Internal notes must be visibly marked inside the internal UI.
+
+Client portal must never display an internal-note indicator because
+internal notes must never be included in the portal payload.
+
+Change requests should distinguish:
+
+- requested scope
+- client estimate
+- internal estimate
+- review decision
+- delivery conversion

@@ -139,6 +139,20 @@ class Client extends Model
         );
     }
 
+    public function supportTickets(): HasMany
+    {
+        return $this->hasMany(
+            SupportTicket::class
+        );
+    }
+
+    public function changeRequests(): HasMany
+    {
+        return $this->hasMany(
+            ChangeRequest::class
+        );
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

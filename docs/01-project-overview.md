@@ -116,3 +116,14 @@ run auditing and administrative operational health monitoring.
 
 It consolidates data from earlier modules without duplicating their
 transactional records.
+
+## M14
+
+M14 introduces support ticket management and formal project change
+requests.
+
+Support tickets may originate internally or from authenticated M12
+client portal users.
+
+Change requests provide controlled scope-change submission, estimation,
+review and optional conversion into M06 delivery work.

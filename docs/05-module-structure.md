@@ -346,3 +346,34 @@ PDF:
 
 - pdf/project-operations.blade.php
 - pdf/report-runs.blade.php
+
+## M14
+
+Backend:
+
+- Models/SupportTicket
+- Models/SupportTicketMessage
+- Models/ChangeRequest
+- Models/ChangeRequestEstimate
+- Controllers/Admin/SupportTicketController
+- Controllers/Admin/SupportTicketMessageController
+- Controllers/Admin/ChangeRequestController
+- Controllers/Admin/ChangeRequestEstimateController
+- Controllers/Portal/SupportTicketController
+- Controllers/Portal/SupportTicketMessageController
+- Controllers/Portal/ChangeRequestController
+- Services/Support
+- Services/ChangeRequests
+- Notifications/SupportTicket\*
+- Notifications/ChangeRequest\*
+- Exports/SupportTicketsExport
+- Exports/ChangeRequestsExport
+- Console/Commands/CheckSupportSla
+
+Frontend:
+
+- pages/admin/support
+- pages/admin/change-requests
+- pages/portal/support
+- pages/portal/change-requests
+- components/m14

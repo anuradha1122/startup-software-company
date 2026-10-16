@@ -37,6 +37,8 @@ class CompanySettingSeeder extends Seeder
             'receipt' => 'RCP-',
             'purchase_order' => 'PO-',
             'client_approval' => 'APR-',
+            'support_ticket' => 'SUP-',
+            'change_request' => 'CR-',
         ];
 
         foreach ($sequences as $type => $prefix) {

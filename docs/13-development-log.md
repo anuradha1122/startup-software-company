@@ -278,3 +278,24 @@ Implemented:
 - manual operational health checks
 - scheduled health checking
 - queued administrator health alerts
+
+## M14 — Support & Change Requests
+
+Implemented:
+
+- support ticket numbering
+- internal support workflow
+- client portal support
+- ticket assignment
+- ticket conversations
+- confidential internal support notes
+- SLA deadlines
+- SLA checker
+- change request numbering
+- internal and portal change requests
+- change estimates
+- confidential internal change costing
+- approval/rejection workflow
+- portal decision notifications
+- M06 delivery-task conversion
+- support/change exports

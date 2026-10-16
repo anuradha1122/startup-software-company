@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminOperationsController;
 use App\Http\Controllers\Admin\AuditLogController;
+use App\Http\Controllers\Admin\ChangeRequestController;
+use App\Http\Controllers\Admin\ChangeRequestEstimateController;
 use App\Http\Controllers\Admin\ClientApprovalController;
 use App\Http\Controllers\Admin\ClientBillingProfileController;
 use App\Http\Controllers\Admin\ClientContactController;
@@ -54,6 +56,8 @@ use App\Http\Controllers\Admin\ResourceCostRateController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\SupportTicketController;
+use App\Http\Controllers\Admin\SupportTicketMessageController;
 use App\Http\Controllers\Admin\TimesheetApprovalController;
 use App\Http\Controllers\Admin\TimesheetController;
 use App\Http\Controllers\Admin\TimesheetEntryController;
@@ -2937,6 +2941,180 @@ Route::middleware([
                     )
                     ->name(
                         'health-check'
+                    );
+            });
+
+        Route::prefix('support')
+            ->name('support.')
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        SupportTicketController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:support-tickets.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        SupportTicketController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:support-tickets.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        SupportTicketController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:support-tickets.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '{ticket}',
+                    [
+                        SupportTicketController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:support-tickets.view'
+                    )
+                    ->name('show');
+
+                Route::put(
+                    '{ticket}',
+                    [
+                        SupportTicketController::class,
+                        'update',
+                    ]
+                )
+                    ->middleware(
+                        'permission:support-tickets.update'
+                    )
+                    ->name('update');
+
+                Route::post(
+                    '{ticket}/messages',
+                    [
+                        SupportTicketMessageController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:support-tickets.reply'
+                    )
+                    ->name(
+                        'messages.store'
+                    );
+            });
+
+        Route::prefix(
+            'change-requests'
+        )
+            ->name(
+                'change-requests.'
+            )
+            ->group(function (): void {
+                Route::get(
+                    '/',
+                    [
+                        ChangeRequestController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:change-requests.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        ChangeRequestController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:change-requests.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        ChangeRequestController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:change-requests.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '{changeRequest}',
+                    [
+                        ChangeRequestController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:change-requests.view'
+                    )
+                    ->name('show');
+
+                Route::post(
+                    '{changeRequest}/estimate',
+                    [
+                        ChangeRequestEstimateController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:change-requests.estimate'
+                    )
+                    ->name(
+                        'estimate.store'
+                    );
+
+                Route::post(
+                    '{changeRequest}/review',
+                    [
+                        ChangeRequestController::class,
+                        'review',
+                    ]
+                )
+                    ->middleware(
+                        'permission:change-requests.review'
+                    )
+                    ->name('review');
+
+                Route::post(
+                    '{changeRequest}/convert-task',
+                    [
+                        ChangeRequestController::class,
+                        'convertTask',
+                    ]
+                )
+                    ->middleware(
+                        'permission:change-requests.convert-task'
+                    )
+                    ->name(
+                        'convert-task'
                     );
             });
     });

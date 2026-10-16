@@ -554,3 +554,51 @@ M14 will introduce:
 
 M14 must preserve the M12 client-data boundary and must not expose
 M11/M13 internal financial information to portal users.
+
+## Current Module
+
+M14 — Support & Change Requests
+
+## Completion Gate
+
+Before M15:
+
+1. support numbering tested
+2. internal ticket creation tested
+3. portal ticket creation tested
+4. assignment tested
+5. first-response SLA tested
+6. resolution SLA tested
+7. client reply tested
+8. internal reply tested
+9. internal note privacy tested
+10. ticket transitions tested
+11. cross-client ticket access tested
+12. change numbering tested
+13. internal change creation tested
+14. portal change creation tested
+15. project ownership tested
+16. estimate tested
+17. internal estimate privacy tested
+18. approval tested
+19. rejection tested
+20. task conversion tested
+21. support export tested
+22. change export tested
+23. M01-M13 regressions pass
+24. full PHP suite passes
+25. Pint passes
+26. TypeScript passes
+27. production build passes
+28. npm run check passes
+29. M14 Git commit created
+
+## Next Module
+
+M15 — HR, Leave, Attendance & Payroll
+
+M15 will introduce employee HR records, leave management, attendance and
+payroll.
+
+M15 salary/payroll data must remain separate from M07 resource profiles
+and M08 operational internal costing.

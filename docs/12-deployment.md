@@ -151,3 +151,21 @@ Current operational schedule:
 
 Queue failure visibility requires the failed_jobs table when Laravel's
 failed-job storage is enabled.
+
+## M14 Deployment Notes
+
+M14 uses the existing queue worker for support and change-request
+notifications.
+
+Laravel scheduler runs:
+
+support:check-sla
+
+hourly.
+
+Current scheduled operations include:
+
+Hourly support:check-sla
+00:10 daily invoices:mark-overdue
+00:30 daily finance:capture-snapshots
+01:00 daily operations:health-check

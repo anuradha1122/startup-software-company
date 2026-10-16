@@ -423,3 +423,41 @@
 - [ ] TypeScript passes
 - [ ] Production build passes
 - [ ] npm run check passes
+
+## M14
+
+- [ ] Support number generated
+- [ ] Internal support ticket creates
+- [ ] Portal support ticket creates
+- [ ] Project/client ownership validated
+- [ ] Active user assignment works
+- [ ] Inactive assignee rejected
+- [ ] Internal reply works
+- [ ] Client reply works
+- [ ] Internal note hidden from portal
+- [ ] First client-visible response records first_responded_at
+- [ ] Internal note does not record first response
+- [ ] Waiting-client reply returns ticket to in_progress
+- [ ] Invalid ticket transition blocked
+- [ ] Closed ticket reply blocked
+- [ ] Cross-client support access blocked
+- [ ] SLA deadlines calculated
+- [ ] SLA command works
+- [ ] Change request number generated
+- [ ] Internal change request creates
+- [ ] Portal change request creates
+- [ ] Cross-client project change blocked
+- [ ] Change estimate saves
+- [ ] Approval requires estimate
+- [ ] Rejection requires review notes
+- [ ] Internal estimate fields hidden from portal
+- [ ] Approved change creates M06 task
+- [ ] Unapproved change cannot create task
+- [ ] Support Excel works
+- [ ] Change-request Excel works
+- [ ] M01-M13 regressions pass
+- [ ] Full PHP suite passes
+- [ ] Pint passes
+- [ ] TypeScript passes
+- [ ] Production build passes
+- [ ] npm run check passes

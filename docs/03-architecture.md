@@ -242,3 +242,108 @@ PayrollPeriod
 → PayrollAdjustment
 
 M15 salary/payroll data is independent from M08 ResourceCostRate.
+
+## M16 Architecture
+
+M16 follows the existing Laravel service-oriented module structure.
+
+### Layers
+
+#### Models
+
+- ProcurementRequest
+- ProcurementRequestItem
+- PurchaseOrder
+- PurchaseOrderItem
+- GoodsReceipt
+- GoodsReceiptItem
+- Asset
+- AssetAssignment
+- AssetMaintenance
+
+#### Controllers
+
+Admin controllers expose only authorized internal workflows:
+
+- ProcurementRequestController
+- ProcurementReviewController
+- PurchaseOrderController
+- GoodsReceiptController
+- AssetController
+- AssetAssignmentController
+- AssetMaintenanceController
+
+Controllers must:
+
+- authorize access;
+- validate through Form Requests;
+- delegate workflow rules to services;
+- return explicit frontend DTOs;
+- avoid returning raw Eloquent models where sensitive data may be exposed.
+
+#### Services
+
+Procurement services:
+
+- ProcurementMoneyService
+- ProcurementQuantityService
+- ProcurementRequestService
+- ProcurementReviewService
+- PurchaseOrderService
+- PurchaseOrderWorkflowService
+- GoodsReceiptService
+
+Asset services:
+
+- AssetService
+- AssetAssignmentService
+- AssetMaintenanceService
+- AssetLifecycleService
+
+Workflow state changes must be implemented in services rather than React pages or controllers.
+
+### Transaction Boundaries
+
+The following operations use database transactions:
+
+- procurement creation;
+- procurement submission;
+- procurement review;
+- purchase-order creation;
+- purchase-order issue;
+- purchase-order cancellation;
+- goods receipt;
+- asset creation;
+- asset assignment;
+- asset return;
+- asset maintenance;
+- asset retirement.
+
+Rows participating in workflow concurrency use `lockForUpdate()` where required.
+
+### Exact Decimal Handling
+
+Procurement monetary calculations must not use binary floating-point arithmetic.
+
+`ProcurementMoneyService` converts currency values to integer minor units.
+
+`ProcurementQuantityService` converts quantity values to integer hundredths.
+
+Line totals are computed using integer arithmetic with explicit rounding.
+
+### Notifications
+
+Notifications are dispatched after the related database transaction commits.
+
+M16 notifications use named backend routes rather than hardcoded URLs.
+
+### Frontend Architecture
+
+M16 frontend pages use:
+
+- React;
+- Inertia;
+- Wayfinder-generated action helpers;
+- existing project Tailwind conventions.
+
+Hardcoded backend URLs must not be introduced into M16 React pages.

@@ -293,3 +293,76 @@ Employee self-service may access only the authenticated employee's
 leave, attendance and published payslips.
 
 Compensation management requires dedicated permissions.
+
+## M16 Security and Data Classification
+
+M16 contains internal commercial and operational information.
+
+### Sensitive M16 Data
+
+Sensitive internal data includes:
+
+- supplier prices;
+- procurement estimates;
+- purchase-order unit prices;
+- purchase-order totals;
+- asset purchase costs;
+- maintenance costs;
+- supplier references;
+- internal procurement notes;
+- internal review notes.
+
+### Access Controls
+
+Every M16 endpoint must require:
+
+- authentication;
+- appropriate Spatie permission;
+- project or organizational scope where applicable.
+
+Frontend visibility is not authorization.
+
+Backend authorization must always be enforced.
+
+### Client Portal Boundary
+
+M12 client portal users must never receive:
+
+- supplier details not intended for clients;
+- supplier pricing;
+- procurement request estimates;
+- procurement review notes;
+- purchase orders;
+- goods receipt details;
+- internal asset purchase costs;
+- maintenance costs.
+
+### DTO Requirement
+
+Admin Inertia responses must use explicit data structures rather than unrestricted serialized models.
+
+This reduces accidental leakage of:
+
+- hidden model fields;
+- internal foreign keys;
+- unrelated employee fields;
+- supplier financial data;
+- internal notes.
+
+### Route Identifiers
+
+Externally exposed admin URLs should use `public_id` rather than numeric primary keys where supported.
+
+### Transaction Security
+
+Approval, purchase-order, goods-receipt, assignment, maintenance, and retirement transitions are transaction-protected.
+
+### Audit Considerations
+
+Purchase costs and procurement amounts should not be exposed through generic activity-log interfaces unless the viewer has suitable procurement/asset permissions.
+
+### Export Security
+
+Excel and PDF endpoints require explicit permissions.
+
+Exports must not bypass the same data-scope rules that apply to normal UI access.

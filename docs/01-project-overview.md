@@ -137,3 +137,58 @@ M15 payroll and salary information is confidential.
 
 M15 remains separate from M07 operational resource management and M08
 internal project costing.
+
+## M16 — Procurement & Asset Management
+
+M16 adds internal procurement, purchasing, goods receipt, asset registration, asset assignment, maintenance, and retirement capabilities.
+
+The module supports the operational lifecycle:
+
+Procurement Request
+→ Internal Review
+→ Purchase Order
+→ Goods Receipt
+→ Asset Registration
+→ Asset Assignment
+→ Return / Maintenance
+→ Retirement
+
+The module integrates with existing supplier, project, employee, notification, reporting, export, and audit capabilities while preserving strict boundaries with finance, payroll, internal costing, and client-facing modules.
+
+### Key capabilities
+
+- Procurement request creation
+- Procurement request approval/rejection
+- Self-approval prevention
+- Purchase order generation
+- Purchase order issue/cancellation workflow
+- Supplier linkage
+- Goods receipt recording
+- Partial goods receipt support
+- Over-receipt protection
+- Asset registration
+- Asset assignment to users
+- Project-aware asset assignment
+- Asset return history
+- Asset maintenance tracking
+- Asset retirement
+- Excel exports
+- Purchase-order PDF output
+- Database notifications
+- Public-ID based routing
+- Exact decimal handling for procurement money and quantities
+
+### Status
+
+M16 is currently In Progress.
+
+The module must not be considered complete until:
+
+- all M16 feature tests pass;
+- all prior module regression suites pass;
+- PHP formatting passes;
+- Wayfinder regeneration succeeds;
+- TypeScript checks pass;
+- frontend build passes;
+- frontend lint/check passes;
+- full Laravel test suite passes.

@@ -42,6 +42,9 @@ class CompanySettingSeeder extends Seeder
             'employee' => 'EMP-',
             'leave' => 'LV-',
             'payroll' => 'PAY-',
+            'procurement_request' => 'PRQ-',
+            'goods_receipt' => 'GRN-',
+            'asset' => 'AST-',
         ];
 
         foreach ($sequences as $type => $prefix) {

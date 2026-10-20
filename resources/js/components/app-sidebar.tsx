@@ -24,7 +24,14 @@ import {
     FileChartColumn,
     GitPullRequestArrow,
     LifeBuoy,
+    ShoppingCart,
+    PackageCheck,
+    Boxes,
 } from 'lucide-react';
+
+import ProcurementRequestController from '@/actions/App/Http/Controllers/Admin/ProcurementRequestController';
+import PurchaseOrderController from '@/actions/App/Http/Controllers/Admin/PurchaseOrderController';
+import AssetController from '@/actions/App/Http/Controllers/Admin/AssetController';
 
 import AppLogo from '@/components/app-logo';
 import { NavMain } from '@/components/nav-main';
@@ -214,6 +221,32 @@ export function AppSidebar() {
         });
     }
 
+    const procurementNavItems: NavItem[] = [];
+
+    if (can('procurement-requests.view')) {
+        procurementNavItems.push({
+            title: 'Procurement Requests',
+            href: ProcurementRequestController.index().url,
+            icon: ShoppingCart,
+        });
+    }
+
+    if (can('purchase-orders.view')) {
+        procurementNavItems.push({
+            title: 'Purchase Orders',
+            href: PurchaseOrderController.index().url,
+            icon: PackageCheck,
+        });
+    }
+
+    if (can('assets.view')) {
+        procurementNavItems.push({
+            title: 'Assets',
+            href: AssetController.index().url,
+            icon: Boxes,
+        });
+    }
+
     const billingNavItems: NavItem[] = [];
 
     if (can('invoices.view')) {
@@ -311,6 +344,17 @@ export function AppSidebar() {
 
                 {financeOpsNavItems.length > 0 && (
                     <NavMain items={financeOpsNavItems} label="Costs" />
+                )}
+
+                {procurementNavItems.length > 0 && (
+                    <NavMain
+                        items={procurementNavItems}
+                        label="Procurement & Assets"
+                    />
+                )}
+
+                {billingNavItems.length > 0 && (
+                    <NavMain items={billingNavItems} label="Billing" />
                 )}
 
                 {billingNavItems.length > 0 && (

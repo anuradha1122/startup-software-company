@@ -267,6 +267,36 @@ class RolePermissionSeeder extends Seeder
 
             'payslips.view-own',
             'payslips.download-own',
+
+            'procurement-requests.view',
+            'procurement-requests.create',
+            'procurement-requests.update',
+            'procurement-requests.submit',
+            'procurement-requests.review',
+            'procurement-requests.cancel',
+            'procurement-requests.export',
+
+            'purchase-orders.view',
+            'purchase-orders.create',
+            'purchase-orders.update',
+            'purchase-orders.issue',
+            'purchase-orders.cancel',
+            'purchase-orders.export',
+
+            'goods-receipts.view',
+            'goods-receipts.create',
+
+            'assets.view',
+            'assets.create',
+            'assets.update',
+            'assets.assign',
+            'assets.return',
+            'assets.maintain',
+            'assets.retire',
+            'assets.export',
+
+            'asset-assignments.view',
+            'asset-assignments.export',
         ];
 
         foreach ($permissions as $permission) {
@@ -444,6 +474,9 @@ class RolePermissionSeeder extends Seeder
                 'change-requests.review',
                 'change-requests.convert-task',
                 'change-requests.export',
+
+                'procurement-requests.view',
+                'procurement-requests.create',
             ]);
 
         Role::findByName('Sales')

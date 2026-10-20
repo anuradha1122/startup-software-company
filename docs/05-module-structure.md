@@ -415,3 +415,122 @@ Frontend:
 PDF:
 
 - pdf/payslip.blade.php
+
+## M16 — Procurement & Asset Management
+
+### Backend
+
+app/Models/
+
+- ProcurementRequest.php
+- ProcurementRequestItem.php
+- PurchaseOrder.php
+- PurchaseOrderItem.php
+- GoodsReceipt.php
+- GoodsReceiptItem.php
+- Asset.php
+- AssetAssignment.php
+- AssetMaintenance.php
+
+app/Http/Controllers/Admin/
+
+- ProcurementRequestController.php
+- ProcurementReviewController.php
+- PurchaseOrderController.php
+- GoodsReceiptController.php
+- AssetController.php
+- AssetAssignmentController.php
+- AssetMaintenanceController.php
+
+app/Http/Requests/Admin/
+
+- StoreProcurementRequestRequest.php
+- ReviewProcurementRequestRequest.php
+- StorePurchaseOrderRequest.php
+- StoreGoodsReceiptRequest.php
+- StoreAssetRequest.php
+- AssignAssetRequest.php
+- ReturnAssetRequest.php
+- StoreAssetMaintenanceRequest.php
+- CompleteAssetMaintenanceRequest.php
+- RetireAssetRequest.php
+
+app/Services/Procurement/
+
+- ProcurementMoneyService.php
+- ProcurementQuantityService.php
+- ProcurementRequestService.php
+- ProcurementReviewService.php
+- PurchaseOrderService.php
+- PurchaseOrderWorkflowService.php
+- GoodsReceiptService.php
+
+app/Services/Assets/
+
+- AssetService.php
+- AssetAssignmentService.php
+- AssetMaintenanceService.php
+- AssetLifecycleService.php
+
+app/Exports/
+
+- ProcurementRequestsExport.php
+- PurchaseOrdersExport.php
+- AssetsExport.php
+- AssetAssignmentsExport.php
+
+app/Notifications/
+
+- ProcurementRequestSubmittedNotification.php
+- ProcurementRequestReviewedNotification.php
+- PurchaseOrderIssuedNotification.php
+- AssetAssignedNotification.php
+- AssetReturnedNotification.php
+
+resources/views/pdf/
+
+- purchase-order.blade.php
+
+### Frontend
+
+resources/js/pages/admin/procurement/
+
+- index.tsx
+- show.tsx
+
+resources/js/pages/admin/purchase-orders/
+
+- index.tsx
+- show.tsx
+
+resources/js/pages/admin/assets/
+
+- index.tsx
+- show.tsx
+
+### Tests
+
+tests/Feature/M16/
+
+- Helpers.php
+- ProcurementRequestCreationTest.php
+- ProcurementRequestSelfApprovalTest.php
+- ProcurementRequestRejectionTest.php
+- ProcurementRequestApprovalTest.php
+- PurchaseOrderCreationTest.php
+- PurchaseOrderApprovalGuardTest.php
+- PurchaseOrderDuplicateGuardTest.php
+- PurchaseOrderIssueTest.php
+- PurchaseOrderCancellationGuardTest.php
+- GoodsReceiptTest.php
+- GoodsReceiptPartialTest.php
+- GoodsReceiptOverReceiveTest.php
+- AssetCreationTest.php
+- AssetAssignmentTest.php
+- AssetDuplicateAssignmentTest.php
+- AssetReturnTest.php
+- AssetRetirementTest.php
+- AssetRetirementAssignmentGuardTest.php
+- ProcurementMoneyTest.php
+- ProcurementPrivacyTest.php
+- M16ExportTest.php

@@ -334,3 +334,97 @@
 18. Overtime payment is zero until an explicit overtime-pay policy exists.
 19. Unpaid-leave deduction is not inferred until an explicit payroll policy exists.
 20. Payroll money calculations must avoid binary floating-point arithmetic.
+
+## M16 Business Rules
+
+1. A procurement request starts in `draft`.
+
+2. A procurement request must contain at least one item before submission.
+
+3. Only the original requester may submit their own draft procurement request.
+
+4. A requester must not approve or reject their own procurement request.
+
+5. Only `submitted` requests may be reviewed.
+
+6. Review decisions are limited to `approved` and `rejected`.
+
+7. Rejection requires review notes.
+
+8. A purchase order may only be created from an approved procurement request.
+
+9. Purchase-order currency must match the procurement request currency.
+
+10. The current workflow allows only one non-cancelled purchase order per procurement request.
+
+11. Every approved procurement item must be represented exactly once in the purchase-order creation payload.
+
+12. Purchase-order unit pricing represents actual supplier pricing and may differ from procurement estimates.
+
+13. Purchase orders start in `draft`.
+
+14. Only draft purchase orders may be issued.
+
+15. A purchase order must contain at least one item before issue.
+
+16. Issuing a purchase order moves its procurement request to `ordered`.
+
+17. A purchase order may not be cancelled after any goods receipt has been recorded.
+
+18. Cancelling an unreceived purchase order returns its linked procurement request to `approved`.
+
+19. Goods may only be received against `issued` or `partially_received` purchase orders.
+
+20. Cumulative received quantity must never exceed ordered quantity.
+
+21. Partial goods receipts move the purchase order to `partially_received`.
+
+22. Full receipt moves the purchase order to `received`.
+
+23. The linked procurement request follows the purchase order's `partially_received` or `received` state.
+
+24. Rejected delivery quantities are recorded separately from accepted received quantities.
+
+25. Asset registration from purchase-order items is allowed only when the purchase-order item is marked `asset_trackable`.
+
+26. A procurement purchase cost does not automatically create an M09 project expense.
+
+27. An asset purchase cost does not automatically create an M08 project cost.
+
+28. A purchase order is not a client invoice.
+
+29. Procurement approval is an internal approval and is unrelated to M12 client approval.
+
+30. Only assets in `available` state may be assigned.
+
+31. An asset may have only one active assignment at a time.
+
+32. Asset assignment history must be retained.
+
+33. Returning an asset closes the active assignment and normally makes the asset `available`.
+
+34. Assigned assets must be returned before entering maintenance.
+
+35. Assets may not have overlapping active maintenance records.
+
+36. Assets in maintenance may not be assigned.
+
+37. Active assignments must be closed before retirement.
+
+38. Active maintenance must be completed or cancelled before retirement.
+
+39. Retired or disposed assets must not be assigned.
+
+40. Asset retirement requires a reason and audit actor.
+
+41. Asset purchase cost, supplier pricing, maintenance cost, and procurement estimates are internal data.
+
+42. Internal procurement data must not be exposed to client portal users.
+
+43. Money values must use fixed decimal handling and must not rely on binary floating-point arithmetic.
+
+44. Quantity calculations must use fixed decimal handling.
+
+45. Workflow actions that can race must use transactional locking.
+
+46. M16 notifications must be dispatched only after successful transaction commit.

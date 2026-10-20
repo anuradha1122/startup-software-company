@@ -317,3 +317,66 @@ Implemented:
 - employee payslips
 - HR notifications
 - M15 exports
+
+## M16 — Procurement & Asset Management
+
+### Development Summary
+
+M16 development introduced:
+
+- procurement requests;
+- procurement request items;
+- internal procurement approval;
+- self-approval prevention;
+- purchase orders;
+- purchase-order items;
+- supplier purchasing workflow;
+- goods receipts;
+- partial receipt handling;
+- cumulative received quantities;
+- over-receipt protection;
+- assets;
+- asset assignments;
+- assignment history;
+- asset returns;
+- maintenance records;
+- retirement workflow;
+- fixed-decimal procurement money handling;
+- fixed-decimal quantity handling;
+- Excel exports;
+- purchase-order PDF;
+- database notifications;
+- explicit frontend DTOs;
+- Wayfinder frontend integration.
+
+### Notable Development Corrections
+
+During M16 implementation the following earlier draft issues were corrected:
+
+- missing goods-receipt models were added;
+- missing maintenance workflow was implemented;
+- purchase-order PDF action and route were added;
+- PHP-invalid/ambiguous `return()` asset service/controller naming was replaced with `returnAsset()`;
+- asset assignment route key uses `public_id`;
+- exact quantity handling was added without requiring BCMath;
+- purchase-order creation now requires explicit per-line actual pricing;
+- PO duplicate protection was added;
+- purchase-order cancellation after goods receipt was blocked;
+- after-commit notifications were used;
+- test supplier creation was aligned with the existing M09 Supplier implementation rather than assuming `Supplier::factory()` exists.
+
+### Current Test Progress
+
+The M16 targeted suite has been actively hardened.
+
+Previously observed failures were primarily caused by:
+
+- tests using `Supplier::factory()` even though the existing Supplier model has no factory;
+- an old `AssetAssignmentService::return()` test call after the implementation was renamed to `returnAsset()`;
+- older purchase-order tests omitting the new required `items` pricing payload.
+
+These are test-fixture/alignment issues rather than reasons to weaken the production workflow rules.
+
+### Status
+
+M16 remains In Progress until the full project gate is confirmed green.

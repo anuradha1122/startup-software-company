@@ -354,3 +354,98 @@ Includes:
 - employee self-service payslips
 - payroll PDF/Excel
 - leave/attendance/employee exports
+
+## M16 Scope — Procurement & Asset Management
+
+### In Scope
+
+M16 includes:
+
+#### Procurement
+
+- creation of procurement requests;
+- optional linkage to a project;
+- business justification;
+- priority classification;
+- multi-line requested items;
+- estimated unit cost and estimated total;
+- submission workflow;
+- internal review;
+- approval;
+- rejection with reason;
+- requester/reviewer separation.
+
+#### Purchase Orders
+
+- conversion of approved procurement requests into purchase orders;
+- supplier selection;
+- purchase-order numbering;
+- actual unit pricing;
+- tax amount;
+- supplier reference;
+- expected delivery date;
+- issue workflow;
+- cancellation before goods receipt;
+- purchase-order PDF;
+- purchase-order Excel export.
+
+#### Goods Receipt
+
+- receipt against issued purchase orders;
+- partial receipt;
+- cumulative received quantity tracking;
+- over-receipt prevention;
+- rejected quantity recording;
+- delivery reference;
+- condition notes;
+- receiver audit data.
+
+#### Assets
+
+- asset registration;
+- asset number and asset tag;
+- supplier and project linkage;
+- purchase-order-item linkage;
+- purchase cost;
+- serial number;
+- warranty expiry;
+- location;
+- asset status tracking;
+- employee/user assignment;
+- assignment history;
+- return workflow;
+- maintenance records;
+- retirement.
+
+### Out of Scope
+
+The following are explicitly outside M16:
+
+- supplier payment processing;
+- automatic invoice generation;
+- client billing;
+- payroll deductions for assets;
+- salary processing;
+- depreciation accounting;
+- general ledger postings;
+- automatic M09 expense creation;
+- automatic M08 project-cost creation;
+- client approvals for procurement;
+- client access to supplier pricing;
+- stock warehouse management;
+- purchase requisition bidding/tender management;
+- disposal sale accounting.
+
+### Module Boundaries
+
+M16 procurement and asset values are internal operational records.
+
+M16 purchase costs do not automatically become:
+
+- M08 internal labor cost;
+- M09 project expense;
+- M10 client invoice;
+- M11 profitability revenue;
+- M15 payroll deduction.
+
+Any future integration must be explicit, authorized, auditable, and implemented through a dedicated workflow.

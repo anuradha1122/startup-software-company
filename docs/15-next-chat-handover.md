@@ -649,3 +649,89 @@ company assets, asset assignment and asset lifecycle.
 
 M16 must keep procurement purchase cost internal and separate from
 client billing unless explicitly approved for M09/M10 workflows.
+
+# Current Handover — M16 Procurement & Asset Management
+
+## Current Module
+
+M16 — Procurement & Asset Management
+
+## Status
+
+In Progress.
+
+Do not mark M16 complete or commit it as complete until all targeted, regression, backend, frontend, and formatting gates are green.
+
+## Main Workflow
+
+Procurement Request
+→ Submission
+→ Internal Review
+→ Approval
+→ Purchase Order
+→ PO Issue
+→ Goods Receipt
+→ Asset Registration
+→ Assignment
+→ Return / Maintenance
+→ Retirement
+
+## M16 Models
+
+- ProcurementRequest
+- ProcurementRequestItem
+- PurchaseOrder
+- PurchaseOrderItem
+- GoodsReceipt
+- GoodsReceiptItem
+- Asset
+- AssetAssignment
+- AssetMaintenance
+
+## M16 Services
+
+### Procurement
+
+- ProcurementMoneyService
+- ProcurementQuantityService
+- ProcurementRequestService
+- ProcurementReviewService
+- PurchaseOrderService
+- PurchaseOrderWorkflowService
+- GoodsReceiptService
+
+### Assets
+
+- AssetService
+- AssetAssignmentService
+- AssetMaintenanceService
+- AssetLifecycleService
+
+## Important Boundaries
+
+- salary != M08 resource cost rate;
+- payroll != procurement;
+- PO != client invoice;
+- goods receipt != payment;
+- purchase cost != automatic M09 expense;
+- asset purchase cost != automatic M08 project cost;
+- procurement approval != client approval.
+
+M16 internal prices and costs must not be exposed to client portal users.
+
+## Important Implementation Rules
+
+### Supplier Tests
+
+The existing M09 `Supplier` model does not currently provide `Supplier::factory()`.
+
+M16 tests should use the existing supplier creation pattern or `tests/Feature/M16/Helpers.php`.
+
+Do not modify production Supplier behavior merely to satisfy M16 tests unless a Supplier factory is intentionally being introduced project-wide.
+
+### Asset Return
+
+The canonical method is:
+
+php
+AssetAssignmentService::returnAsset()

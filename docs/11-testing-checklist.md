@@ -502,3 +502,75 @@
 - [ ] TypeScript passes
 - [ ] Build passes
 - [ ] npm check passes
+
+## M16 Testing Checklist
+
+### Procurement Requests
+
+- [ ] procurement request can be created;
+- [ ] line totals are calculated correctly;
+- [ ] request total is calculated correctly;
+- [ ] draft request can be submitted;
+- [ ] request without items cannot be submitted;
+- [ ] requester cannot self-approve;
+- [ ] submitted request can be approved;
+- [ ] submitted request can be rejected;
+- [ ] rejection requires notes;
+- [ ] invalid review decision is rejected.
+
+### Purchase Orders
+
+- [ ] only approved procurement requests can create POs;
+- [ ] duplicate active PO is prevented;
+- [ ] actual unit prices are accepted;
+- [ ] all procurement lines must be included;
+- [ ] subtotal is calculated correctly;
+- [ ] tax is calculated correctly;
+- [ ] total is calculated correctly;
+- [ ] draft PO can be issued;
+- [ ] PO without items cannot be issued;
+- [ ] issuing updates procurement status;
+- [ ] unreceived PO may be cancelled;
+- [ ] PO with goods receipt cannot be cancelled;
+- [ ] PDF endpoint is authorized;
+- [ ] Excel export is authorized.
+
+### Goods Receipts
+
+- [ ] issued PO accepts goods receipt;
+- [ ] partial receipt changes status to `partially_received`;
+- [ ] full receipt changes status to `received`;
+- [ ] cumulative receipt works across multiple receipts;
+- [ ] over-receipt is rejected;
+- [ ] zero-value receipt payload does not create empty GRN;
+- [ ] rejected quantity is stored correctly;
+- [ ] item must belong to the purchase order.
+
+### Assets
+
+- [ ] asset can be registered;
+- [ ] asset tag is unique;
+- [ ] serial number uniqueness is enforced;
+- [ ] asset may be linked to received PO item;
+- [ ] non-trackable PO item cannot create asset;
+- [ ] unreceived PO item cannot create asset;
+- [ ] available asset may be assigned;
+- [ ] assigned asset cannot be assigned twice;
+- [ ] asset return closes assignment;
+- [ ] assignment history remains intact;
+- [ ] assigned asset cannot enter maintenance;
+- [ ] maintenance can be created;
+- [ ] maintenance can be completed;
+- [ ] asset returns to available after maintenance completion;
+- [ ] assigned asset cannot be retired;
+- [ ] active-maintenance asset cannot be retired;
+- [ ] retirement reason is required.
+
+### Privacy and Authorization
+
+- [ ] unauthorized procurement export returns 403;
+- [ ] unauthorized PO export returns 403;
+- [ ] unauthorized asset export returns 403;
+- [ ] asset assignment export is protected;
+- [ ] client portal receives no M16 internal cost information;
+- [ ] admin DTOs do not expose raw unrelated model fields.

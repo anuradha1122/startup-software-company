@@ -184,3 +184,13 @@ actions and must not be automatically approved by the scheduler.
 
 Payslip PDFs are generated on demand and require authenticated
 employee authorization.
+
+## M16 Deployment Notes
+
+### Database
+
+Deploy M16 migrations using:
+
+```bash
+php artisan migrate --force
+```

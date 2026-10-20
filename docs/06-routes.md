@@ -606,3 +606,46 @@ The documentation must be updated in the same module response rather than deferr
 | -------------------- | -------------------------- | ----------------------------------------- |
 | Yearly / configured  | `leave:accrue-balances`    | Initialize/accrue employee leave balances |
 | Monthly / configured | `payroll:generate-periods` | Prepare upcoming payroll period           |
+
+## M16 Routes
+
+All routes are internal authenticated admin routes.
+
+### Procurement Requests
+
+| Method | URI                                                       | Route Name                          | Permission                    |
+| ------ | --------------------------------------------------------- | ----------------------------------- | ----------------------------- |
+| GET    | `/admin/procurement/requests`                             | `admin.procurement.requests.index`  | `procurement-requests.view`   |
+| POST   | `/admin/procurement/requests`                             | `admin.procurement.requests.store`  | `procurement-requests.create` |
+| GET    | `/admin/procurement/requests/export/excel`                | `admin.procurement.requests.excel`  | `procurement-requests.export` |
+| GET    | `/admin/procurement/requests/{procurementRequest}`        | `admin.procurement.requests.show`   | `procurement-requests.view`   |
+| POST   | `/admin/procurement/requests/{procurementRequest}/submit` | `admin.procurement.requests.submit` | `procurement-requests.submit` |
+| POST   | `/admin/procurement/requests/{procurementRequest}/review` | `admin.procurement.requests.review` | `procurement-requests.review` |
+
+### Purchase Orders
+
+| Method | URI                                               | Route Name                             | Permission               |
+| ------ | ------------------------------------------------- | -------------------------------------- | ------------------------ |
+| GET    | `/admin/purchase-orders`                          | `admin.purchase-orders.index`          | `purchase-orders.view`   |
+| POST   | `/admin/purchase-orders`                          | `admin.purchase-orders.store`          | `purchase-orders.create` |
+| GET    | `/admin/purchase-orders/export/excel`             | `admin.purchase-orders.excel`          | `purchase-orders.export` |
+| GET    | `/admin/purchase-orders/{purchaseOrder}`          | `admin.purchase-orders.show`           | `purchase-orders.view`   |
+| GET    | `/admin/purchase-orders/{purchaseOrder}/pdf`      | `admin.purchase-orders.pdf`            | `purchase-orders.view`   |
+| POST   | `/admin/purchase-orders/{purchaseOrder}/issue`    | `admin.purchase-orders.issue`          | `purchase-orders.issue`  |
+| POST   | `/admin/purchase-orders/{purchaseOrder}/cancel`   | `admin.purchase-orders.cancel`         | `purchase-orders.cancel` |
+| POST   | `/admin/purchase-orders/{purchaseOrder}/receipts` | `admin.purchase-orders.receipts.store` | `goods-receipts.create`  |
+
+### Assets
+
+| Method | URI                                                | Route Name                          | Permission                 |
+| ------ | -------------------------------------------------- | ----------------------------------- | -------------------------- |
+| GET    | `/admin/assets`                                    | `admin.assets.index`                | `assets.view`              |
+| POST   | `/admin/assets`                                    | `admin.assets.store`                | `assets.create`            |
+| GET    | `/admin/assets/export/excel`                       | `admin.assets.excel`                | `assets.export`            |
+| GET    | `/admin/assets/{asset}`                            | `admin.assets.show`                 | `assets.view`              |
+| POST   | `/admin/assets/{asset}/assign`                     | `admin.assets.assign`               | `assets.assign`            |
+| POST   | `/admin/assets/assignments/{assignment}/return`    | `admin.assets.assignments.return`   | `assets.return`            |
+| GET    | `/admin/assets/assignments/export/excel`           | `admin.assets.assignments.excel`    | `asset-assignments.export` |
+| POST   | `/admin/assets/{asset}/maintenance`                | `admin.assets.maintenance.store`    | `assets.maintain`          |
+| POST   | `/admin/assets/maintenance/{maintenance}/complete` | `admin.assets.maintenance.complete` | `assets.maintain`          |
+| POST   | `/admin/assets/{asset}/retire`                     | `admin.assets.retire`               | `assets.retire`            |

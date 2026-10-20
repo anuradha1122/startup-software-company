@@ -325,3 +325,260 @@ Employee compensation is kept in a dedicated confidential table.
 
 Payroll entries contain salary snapshots so historical payslips do not
 change after compensation updates.
+
+## M16 Database Design
+
+### procurement_requests
+
+Purpose:
+Stores procurement request headers.
+
+Key columns:
+
+- id
+- public_id
+- request_number
+- project_id nullable
+- title
+- business_reason
+- priority
+- status
+- currency
+- estimated_total
+- requested_by
+- submitted_at
+- reviewed_by
+- review_notes
+- reviewed_at
+- approved_at
+- rejected_at
+- timestamps
+- soft deletes
+
+Statuses:
+
+- draft
+- submitted
+- approved
+- rejected
+- cancelled
+- ordered
+- partially_received
+- received
+
+### procurement_request_items
+
+Purpose:
+Stores requested procurement line items.
+
+Key columns:
+
+- id
+- public_id
+- procurement_request_id
+- description
+- quantity
+- unit
+- estimated_unit_cost
+- estimated_total
+- notes
+- timestamps
+
+### purchase_orders
+
+Purpose:
+Stores supplier purchase-order headers.
+
+Key columns:
+
+- id
+- public_id
+- purchase_order_number
+- procurement_request_id nullable
+- supplier_id
+- project_id nullable
+- currency
+- order_date
+- expected_delivery_date
+- status
+- subtotal
+- tax_amount
+- total
+- supplier_reference
+- notes
+- created_by
+- issued_by
+- issued_at
+- cancelled_by
+- cancelled_at
+- timestamps
+- soft deletes
+
+Statuses:
+
+- draft
+- issued
+- partially_received
+- received
+- cancelled
+
+### purchase_order_items
+
+Purpose:
+Stores purchase-order lines.
+
+Key columns:
+
+- id
+- public_id
+- purchase_order_id
+- procurement_request_item_id nullable
+- description
+- quantity
+- unit
+- unit_cost
+- line_total
+- received_quantity
+- asset_trackable
+- timestamps
+
+### goods_receipts
+
+Purpose:
+Stores supplier delivery receipt headers.
+
+Key columns:
+
+- id
+- public_id
+- receipt_number
+- purchase_order_id
+- received_date
+- delivery_reference
+- notes
+- received_by
+- timestamps
+
+### goods_receipt_items
+
+Purpose:
+Stores received quantities per purchase-order line.
+
+Key columns:
+
+- id
+- public_id
+- goods_receipt_id
+- purchase_order_item_id
+- quantity_received
+- quantity_rejected
+- condition_notes
+- timestamps
+
+### assets
+
+Purpose:
+Stores company-owned tracked assets.
+
+Key columns:
+
+- id
+- public_id
+- asset_number
+- asset_tag
+- name
+- category
+- brand
+- model
+- serial_number
+- supplier_id nullable
+- purchase_order_item_id nullable
+- project_id nullable
+- currency nullable
+- purchase_cost nullable
+- purchase_date nullable
+- warranty_expires_at nullable
+- status
+- location nullable
+- notes nullable
+- created_by
+- retired_at nullable
+- retired_by nullable
+- retirement_reason nullable
+- timestamps
+- soft deletes
+
+Statuses:
+
+- available
+- assigned
+- maintenance
+- lost
+- retired
+- disposed
+
+### asset_assignments
+
+Purpose:
+Stores historical asset assignment records.
+
+Key columns:
+
+- id
+- public_id
+- asset_id
+- user_id
+- project_id nullable
+- assigned_date
+- expected_return_date nullable
+- returned_date nullable
+- status
+- assignment_notes nullable
+- return_notes nullable
+- assigned_by
+- returned_by nullable
+- timestamps
+
+Statuses:
+
+- active
+- returned
+
+Historical assignment rows are retained and must not be overwritten when an asset is reassigned.
+
+### asset_maintenances
+
+Purpose:
+Stores asset maintenance lifecycle records.
+
+Key columns:
+
+- id
+- public_id
+- asset_id
+- type
+- status
+- started_date nullable
+- completed_date nullable
+- vendor nullable
+- currency nullable
+- cost nullable
+- description
+- resolution nullable
+- created_by
+- completed_by nullable
+- timestamps
+
+Types:
+
+- inspection
+- repair
+- service
+- upgrade
+
+Statuses:
+
+- scheduled
+- in_progress
+- completed
+- cancelled

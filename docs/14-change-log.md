@@ -203,3 +203,58 @@
 - Payslips
 - HR permissions
 - Employee self service
+
+## M16 — Procurement & Asset Management
+
+### Added
+
+- ProcurementRequest model and workflow
+- ProcurementRequestItem model
+- procurement submission
+- procurement approval/rejection
+- self-approval prevention
+- PurchaseOrder model
+- PurchaseOrderItem model
+- PO issue/cancel workflow
+- supplier PO linkage
+- purchase-order PDF
+- GoodsReceipt model
+- GoodsReceiptItem model
+- partial goods receipts
+- cumulative received quantity tracking
+- over-receipt prevention
+- Asset model
+- asset registration
+- asset tagging
+- asset assignment
+- assignment history
+- asset returns
+- AssetMaintenance model
+- maintenance lifecycle
+- asset retirement
+- ProcurementMoneyService
+- ProcurementQuantityService
+- M16 Excel exports
+- M16 database notifications
+- M16 React/Inertia pages
+- M16 Wayfinder routes/actions
+- M16 feature tests
+
+### Changed
+
+- M16 asset return workflow uses `returnAsset()` instead of `return()`.
+- Purchase-order creation now requires explicit line pricing.
+- Purchase-order items explicitly mark whether assets should be tracked.
+- Procurement and asset notifications are dispatched after transaction commit.
+- M16 frontend actions use Wayfinder-generated routes.
+
+### Security
+
+- M16 export endpoints require explicit permissions.
+- Procurement/supplier pricing remains internal.
+- M16 data is excluded from client portal exposure.
+- Raw model serialization is avoided for sensitive frontend payloads.
+
+### Status
+
+M16 is not yet marked final until all project gates are green.

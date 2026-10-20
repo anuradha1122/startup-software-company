@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminOperationsController;
+use App\Http\Controllers\Admin\AssetAssignmentController;
+use App\Http\Controllers\Admin\AssetController;
+use App\Http\Controllers\Admin\AssetMaintenanceController;
 use App\Http\Controllers\Admin\AttendanceController;
 use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\ChangeRequestController;
@@ -19,6 +22,7 @@ use App\Http\Controllers\Admin\EmployeeCompensationController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\EstimateController;
 use App\Http\Controllers\Admin\FinanceDashboardController;
+use App\Http\Controllers\Admin\GoodsReceiptController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\InvoiceLineController;
 use App\Http\Controllers\Admin\LeadActivityController;
@@ -28,6 +32,8 @@ use App\Http\Controllers\Admin\PaymentAllocationController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\PayrollPeriodController;
 use App\Http\Controllers\Admin\PeopleController;
+use App\Http\Controllers\Admin\ProcurementRequestController;
+use App\Http\Controllers\Admin\ProcurementReviewController;
 use App\Http\Controllers\Admin\ProjectAssignmentController;
 use App\Http\Controllers\Admin\ProjectCharterController;
 use App\Http\Controllers\Admin\ProjectController;
@@ -49,6 +55,7 @@ use App\Http\Controllers\Admin\ProjectTaskCommentController;
 use App\Http\Controllers\Admin\ProjectTaskController;
 use App\Http\Controllers\Admin\ProjectTaskWorkflowController;
 use App\Http\Controllers\Admin\ProposalController;
+use App\Http\Controllers\Admin\PurchaseOrderController;
 use App\Http\Controllers\Admin\QuotationController;
 use App\Http\Controllers\Admin\ReceivableController;
 use App\Http\Controllers\Admin\ReportCenterController;
@@ -3269,5 +3276,305 @@ Route::middleware([
                 )
                     ->middleware('permission:payroll.publish')
                     ->name('payroll.publish');
+            });
+
+        Route::prefix('procurement')
+            ->name('procurement.')
+            ->group(function (): void {
+                Route::get(
+                    'requests/export/excel',
+                    [
+                        ProcurementRequestController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:procurement-requests.export'
+                    )
+                    ->name('requests.excel');
+
+                Route::get(
+                    'requests',
+                    [
+                        ProcurementRequestController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:procurement-requests.view'
+                    )
+                    ->name('requests.index');
+
+                Route::post(
+                    'requests',
+                    [
+                        ProcurementRequestController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:procurement-requests.create'
+                    )
+                    ->name('requests.store');
+
+                Route::post(
+                    'requests/{procurementRequest}/submit',
+                    [
+                        ProcurementRequestController::class,
+                        'submit',
+                    ]
+                )
+                    ->middleware(
+                        'permission:procurement-requests.submit'
+                    )
+                    ->name('requests.submit');
+
+                Route::post(
+                    'requests/{procurementRequest}/review',
+                    [
+                        ProcurementReviewController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:procurement-requests.review'
+                    )
+                    ->name('requests.review');
+
+                Route::get(
+                    'requests/{procurementRequest}',
+                    [
+                        ProcurementRequestController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:procurement-requests.view'
+                    )
+                    ->name('requests.show');
+            });
+
+        Route::prefix('purchase-orders')
+            ->name('purchase-orders.')
+            ->group(function (): void {
+                Route::get(
+                    'export/excel',
+                    [
+                        PurchaseOrderController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:purchase-orders.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '/',
+                    [
+                        PurchaseOrderController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:purchase-orders.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        PurchaseOrderController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:purchase-orders.create'
+                    )
+                    ->name('store');
+
+                Route::get(
+                    '{purchaseOrder}/pdf',
+                    [
+                        PurchaseOrderController::class,
+                        'pdf',
+                    ]
+                )
+                    ->middleware(
+                        'permission:purchase-orders.view'
+                    )
+                    ->name('pdf');
+
+                Route::post(
+                    '{purchaseOrder}/issue',
+                    [
+                        PurchaseOrderController::class,
+                        'issue',
+                    ]
+                )
+                    ->middleware(
+                        'permission:purchase-orders.issue'
+                    )
+                    ->name('issue');
+
+                Route::post(
+                    '{purchaseOrder}/cancel',
+                    [
+                        PurchaseOrderController::class,
+                        'cancel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:purchase-orders.cancel'
+                    )
+                    ->name('cancel');
+
+                Route::post(
+                    '{purchaseOrder}/receipts',
+                    [
+                        GoodsReceiptController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:goods-receipts.create'
+                    )
+                    ->name('receipts.store');
+
+                Route::get(
+                    '{purchaseOrder}',
+                    [
+                        PurchaseOrderController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:purchase-orders.view'
+                    )
+                    ->name('show');
+            });
+
+        Route::prefix('assets')
+            ->name('assets.')
+            ->group(function (): void {
+                Route::get(
+                    'assignments/export/excel',
+                    [
+                        AssetAssignmentController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:asset-assignments.export'
+                    )
+                    ->name('assignments.excel');
+
+                Route::get(
+                    'export/excel',
+                    [
+                        AssetController::class,
+                        'excel',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.export'
+                    )
+                    ->name('excel');
+
+                Route::get(
+                    '/',
+                    [
+                        AssetController::class,
+                        'index',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.view'
+                    )
+                    ->name('index');
+
+                Route::post(
+                    '/',
+                    [
+                        AssetController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.create'
+                    )
+                    ->name('store');
+
+                Route::post(
+                    'assignments/{assignment}/return',
+                    [
+                        AssetAssignmentController::class,
+                        'returnAsset',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.return'
+                    )
+                    ->name('assignments.return');
+
+                Route::post(
+                    'maintenance/{maintenance}/complete',
+                    [
+                        AssetMaintenanceController::class,
+                        'complete',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.maintain'
+                    )
+                    ->name('maintenance.complete');
+
+                Route::post(
+                    '{asset}/assign',
+                    [
+                        AssetAssignmentController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.assign'
+                    )
+                    ->name('assign');
+
+                Route::post(
+                    '{asset}/maintenance',
+                    [
+                        AssetMaintenanceController::class,
+                        'store',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.maintain'
+                    )
+                    ->name('maintenance.store');
+
+                Route::post(
+                    '{asset}/retire',
+                    [
+                        AssetController::class,
+                        'retire',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.retire'
+                    )
+                    ->name('retire');
+
+                Route::get(
+                    '{asset}',
+                    [
+                        AssetController::class,
+                        'show',
+                    ]
+                )
+                    ->middleware(
+                        'permission:assets.view'
+                    )
+                    ->name('show');
             });
     });

@@ -236,3 +236,94 @@ Employee self service should emphasize:
 Payroll workflow must clearly display:
 
 Draft → Calculated → Approved → Published → Closed
+
+## M16 UI/UX Guidelines
+
+M16 pages follow the existing internal admin UI conventions.
+
+### Page Layout
+
+Use:
+
+- `max-w-7xl`
+- consistent `p-6`
+- `space-y-6`
+- bordered sections
+- responsive grid layouts
+- existing muted text conventions
+- simple workflow buttons
+- existing project Tailwind tokens
+
+M16 must visually match existing admin pages such as project management pages.
+
+### Procurement UI
+
+Procurement request screens should show:
+
+- request number;
+- title;
+- priority;
+- status;
+- requester;
+- project;
+- currency;
+- estimated total;
+- line items;
+- review status.
+
+Only display actions the current user is allowed to perform.
+
+### Purchase Order UI
+
+Purchase-order screens should show:
+
+- PO number;
+- supplier;
+- procurement request;
+- order date;
+- expected delivery date;
+- line items;
+- ordered quantity;
+- received quantity;
+- unit price;
+- subtotal;
+- tax;
+- total;
+- status;
+- goods receipt history.
+
+### Asset UI
+
+Asset screens should show:
+
+- asset number;
+- asset tag;
+- name;
+- category;
+- serial number;
+- location;
+- project;
+- status;
+- active assignment;
+- assignment history;
+- maintenance history.
+
+Purchase cost must only be displayed to authorized internal users.
+
+### Action Visibility
+
+Examples:
+
+- Submit button only for eligible drafts.
+- Review form only for submitted requests and authorized reviewers.
+- Issue button only for draft POs.
+- Goods receipt form only for issued/partially-received POs.
+- Assign button only for available assets.
+- Return form only when an active assignment exists.
+- Retirement action disabled while assignment or maintenance blocks retirement.
+
+### Wayfinder
+
+All backend navigation/action URLs in new M16 React code must use generated Wayfinder actions.
+
+Do not introduce hardcoded Laravel endpoint strings into M16 frontend pages.

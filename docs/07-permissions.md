@@ -372,3 +372,58 @@ Spatie roles.
 - payroll.export
 - payslips.view-own
 - payslips.download-own
+
+## M16 Permissions
+
+### Procurement Requests
+
+- `procurement-requests.view`
+- `procurement-requests.create`
+- `procurement-requests.update`
+- `procurement-requests.submit`
+- `procurement-requests.review`
+- `procurement-requests.cancel`
+- `procurement-requests.export`
+
+### Purchase Orders
+
+- `purchase-orders.view`
+- `purchase-orders.create`
+- `purchase-orders.update`
+- `purchase-orders.issue`
+- `purchase-orders.cancel`
+- `purchase-orders.export`
+
+### Goods Receipts
+
+- `goods-receipts.view`
+- `goods-receipts.create`
+
+### Assets
+
+- `assets.view`
+- `assets.create`
+- `assets.update`
+- `assets.assign`
+- `assets.return`
+- `assets.maintain`
+- `assets.retire`
+- `assets.export`
+
+### Asset Assignments
+
+- `asset-assignments.view`
+- `asset-assignments.export`
+
+### Permission Rules
+
+Permissions must be added without destroying previously assigned role permissions.
+
+Use additive permission grants.
+
+Do not use broad destructive permission synchronization such as:
+
+php
+$role->syncPermissions(
+Permission::all()
+);
